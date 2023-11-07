@@ -214,12 +214,26 @@ nav li {
 
   nav {
     position: fixed;
+    top:-200px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    transition: all 0.5s ease-out;
+    z-index: 5;
+  }
+
+  nav.open {
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: start;
+    top: 0;
     right: 0;
     width: 100%;
+    height: fit-content;
     z-index: 5;
+    transition: all 0.5s ease-in;
   }
 
   
@@ -314,11 +328,6 @@ nav li {
   nav ul li a {
     margin-left: 0;
   }
-
-  /* nav ul li:last-child {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #555;
-  } */
 
   nav ul li:hover {
     background-color: rgb(247, 247, 247);
