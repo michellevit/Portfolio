@@ -21,7 +21,7 @@ function Navbar() {
         </div>
         <div className="hamburger-menu-container" onClick={handleHamburgerMenu}>
         <div className={menuOpen ? "hamburger-menu icon-open" : "hamburger-menu"} >
-            <div class="hamburger-menu-button"></div>
+            <div className="hamburger-menu-button"></div>
         </div>
         </div>
         <nav>
