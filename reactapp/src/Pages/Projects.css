@@ -1,0 +1,142 @@
+.projects-container {
+  padding: 0 5%;
+}
+
+.projects-container h2 {
+  text-align: center;
+}
+
+.featured-project h3 {
+  text-align: left;
+  margin: 0;
+}
+
+.featured-project {
+  display: flex;
+  flex-direction: row;
+  margin: 25px 0;
+}
+
+.project-image {
+  position: relative;
+  display: flex;
+  width: 60%;
+  margin: 0 25px 0 0;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project-image img {
+  width: 100%;
+  transition: opacity 0.6s;
+}
+
+.project-image .project-image-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  color: white;
+  background-color: rgb(231, 207, 254, 0.5);
+  text-shadow: #FFF 1px 0 20px;
+  transition: opacity 0.6s;
+}
+
+.project-image:hover .project-image-text {
+  opacity: 1;
+}
+
+.project-image:hover .project-image-text  {
+    opacity: 1;
+  }
+  
+.project-image .project-image-text h2 {
+  color: black;
+  margin-bottom: 0;
+}
+
+.project-text {
+  width: 40%;
+  text-align: left;
+}
+
+.project-text p.read-more-link {
+  width: fit-content;
+}
+
+.project-text p.read-more-link a {
+  margin-top: 1em !important;
+  color: inherit;
+}
+
+.project-text p.read-more-link span {
+  display: inline-block;
+  transform: translateX(20%);
+  transition: 0.25s;
+}
+
+.project-text p.read-more-link:hover span {
+  transform: translateX(40%);
+}
+
+@media screen and (min-width: 800px) {
+  .featured-project {
+    margin-top: 50px;
+  }
+
+  .featured-project .project-text > h3,
+  p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .project-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-text p.read-more-link {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 550px) {
+  .project-text p {
+    margin: 0;
+  }
+  .project-text p.read-more-link span {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .featured-project {
+    flex-direction: column;
+  }
+
+  .project-image {
+    padding: 0;
+  }
+
+  .project-image,
+  .project-text {
+    margin: auto;
+  }
+
+  .project-text {
+    margin-top: 0.5em;
+    width: 75%;
+  }
+
+  .projects-container .featured-project .project-text h3,
+  .projects-container .featured-project .project-text p {
+    text-align: center;
+    margin: 0.5rem auto;
+  }
+}

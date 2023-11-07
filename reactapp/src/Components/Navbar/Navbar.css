@@ -1,0 +1,358 @@
+.navbar-container {
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  color: black;
+  max-width: 100%;
+  padding: 4% 7%;
+  justify-content: space-between;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-container-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 70%;
+  color: black;
+  text-align: right;
+  z-index: 10;
+}
+
+.navbar-container a {
+  text-decoration: none;
+  color: black;
+}
+
+nav .active {
+  opacity: 0.5;
+}
+
+nav a:hover {
+  opacity: 0.5;
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+}
+
+nav li {
+  list-style-type: none;
+  letter-spacing: 1px; 
+}
+
+.site-title {
+  width: 30%;
+  white-space: nowrap;
+  letter-spacing: 2px; 
+  z-index: 10;
+}
+
+nav li {
+  margin: 0 0 0 2rem;
+}
+
+.hamburger-menu-container, .hamburger-menu {
+  display: none;
+}
+
+@media screen and (max-width: 700px) and (min-width: 500px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: fit-content;
+    z-index: 5;
+  }
+
+  nav .active:hover {
+    opacity: 0.5;
+  }
+
+  .hamburger-menu-container {
+    display: flex;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 4% 7%;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .hamburger-menu {
+    position: absolute;
+    display: block;
+    margin: 14px 5px;
+    top: 0;
+    right: 0;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .hamburger-menu-button {
+    width: 20px;
+    height: 1px;
+    background: #000;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  .hamburger-menu-button::before,
+  .hamburger-menu-button::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    background: #000;
+    transition: all 0.5s ease-in-out;
+  }
+  .hamburger-menu-button::before {
+    transform: translateY(-8px);
+  }
+  .hamburger-menu-button::after {
+    transform: translateY(8px);
+  }
+  .hamburger-menu.icon-open .hamburger-menu-button  {
+    transform: translateX(50px);
+    background: transparent;
+  }
+
+  .hamburger-menu.icon-open  {
+    transform: translateX(-50px);
+  }
+
+  .hamburger-menu.icon-open .hamburger-menu-button::before {
+    transform: rotate(45deg) translate(0, 0);
+    height: 1px;
+  }
+  .hamburger-menu.icon-open .hamburger-menu-button::after {
+    transform: rotate(-45deg) translate(0, 0);
+    height: 1px;
+  }
+
+  nav ul li, nav a {
+    margin: 0;
+  }
+
+  nav ul {
+    display: block;
+    position: absolute;
+    top: -200px;
+    right: 7%;
+    flex-direction: column;
+    width: fit-content;
+    margin-top: 2rem;
+    background: white;
+    padding: 0;
+    transition: all 0.5s ease-out;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: right;
+    opacity: 1;
+    padding: 0.8rem;
+    padding-left: 1.8rem;
+  }
+
+  nav ul li:hover {
+    background-color: rgb(247, 247, 247);
+    color: black;
+    opacity: 1;
+    width: 100%;
+
+  }
+
+
+  nav a:hover {
+    opacity: 1
+  }
+
+  nav .active:hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  nav ul.open {
+    display: flex;
+    top: 36px;
+    right: 7%;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+    background-color: white;;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  
+  .navbar-container {
+    position: sticky;
+    flex-direction: column;
+    color: black;
+    max-width: 100%;
+    padding: 4% 7%;
+    justify-content: space-between;
+    top: 0;
+  }
+
+  nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    right: 0;
+    width: 100%;
+    z-index: 5;
+  }
+
+  
+  .hamburger-menu-container {
+    display: flex;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 3% 7%;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .hamburger-menu {
+    position: absolute;
+    display: block;
+    margin: 14px 5px;
+    top: 0;
+    right: 0;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .hamburger-menu-button {
+    width: 20px;
+    height: 1px;
+    background: #000;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  .hamburger-menu-button::before,
+  .hamburger-menu-button::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    background: #000;
+    transition: all 0.5s ease-in-out;
+  }
+  .hamburger-menu-button::before {
+    transform: translateY(-8px);
+  }
+  .hamburger-menu-button::after {
+    transform: translateY(8px);
+  }
+  .hamburger-menu.icon-open .hamburger-menu-button  {
+    transform: translateX(50px);
+    background: transparent;
+  }
+
+  .hamburger-menu.icon-open  {
+    transform: translateX(-50px);
+  }
+
+  .hamburger-menu.icon-open .hamburger-menu-button::before {
+    transform: rotate(45deg) translate(0, 0);
+    height: 1px;
+  }
+  .hamburger-menu.icon-open .hamburger-menu-button::after {
+    transform: rotate(-45deg) translate(0, 0);
+    height: 1px;
+  }
+
+
+  nav ul {
+    position: relative;
+    top:-200px;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    transition: all 0.5s ease-out;
+    background: white;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: right;
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  nav ul li a {
+    margin-left: 0;
+  }
+
+  /* nav ul li:last-child {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #555;
+  } */
+
+  nav ul li:hover {
+    background-color: rgb(247, 247, 247);
+    color: black;
+  }
+
+  nav ul li a:hover {
+    color: black;
+    opacity: 1;
+  }
+
+  nav a:hover {
+    opacity: 1
+  }
+
+  nav .active:hover {
+    opacity: 0.5;
+  }
+
+  nav ul.open {
+    top: 15px;
+    padding-top: 10px;
+    transition: all 0.5s ease-in;
+    height: fit-content;
+  }
+
+}
+
+
+@media screen and (min-width: 800px) {
+
+  .navbar-container {
+    width: 1200px;
+    padding: 4% 10%;
+  }
+}
+  

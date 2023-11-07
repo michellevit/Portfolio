@@ -1,0 +1,136 @@
+.about-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+
+.about-text {
+  max-width: 75%;
+  margin-right: 40px;
+  padding-bottom: 0;
+}
+
+.about-text span {
+  display: inline-block;
+}
+
+.about-text li {
+  list-style-type: none;
+}
+
+.about-text a:hover {
+ opacity: 0.5;
+ color: black;
+  }
+
+.about-text .rough-annotation {
+  opacity: 0.5;
+}
+
+
+.about-text button {
+  min-width: fit-content;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.about-text .about-buttons {
+  display: inline-flex;
+  margin: 10px 0 0 0;
+}
+
+.about-text button#linked {
+  margin-right: 10px;
+  background-color: black;
+  border: none;
+  color: white;
+  border: solid 1px black;
+  transition: all 0.3s ease-out;
+}
+
+.about-text button#git {
+  background-color: white;
+  color: black;
+  border: 1px black solid;
+  transition: all 0.3s ease-out;
+}
+
+.about-text button#linked:hover {
+  background-color: #e7cffe;
+  border: none;
+  color: black;
+  border: solid 1px black;
+  transition: all 0.3s ease-in;
+}
+
+.about-text button#git:hover {
+  background-color: #e7cffe;
+  color: white;
+  border: 1px black solid;
+  transition: all 0.3s ease-in;
+}
+
+.about-picture {
+  width: 30%;
+}
+
+.about-picture img {
+  width: 225px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+}
+
+
+@media screen and (max-width: 700px) and (min-width: 630px) {
+  .about-picture img {
+    max-width: 200px;
+  }
+  .about-text {
+    margin-right: 10px;
+  }
+
+}
+
+@media screen and (max-width: 630px) and (min-width: 500px) {
+  .about-picture img {
+    max-width: 150px;
+  }
+  .about-text {
+    margin-right: 10px;
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+  .about-container {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .about-container .about-text {
+    margin-right: 0;
+  }
+
+  .about-container .about-picture {
+    display: none;
+    width: 100%;
+    margin: 40px auto;
+    justify-content: center;
+  }
+
+  .about-container .about-buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  h2 {
+    text-align: center;
+    font-size: 1rem;
+  }
+}

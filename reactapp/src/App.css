@@ -1,0 +1,56 @@
+.app {
+  margin: auto;
+  width: 100%;
+  font-size: 1rem;
+  justify-content: center;
+  max-width: 100%;
+  padding-bottom: 50px;
+}
+
+h2 {
+  color: black;
+  margin-top: 0;
+}
+
+h3 {
+  color: black;
+  font-size: 0.8rem;
+}
+
+p {
+  color: #555;
+  font-size: 0.8rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  margin: 20px 10%;
+  height: fit-content;
+}
+
+.home-div {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 700px) and (min-width: 500px) {
+  .main-container {
+    margin: 20px 7%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-container {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .app {
+    max-width: 1200px;
+    justify-content: center;
+  }
+}
+  
