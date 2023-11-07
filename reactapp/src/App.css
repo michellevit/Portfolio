@@ -35,6 +35,28 @@ a {
   margin-bottom: 75px;
 }
 
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+
+
 @media screen and (max-width: 700px) and (min-width: 500px) {
   .main-container {
     margin: 20px 7%;
@@ -54,3 +76,6 @@ a {
   }
 }
   
+
+
+

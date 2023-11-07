@@ -24,9 +24,8 @@ function Navbar() {
             <div className="hamburger-menu-button"></div>
         </div>
         </div>
-        <nav>
+        <nav className={menuOpen ? "open" : ""}>
           <ul className={menuOpen ? "open" : ""}>
-            
               <NavLink to="/about"><li>About</li></NavLink>
               <NavLink to="/projects"><li>Projects</li></NavLink>
               <NavLink to="/contact"><li>Contact</li></NavLink>

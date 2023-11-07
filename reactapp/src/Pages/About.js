@@ -57,12 +57,16 @@ function About() {
           Vancouver.
         </h2>
         <p>
-          I love building tools that are <span id="e2">user-friendly, simple</span>, and <span id="e3">practical</span>.
+          I love building tools that are{" "}
+          <span id="e2">user-friendly, simple</span>, and{" "}
+          <span id="e3">practical</span>.
         </p>
         <p>
-          While studying at UBC I was introduced to computer science, and afterwards I continued to learn by working on projects of 
-          increasing complexity - from automating small tasks with <span id="e4">Python</span> to a full-stack web application 
-          using <span id="e5">Django, MYSQL, and React</span>. 
+          While studying at UBC I was introduced to computer science, and
+          afterwards I continued to learn by working on projects of increasing
+          complexity - from automating small tasks with{" "}
+          <span id="e4">Python</span> to a full-stack web application using{" "}
+          <span id="e5">Django, MYSQL, and React</span>.
         </p>
         <p>
           Through these experiences, I had the opportunity to work both
@@ -71,13 +75,30 @@ function About() {
           <span id="e7">clarity,</span> and <span id="e8">collaboration</span>.
         </p>
         <p>
-          Please don't hesitate to <span id="e9"><li><Link to="/contact">contact me</Link></li></span> if you have any questions about my work.
+          Please don't hesitate to{" "}
+          <span id="e9" className="about-contact">
+            <li>
+              <Link to="/contact">contact me</Link>
+            </li>
+          </span>{" "}
+          if you have any questions about my work.
         </p>
         <div className="about-buttons">
-          <button id="linked">View LinkedIn</button>
-          <button id="git">View Github</button>
+          <a
+            href="https://www.linkedin.com/in/michelle-f-ba0a5017b/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button id="linked">View LinkedIn</button>
+          </a>
+          <a
+            href="https://github.com/michellevit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          <button id="git">View Github</button></a>
         </div>
-      </div>      
+      </div>
       <div className="about-picture">
         <img src={profilePic} alt="Picture of Michelle in Vancouver" />
       </div>
