@@ -6,6 +6,8 @@ import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
 import ProductionPlanner from "./Projects/ProductionPlanner";
+import AmazonChecker from "./Projects/AmazonChecker";
+import KibbeQuiz from "./Projects/KibbeQuiz";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/production-planner" element={<ProductionPlanner />} />
+            <Route path="/amazon-checker" element={<AmazonChecker />} />
+            <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
           </Routes>
         </div>
       </div>

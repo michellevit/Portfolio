@@ -27,12 +27,12 @@ a {
 }
 
 .main-container {
-  margin: 20px 10%;
+  margin: 30px 10%;
   height: fit-content;
 }
 
 .home-div {
-  margin-bottom: 50px;
+  margin-bottom: 75px;
 }
 
 @media screen and (max-width: 700px) and (min-width: 500px) {
