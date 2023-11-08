@@ -15,6 +15,11 @@ app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
+// ADD CORS to communicate with frontend
+const cors = require('cors');
+app.use(cors({ origin: 'http://localhost:3000' }));
+
+
 // NODEMAILER SETUP
 
 const nodemailer = require('nodemailer');
@@ -32,16 +37,16 @@ let transporter = nodemailer.createTransport({
 
 // Email sending route
 app.post('/api/sendmail', async (req, res) => {
-    let { name, email, subject, message } = req.body;
+    let { name, email, message } = req.body;
   
     try {
       // send mail with defined transport object
       let info = await transporter.sendMail({
-        from: '"My Website Contact Form" <your-email@example.com>', // sender address
-        to: "your-receiving-email@example.com", // list of receivers
-        subject: subject, // Subject line
-        text: `Message from: ${name} <${email}>\n\n${message}`, // plain text body
-        html: `<b>Message from:</b> ${name} &lt;${email}&gt;<br><br>${message}`, // html body
+        from: `"My Website Contact Form" <${process.env.EMAIL_USER}>`,
+        to: process.env.EMAIL_TO,
+        subject: "New email from michellef.dev", 
+        text: `Message from: ${name} <${email}>\n\n${message}`, 
+        html: `<b>Message from:</b> ${name} &lt;${email}&gt;<br><br>${message}`,
       });
   
       res.send('Message sent: ' + info.messageId);

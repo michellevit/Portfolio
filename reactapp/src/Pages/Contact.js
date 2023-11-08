@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import axios from "axios";
 import "./Contact.css";
 
@@ -7,7 +7,9 @@ function Contact() {
     name: "",
     email: "",
     message: "",
+    honeypot: "",
   });
+  const [recaptchaToken, setRecaptchaToken] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [successClass, setSuccessClass] = useState("");
   const [showLinkedIn, setShowLinkedIn] = useState(false);
@@ -15,10 +17,23 @@ function Contact() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  
+  const handleReCaptchaVerify = useCallback((token) => {
+    setRecaptchaToken(token);
+    handleSubmit();
+  }, []);
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    if (formData.honeypot) {
+      console.log("Nothing sent.");
+      return;
+    }
+    if (recaptchaToken) {
     try {
-      const response = await axios.post("/api/sendmail", formData);
+      const response = await axios.post("/api/sendmail", {
+        ...formData,
+        recaptchaToken: recaptchaToken,
+      });
       console.log(response.data);
       setSuccessMessage(
         <span>
@@ -47,11 +62,21 @@ function Contact() {
         setSuccessClass("");
       }, 10000);
     }
+  }
   };
+
+  window.onSubmit = handleReCaptchaVerify;
+
   return (
     <div className="contact-container">
       <h2>Contact Me</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => e.preventDefault()}>
+        <input
+          type="text"
+          name="honeypot"
+          style={{ display: "none" }}
+          onChange={handleChange}
+        />
         <input
           type="text"
           name="name"
@@ -72,7 +97,14 @@ function Contact() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Send</button>
+        <button
+          className="g-recaptcha"
+          data-sitekey="6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh"
+          data-callback="onSubmit"
+          data-action="submit"
+        >
+          Send
+        </button>
         {successMessage && <div className={successClass}>{successMessage}</div>}
         {showLinkedIn && (
           <div className="linkedInButton">
