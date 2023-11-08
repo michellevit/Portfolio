@@ -59,8 +59,7 @@
   opacity: 1; 
   overflow: hidden; 
   transition: max-height 1s ease-in-out; 
-  animation: fadeIn 1s, fadeOutAndCollapse 1s 8s; 
-  animation-fill-mode: forwards; 
+  animation: fadeIn 1s;
 }
 
 .error-message {
@@ -85,30 +84,7 @@
   transition: all 0.3s ease-in;
 }
 
-
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-
-@keyframes fadeOutAndCollapse {
-  0% { 
-    opacity: 1; 
-    max-height: 60px;
-  }
-  50% { 
-    opacity: 0; 
-    max-height: 60px; 
-  }
-  100% {
-    opacity: 0;
-    max-height: 0px; 
-  }
 }
