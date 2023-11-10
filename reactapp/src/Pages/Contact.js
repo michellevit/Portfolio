@@ -7,31 +7,13 @@ function Contact() {
     name: '',
     email: '',
     message: '',
-    honeypot: '', // hidden field to trick bots
+    honeypot: '', 
   });
   const [recaptchaToken, setRecaptchaToken] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [successClass, setSuccessClass] = useState('');
   const [showLinkedIn, setShowLinkedIn] = useState(false);
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js?render=6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh';
-    document.body.appendChild(script);
-
-    script.onload = () => {
-      window.grecaptcha.ready(() => {
-        window.grecaptcha.execute('6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh', { action: 'submit' })
-          .then(token => {
-            setRecaptchaToken(token);
-          });
-      });
-    };
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,16 +26,18 @@ function Contact() {
       return;
     }
 
-    if (!recaptchaToken) {
-      console.error('reCAPTCHA token is missing.');
-      return;
-    }
-    console.log("RECAPTCHA: ", recaptchaToken);
     try {
+      // Generate a new reCAPTCHA token
+      const newToken = await window.grecaptcha.execute('6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh', { action: 'submit' });
+      setRecaptchaToken(newToken);
+  
+      // Post form data with the new reCAPTCHA token
       const response = await axios.post('/api/sendmail', {
         ...formData,
-        recaptchaToken,
+        recaptchaToken: newToken,
       });
+  
+      // Handling success response
       setSuccessMessage(<span>Thank you - your message has been sent successfully.<br />I will get back to you as soon as possible.</span>);
       setSuccessClass('success-message');
       setFormData({ name: '', email: '', message: '' }); 

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ff6d7345.css",
+    "main.js": "/static/js/main.cb8d5dc3.js",
+    "static/media/Profile2.jpg": "/static/media/Profile2.408922bab782ebecf34e.jpg",
+    "static/media/production-planner-mockup.jpg": "/static/media/production-planner-mockup.0ab4a8bbc13f6da9a465.jpg",
+    "static/media/amazon-checker-mockup.jpg": "/static/media/amazon-checker-mockup.1289dd530bacf69ce565.jpg",
+    "static/media/kbt-mockup.jpg": "/static/media/kbt-mockup.dbe0f141eae604a4c624.jpg",
+    "index.html": "/index.html",
+    "main.ff6d7345.css.map": "/static/css/main.ff6d7345.css.map",
+    "main.cb8d5dc3.js.map": "/static/js/main.cb8d5dc3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff6d7345.css",
+    "static/js/main.cb8d5dc3.js"
+  ]
+}
