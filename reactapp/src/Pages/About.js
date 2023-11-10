@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./About.css";
-import profilePic from "../static/Profile2.jpg";
+import profilePic from "../static/ProfilePic.jpg";
 import { annotate, annotationGroup } from "rough-notation";
 import { Link } from "react-router-dom";
 

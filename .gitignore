@@ -15,6 +15,7 @@ node_modules/
 
 # misc
 private-files/
+.htaccess
 
 .DS_Store
 .env

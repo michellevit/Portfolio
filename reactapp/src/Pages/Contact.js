@@ -1,76 +1,60 @@
-import React, { useState, useCallback } from "react";
-import axios from "axios";
-import "./Contact.css";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './Contact.css';
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    honeypot: "",
+    name: '',
+    email: '',
+    message: '',
+    honeypot: '', 
   });
-  const [recaptchaToken, setRecaptchaToken] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
-  const [successClass, setSuccessClass] = useState("");
+  const [recaptchaToken, setRecaptchaToken] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [successClass, setSuccessClass] = useState('');
   const [showLinkedIn, setShowLinkedIn] = useState(false);
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
-  const handleReCaptchaVerify = useCallback((token) => {
-    setRecaptchaToken(token);
-    handleSubmit();
-  }, []);
 
   const handleSubmit = async (e) => {
-    if (formData.honeypot) {
-      console.log("Nothing sent.");
+    e.preventDefault();
+
+    if (formData.honeypot) { 
       return;
     }
-    if (recaptchaToken) {
-    try {
-      const response = await axios.post("/api/sendmail", {
-        ...formData,
-        recaptchaToken: recaptchaToken,
-      });
-      console.log(response.data);
-      setSuccessMessage(
-        <span>
-          Thank you - your message has been sent successfully.
-          <br />I will get back to you as soon as possible.
-        </span>
-      );
-      setSuccessClass("success-message");
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => {
-        setSuccessMessage("");
-        setSuccessClass("");
-      }, 10000);
-    } catch (error) {
-      setSuccessMessage(
-        <span>
-          The message failed to send.
-          <br />
-          Please try contacting me through LinkedIn.
-        </span>
-      );
-      setSuccessClass("success-message error-message");
-      setShowLinkedIn(true);
-      setTimeout(() => {
-        setSuccessMessage("");
-        setSuccessClass("");
-      }, 10000);
-    }
-  }
-  };
 
-  window.onSubmit = handleReCaptchaVerify;
+    try {
+      // Generate a new reCAPTCHA token
+      const newToken = await window.grecaptcha.execute('6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh', { action: 'submit' });
+      setRecaptchaToken(newToken);
+  
+      // Post form data with the new reCAPTCHA token
+      const response = await axios.post('/api/sendmail', {
+        ...formData,
+        recaptchaToken: newToken,
+      });
+  
+      // Handling success response
+      setSuccessMessage(<span>Thank you - your message has been sent successfully.<br />I will get back to you as soon as possible.</span>);
+      setSuccessClass('success-message');
+      setFormData({ name: '', email: '', message: '' }); 
+      setShowLinkedIn(false);
+      setRecaptchaToken("");
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setSuccessMessage(<span>The message failed to send.<br />Please try contacting me through LinkedIn.</span>);
+      setSuccessClass('success-message error-message');
+      setShowLinkedIn(true);
+    }
+  };
 
   return (
     <div className="contact-container">
       <h2>Contact Me</h2>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="honeypot"
@@ -81,6 +65,7 @@ function Contact() {
           type="text"
           name="name"
           placeholder="Your Name"
+          value={formData.name}
           onChange={handleChange}
           required
         />
@@ -88,23 +73,18 @@ function Contact() {
           type="email"
           name="email"
           placeholder="Your Email"
+          value={formData.email}
           onChange={handleChange}
           required
         />
         <textarea
           name="message"
           placeholder="Your Message"
+          value={formData.message}
           onChange={handleChange}
           required
         />
-        <button
-          className="g-recaptcha"
-          data-sitekey="6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh"
-          data-callback="onSubmit"
-          data-action="submit"
-        >
-          Send
-        </button>
+        <button type="submit">Send</button>
         {successMessage && <div className={successClass}>{successMessage}</div>}
         {showLinkedIn && (
           <div className="linkedInButton">
@@ -113,7 +93,7 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button id="linkedButton">LinkedIn</button>
+              <button type="button" id="linkedButton">LinkedIn</button>
             </a>
           </div>
         )}
