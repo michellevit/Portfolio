@@ -1,15 +1,17 @@
 .about-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  max-width: 850px;
   align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 
 .about-text {
-  max-width: 75%;
-  margin-right: 40px;
-  padding-bottom: 0;
+  width: 60%;
+  margin-right: 5px;
+  min-width: 250px;
 }
 
 .about-text span {
@@ -80,46 +82,30 @@
 }
 
 .about-picture {
-  width: 30%;
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 10px
 }
 
 .about-picture img {
-  width: 225px;
+  width: 100%;
+  max-width: 275px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 15px;
 }
 
 
-@media screen and (max-width: 700px) and (min-width: 630px) {
-  .about-picture img {
-    max-width: 200px;
-  }
-  .about-text {
-    margin-right: 10px;
-  }
-
-}
-
-@media screen and (max-width: 630px) and (min-width: 500px) {
-  .about-picture img {
-    max-width: 150px;
-  }
-  .about-text {
-    margin-right: 10px;
-  }
-
-}
-
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .about-container {
     flex-direction: column;
     justify-content: center;
-    margin: 0;
+    margin: 0 20px;
   }
 
   .about-container .about-text {
     margin-right: 0;
+    width: 100%;
   }
 
   .about-container .about-picture {
@@ -132,11 +118,27 @@
   .about-container .about-buttons {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
   }
 
 
-  h2 {
+  .about-container h2 {
     text-align: center;
     font-size: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  .about-container .about-buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .about-container .about-buttons button {
+    margin: 8px auto;
+  }
+  .about-text button#linked {
+    margin-right: 0;
   }
 }

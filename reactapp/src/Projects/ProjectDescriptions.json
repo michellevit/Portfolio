@@ -1,0 +1,14 @@
+{
+    "production_planner": {
+      "short": "A web application for optimizing manufacturing workflows.",
+      "long": "This application streamlines the sales-to-shipping process by displaying orders from the QuickBooks database in a dynamic React interface, and managing large amounts of data effectively with a Django/MySQL backend."
+    },
+    "amazon_inventory": {
+      "short": "A script to automate the Amazon order confirmation process.",
+      "long": "This Python script speeds up order management by aggregating Amazon's weekly order request data, allowing vendors to easily compare the requested quantities against available inventory, and instantly calculate and submit the orders to confirm."
+    },
+    "kbt_quiz": {
+      "short": "A quiz that helps 3000+ users a month find their unique body type.",
+      "long": "This JavaScript quiz, attracting over 3000 monthly visitors, features a unique algorithm that breaks away from conventional quiz formats. It leverages the Chart.js library to present results in an engaging and visually intuitive manner."
+    }
+  }
