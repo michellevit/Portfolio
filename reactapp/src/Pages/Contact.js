@@ -14,29 +14,23 @@ function Contact() {
   const [successClass, setSuccessClass] = useState('');
   const [showLinkedIn, setShowLinkedIn] = useState(false);
 
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (formData.honeypot) { 
       return;
     }
-
     try {
       // Generate a new reCAPTCHA token
       const newToken = await window.grecaptcha.execute('6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh', { action: 'submit' });
       setRecaptchaToken(newToken);
-  
       // Post form data with the new reCAPTCHA token
       const response = await axios.post('/api/sendmail', {
         ...formData,
         recaptchaToken: newToken,
       });
-  
       // Handling success response
       setSuccessMessage(<span>Thank you - your message has been sent successfully.<br />I will get back to you as soon as possible.</span>);
       setSuccessClass('success-message');

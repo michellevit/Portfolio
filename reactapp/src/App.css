@@ -7,6 +7,12 @@
   padding-bottom: 50px;
 }
 
+
+.main-container {
+  margin: 30px 30px;
+  height: fit-content;
+}
+
 h2 {
   color: black;
   margin-top: 0;
@@ -26,10 +32,6 @@ a {
   text-decoration: none;
 }
 
-.main-container {
-  margin: 30px 10%;
-  height: fit-content;
-}
 
 .home-div {
   margin-bottom: 75px;
@@ -56,16 +58,18 @@ a {
 }
 
 
-@media screen and (max-width: 700px) and (min-width: 500px) {
-  .main-container {
-    margin: 20px 7%;
-  }
-}
+
 
 @media screen and (max-width: 500px) {
   .main-container {
-    margin: 20px 0;
+    margin: 30px 30px;
   }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+
 }
 
 @media screen and (min-width: 800px) {
