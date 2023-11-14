@@ -1,10 +1,10 @@
 .projects-container {
-  max-width: 800px;
+  max-width: 850px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  padding: 0 20px;
+
 }
 
 .projects-container h2 {
@@ -105,12 +105,12 @@
 
 
 
-@media screen and (max-width: 900px) and (min-width: 575px) {
+/* @media screen and (max-width: 900px) and (min-width: 575px) {
   .projects-container {
     max-width: 600px;
   }
   
-}
+} */
 
 
 @media screen and (max-width: 575px) {

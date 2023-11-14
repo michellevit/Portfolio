@@ -3,7 +3,7 @@
       "short": "A web application for optimizing manufacturing workflows.",
       "long": "This application streamlines the sales-to-shipping process by displaying orders from the QuickBooks database in a dynamic React interface, and managing large amounts of data effectively with a Django/MySQL backend."
     },
-    "amazon_inventory": {
+    "amazon_checker": {
       "short": "A script to automate the Amazon order confirmation process.",
       "long": "This Python script speeds up order management by aggregating Amazon's weekly order request data, allowing vendors to easily compare the requested quantities against available inventory, and instantly calculate and submit the orders to confirm."
     },

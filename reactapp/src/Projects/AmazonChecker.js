@@ -1,10 +1,58 @@
 import React from "react";
+import "./SingleProject.css";
+import projectDescriptions from './ProjectDescriptions.json';
+
 import projectPic from "../static/amazon-checker-mockup.jpg";
+
+import djangoLogo from "../static/logos/django-logo.png";
+import pythonLogo from "../static/logos/python-logo.png";
+import reactLogo from "../static/logos/react-logo.png";
+import javascriptLogo from "../static/logos/javascript-logo.png";
+import mysqlLogo from "../static/logos/mysql-logo.png";
+import dockerLogo from "../static/logos/docker-logo.png";
+import githubLogo from "../static/logos/github-logo.png";
+
 
 
 function AmazonChecker() {
-  return <div className="amazon-checker">
-        Amazon Checker
+  return <div className="single-project-container">
+        <h2>Production Planner</h2>
+        <div className='introduction'>
+        <div><img src={projectPic} alt="Amazon inventory checker project snapshot" /></div>
+        <div>{projectDescriptions.amazon_checker.long}</div>
+        </div>
+        <div className="key-features"><h3>Key Features</h3>
+        <ul>
+          <li>Real-time data updates</li>
+          <li>Queryset search and filters</li>
+          <li>Pagination</li>
+          <li>Database indexing</li>
+          <li>Object-Relational Mapping</li>
+        </ul>
+        </div>
+        <div className="technologies-used">
+          <h3>Technologies Used</h3>
+          <ul className="tech">
+            <li>Backend: Django, Python</li>
+            <li>Frontend: React, JavaScript</li>
+            <li>Database: MySQL</li>
+            <li>Other: Docker, GitHub</li>
+            </ul>
+            <div className='logo-images'>
+              <img id='django' src={djangoLogo} alt="Django logo" />
+              <img src={pythonLogo} alt="Python logo" />
+              <img src={reactLogo} alt="React logo" />
+              <img src={javascriptLogo} alt="JavaScript logo" />
+              <a src="https://www.mysql.com/"><img src={mysqlLogo} alt="MySQL logo" /></a>
+              <img src={dockerLogo} alt="Docker logo" />
+              <img src={githubLogo} alt="GitHub logo" />
+            </div>
+          
+        </div>
+        <div>
+          <h3>Demo</h3>
+          
+        </div>
   </div>
 }
 

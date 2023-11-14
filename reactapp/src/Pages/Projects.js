@@ -18,11 +18,11 @@ function Projects() {
     const screenWidth = window.innerWidth;
     if (screenWidth >= 900) {
       setProjectText1(projectDescriptions.production_planner.long);
-      setProjectText2(projectDescriptions.amazon_inventory.long);
+      setProjectText2(projectDescriptions.amazon_checker.long);
       setProjectText3(projectDescriptions.kbt_quiz.long);
     } else {
       setProjectText1(projectDescriptions.production_planner.short);
-      setProjectText2(projectDescriptions.amazon_inventory.short);
+      setProjectText2(projectDescriptions.amazon_checker.short);
       setProjectText3(projectDescriptions.kbt_quiz.short);
     }
   };
