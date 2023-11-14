@@ -9,7 +9,7 @@
 
 
 .main-container {
-  margin: 30px 30px;
+  margin: 30px 7%;
   height: fit-content;
 }
 
@@ -61,9 +61,6 @@ a {
 
 
 @media screen and (max-width: 500px) {
-  .main-container {
-    margin: 30px 30px;
-  }
 
   h2 {
     font-size: 1.2rem;

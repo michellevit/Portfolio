@@ -52,7 +52,7 @@ function ProductionPlanner() {
           
         </div>
         <div>
-          <h3>Walk Through</h3>
+          <h3>Demo</h3>
           
         </div>
   </div>

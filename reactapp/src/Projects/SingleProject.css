@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  padding: 0 20px;
 }
 
 .single-project-container > div {
@@ -48,13 +47,14 @@
     width: fit-content;
     margin: auto;
     margin-bottom: 20px;
+    color: #555;
 }
 
 .single-project-container .key-features img {
     width: 100%;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-}
+  }
 
 
 .single-project-container .logo-images {
