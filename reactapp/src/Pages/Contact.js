@@ -78,7 +78,7 @@ function Contact() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Send</button>
+        <button type="submit" className="dark">Send</button>
         {successMessage && <div className={successClass}>{successMessage}</div>}
         {showLinkedIn && (
           <div className="linkedInButton">
@@ -87,7 +87,7 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button type="button" id="linkedButton">LinkedIn</button>
+              <button type="button" className="light">LinkedIn</button>
             </a>
           </div>
         )}

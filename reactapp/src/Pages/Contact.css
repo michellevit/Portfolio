@@ -31,26 +31,7 @@
     height: 5rem;
   }
 
-.contact-container form button {
-  margin: 10px auto 30px auto;
-  width: fit-content;
-  padding: 10px 25px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: black;
-  border: none;
-  color: white;
-  border: solid 1px black;
-  transition: all 0.3s ease-out;
-}
 
-.contact-container form button:hover {
-  background-color: #e7cffe;
-  border: none;
-  color: black;
-  border: solid 1px black;
-  transition: all 0.3s ease-in;
-}
 
 
 .success-message {

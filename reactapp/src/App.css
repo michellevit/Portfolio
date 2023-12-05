@@ -32,11 +32,48 @@ a {
   text-decoration: none;
 }
 
+.link-styles {
+  overflow: hidden;
+}
 
 .home-div {
   margin-bottom: 75px;
 }
 
+
+button {
+  width: fit-content;
+  cursor: pointer;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 10px 25px;
+  margin: 10px auto 0 auto;
+  transition: all 0.3s ease-in;
+}
+
+button:hover {
+  transition: all 0.3s ease-in;
+}
+
+button.dark {
+  color: white;
+  background-color: black;
+}
+
+button.dark:hover {
+  color: black;
+  background-color: #e7cffe;
+}
+
+button.light {
+  color: black;
+  background-color: white;
+}
+
+button.light:hover {
+  background-color: #e7cffe;
+  color: black;
+}
 
 .fade-enter {
   opacity: 0;
@@ -56,8 +93,6 @@ a {
   opacity: 0;
   transition: opacity 300ms ease-in;
 }
-
-
 
 
 @media screen and (max-width: 500px) {

@@ -58,7 +58,7 @@ function About() {
         </h2>
         <p>
           I love building tools that are{" "}
-          <span id="e2">user-friendly, simple</span>, and{" "}
+          <span id="e2">user-friendly, simple,</span> and{" "}
           <span id="e3">practical</span>.
         </p>
         <p>
@@ -89,14 +89,14 @@ function About() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button id="linked">View LinkedIn</button>
+            <button id="linked" className="dark">View LinkedIn</button>
           </a>
           <a
             href="https://github.com/michellevit"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <button id="git">View Github</button></a>
+          <button className="light">View Github</button></a>
         </div>
       </div>
       <div className="about-picture">
