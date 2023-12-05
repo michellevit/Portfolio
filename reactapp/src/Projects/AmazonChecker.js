@@ -50,7 +50,7 @@ function AmazonChecker() {
       </div>
       <div>
         <h3>Demo</h3>
-        <YouTubeEmbed embedId="fK4fXUkFoARMe4zZ" />
+        <YouTubeEmbed embedId="lD-wTry930w" />
       </div>
     </div>
   );
