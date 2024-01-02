@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home";
@@ -8,11 +8,16 @@ import Contact from "./Pages/Contact";
 import ProductionPlanner from "./Projects/ProductionPlanner";
 import AmazonChecker from "./Projects/AmazonChecker";
 import KibbeQuiz from "./Projects/KibbeQuiz";
+import SiteBlocker from "./Projects/SiteBlocker";
+import CommentAnalyzer from "./Projects/CommentAnalyzer";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 function App() {
   const location = useLocation(); 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div className="app">
       <Navbar />
@@ -34,6 +39,8 @@ function App() {
               />
               <Route path="/amazon-checker" element={<AmazonChecker />} />
               <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
+              <Route path="/site-blocker" element={<SiteBlocker />} />
+              <Route path="/comment-analyzer" element={<CommentAnalyzer />} />
             </Routes>
           </div>
         </CSSTransition>

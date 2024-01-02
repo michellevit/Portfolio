@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Contact.css';
+/* global grecaptcha */
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ function Contact() {
   const [successMessage, setSuccessMessage] = useState('');
   const [successClass, setSuccessClass] = useState('');
   const [showLinkedIn, setShowLinkedIn] = useState(false);
-
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -22,27 +23,32 @@ function Contact() {
     if (formData.honeypot) { 
       return;
     }
-    try {
-      // Generate a new reCAPTCHA token
-      const newToken = await window.grecaptcha.execute('6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh', { action: 'submit' });
-      setRecaptchaToken(newToken);
-      // Post form data with the new reCAPTCHA token
-      const response = await axios.post('/api/sendmail', {
-        ...formData,
-        recaptchaToken: newToken,
-      });
-      // Handling success response
-      setSuccessMessage(<span>Thank you - your message has been sent successfully.<br />I will get back to you as soon as possible.</span>);
-      setSuccessClass('success-message');
-      setFormData({ name: '', email: '', message: '' }); 
-      setShowLinkedIn(false);
-      setRecaptchaToken("");
-    } catch (error) {
-      console.error('Error sending message:', error);
-      setSuccessMessage(<span>The message failed to send.<br />Please try contacting me through LinkedIn.</span>);
-      setSuccessClass('success-message error-message');
-      setShowLinkedIn(true);
-    }
+    grecaptcha.enterprise.ready(async () => {
+      try {
+        // Generate a new reCAPTCHA token
+        const newToken = await grecaptcha.enterprise.execute('6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh', { action: 'submit' });
+        setRecaptchaToken(newToken);
+
+        // Post form data with the new reCAPTCHA token
+        const response = await axios.post('/api/sendmail', {
+          ...formData,
+          recaptchaToken: newToken,
+        });
+
+        // Handling success response
+        setSuccessMessage(<span>Thank you - your message has been sent successfully.<br />I will get back to you as soon as possible.</span>);
+        setSuccessClass('success-message');
+        setFormData({ name: '', email: '', message: '' }); 
+        setShowLinkedIn(false);
+        setRecaptchaToken("");
+
+      } catch (error) {
+        console.error('Error sending message:', error);
+        setSuccessMessage(<span>The message failed to send.<br />Please try contacting me through LinkedIn.</span>);
+        setSuccessClass('success-message error-message');
+        setShowLinkedIn(true);
+      }
+    });
   };
 
   return (
@@ -78,7 +84,8 @@ function Contact() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Send</button>
+        <button type="submit" className="dark">Send</button>
+        </form>
         {successMessage && <div className={successClass}>{successMessage}</div>}
         {showLinkedIn && (
           <div className="linkedInButton">
@@ -87,11 +94,11 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button type="button" id="linkedButton">LinkedIn</button>
+              <button type="button" className="light">LinkedIn</button>
             </a>
           </div>
         )}
-      </form>
+      
     </div>
   );
 }

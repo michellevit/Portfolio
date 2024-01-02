@@ -5,7 +5,8 @@ Project Title: Portfolio Website
 Table of Contents: 
 1. Project Description
 2. How to deploy on Dreamhost
-3. Credits
+3. How to update react files on DreamHost
+4. Credits
 
 
 ----------
@@ -33,27 +34,44 @@ This website was written in React and Node.js to display my projects.
 ---For this you will need to create a project in console.cloud.google.com in the Security -> ReCapctha Enterprise section
 ----Then you will need to go to APIs and Services to enable/create the API (and restrict the key to a specific domain)
 ----Download the Google application credentials file (.json file) -> Google Console -> IAM and admin -> Service Accounts -> Create Service Account -> Add key -> create new key -> save
--add the google application credentials file to the .credentials folder (using scp) with chmod 700
--make sure the react Contact.js has the correct recaptcha site key
-----make sure the .env has the correct environment variables and that the .env file chmod is 600
+-Add the google application credentials file to the .credentials folder (using scp) with chmod 700
+-Make sure the react Contact.js has the correct recaptcha site key
+----Make sure the .env has the correct environment variables and that the .env file chmod is 600
 -Add 'export GOOGLE_APPLICATION_CREDENTIALS='/path/to/file' to the .bashrc
----add the following to .bashrc (by going 'cd~' then nano '.bashrc'):
+---Add the following to .bashrc (by going 'cd~' then nano '.bashrc'):
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 TROUBLESHOOTING:
 -TO RESTART APP:
-----add a folder called "tmp" to the app folder 
-----run 'touch tmp/restart.txt' when you need to restart the app
+----Add a folder called "tmp" to the app folder 
+----Run 'touch tmp/restart.txt' when you need to restart the app
 -IF NODE/NVM 'not found' ON SSH:
-----this often happens when ssh is opened the first time
-----run 'source ~/.bashrc' in ssh
+----This often happens when ssh is opened the first time
+----Run 'source ~/.bashrc' in ssh
 -GENERAL TROUBLESHOOTING:
 ----Check the error log: nano ~/logs/*website-name*/https/error.log
 ----New errors will be at the bottom, and the file clears after each day
+-Location of Google API reCAPCTHA key
+--Visit the Google Cloud Console and log in with your credentials
+--Select the 'Portfolio-Website' project
+--Navigate to the hamburger menu (≡) on the top left corner
+--Go to “Security” and then select “reCAPTCHA Enterprise”.
+--Key ID will be in the 'Keys' tab
+
 
 ----------
-3. Credits
+3. How to update react files on DreamHost
+
+-Open a terminal window and navigate/cd to the project's 'reactapp' directory
+--Run: npm run build
+-Login to DreamHost and go to the domain's 'File Manager' 
+--Open the 'app' folder
+--Replace the old 'build' file with the newly created one
+
+
+----------
+4. Credits
 
 Michelle Flandin

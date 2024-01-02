@@ -1,10 +1,9 @@
 import React from "react";
 import "./SingleProject.css";
+import YouTubeEmbed from "./YouTubeEmbed";
 import projectDescriptions from './ProjectDescriptions.json';
-
 import projectPic from "../static/production-planner-mockup.jpg";
 import ormExample from "../static/ORM-example.jpg";
-
 import djangoLogo from "../static/logos/django-logo.png";
 import pythonLogo from "../static/logos/python-logo.png";
 import reactLogo from "../static/logos/react-logo.png";
@@ -19,8 +18,15 @@ function ProductionPlanner() {
   return <div className="single-project-container">
         <h2>Production Planner</h2>
         <div className='introduction'>
-        <div><img src={projectPic} alt="Amazon inventory checker project snapshot" /></div>
+        <div><img src={projectPic} alt="Production Planner project snapshot" /></div>
         <div>{projectDescriptions.production_planner.long}</div>
+        <a
+            href="https://github.com/michellevit/Production-Planner"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          <button id="git-repo" className="light">View Github Repository</button>
+          </a>
         </div>
         <div className="key-features"><h3>Key Features</h3>
         <ul>
@@ -53,7 +59,8 @@ function ProductionPlanner() {
         </div>
         <div>
           <h3>Demo</h3>
-          
+          TBD
+          {/* <YouTubeEmbed embedId="bUz8jZRyW24" /> */}
         </div>
   </div>
 }
