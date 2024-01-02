@@ -51,7 +51,7 @@ function SiteBlocker() {
         </div>
         <div>
           <h3>Demo</h3>
-          <YouTubeEmbed embedId="bUz8jZRyW24" />
+          <YouTubeEmbed embedId="i5OJ-5s9mCA" />
         </div>
   </div>
 }

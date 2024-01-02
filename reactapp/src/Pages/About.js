@@ -64,9 +64,9 @@ function About() {
         <p>
           While studying at UBC I was introduced to computer science, and
           afterwards I continued to learn by working on projects of increasing
-          complexity - from automating small tasks with{" "}
-          <span id="e4">Python</span> to a full-stack web application using{" "}
-          <span id="e5">Django, MYSQL, and React</span>.
+          complexity - from <Link to="/amazon-checker">automating small tasks with{" "}
+          <span id="e4">Python</span></Link> to <Link to="/production-planner">a full-stack web application using{" "}
+          <span id="e5">Django, MYSQL, and React</span></Link>.
         </p>
         <p>
           Through these experiences, I had the opportunity to work both

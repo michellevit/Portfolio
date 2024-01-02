@@ -7,17 +7,27 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   let location = useLocation();
+
   useEffect(() => {
     setMenuOpen(false);
+
+    const upperThreshold = 100;
+    const lowerThreshold = 50;
+
     const handleScroll = () => {
       const offset = window.scrollY;
-      setScrolled(offset > 50);  
+      if (offset > upperThreshold && !scrolled) {
+        setScrolled(true);
+      } else if (offset < lowerThreshold && scrolled) {
+        setScrolled(false);
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [location, setMenuOpen]); 
+  }, [scrolled]);
 
   const handleHamburgerMenu = () => {
     setMenuOpen(!menuOpen);
@@ -31,24 +41,23 @@ function Navbar() {
 
   return (
     <div className={navbarContainerClasses}>
-      <div className={navbarContainerBGClasses}>
-        </div>
-        <div className="site-title">
-          <NavLink to="/">Michelle &nbsp;Flandin</NavLink>
-        </div>
-        <div className={hamburgerMenuContainerClasses} onClick={handleHamburgerMenu}>
-        <div className={menuOpen ? "hamburger-menu icon-open" : "hamburger-menu"} >
-            <div className="hamburger-menu-button"></div>
-        </div>
-        </div>
-        <nav className={navClasses}>
-          <ul className={ulClasses}>
-              <NavLink to="/about"><li>About</li></NavLink>
-              <NavLink to="/projects"><li>Projects</li></NavLink>
-              <NavLink to="/contact"><li>Contact</li></NavLink>
-          </ul>
-        </nav>
+      <div className={navbarContainerBGClasses}></div>
+      <div className="site-title">
+        <NavLink to="/">Michelle &nbsp;Flandin</NavLink>
       </div>
+      <div className={hamburgerMenuContainerClasses} onClick={handleHamburgerMenu}>
+        <div className={menuOpen ? "hamburger-menu icon-open" : "hamburger-menu"} >
+          <div className="hamburger-menu-button"></div>
+        </div>
+      </div>
+      <nav className={navClasses}>
+        <ul className={ulClasses}>
+          <NavLink to="/about"><li>About</li></NavLink>
+          <NavLink to="/projects"><li>Projects</li></NavLink>
+          <NavLink to="/contact"><li>Contact</li></NavLink>
+        </ul>
+      </nav>
+    </div>
   );
 }
 

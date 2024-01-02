@@ -53,6 +53,12 @@ TROUBLESHOOTING:
 -GENERAL TROUBLESHOOTING:
 ----Check the error log: nano ~/logs/*website-name*/https/error.log
 ----New errors will be at the bottom, and the file clears after each day
+-Location of Google API reCAPCTHA key
+--Visit the Google Cloud Console and log in with your credentials
+--Select the 'Portfolio-Website' project
+--Navigate to the hamburger menu (≡) on the top left corner
+--Go to “Security” and then select “reCAPTCHA Enterprise”.
+--Key ID will be in the 'Keys' tab
 
 
 ----------

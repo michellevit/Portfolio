@@ -42,7 +42,7 @@ function Projects() {
     updateCurrentPage();
     window.addEventListener("resize", updateProjectText);
     return () => window.removeEventListener("resize", updateProjectText);
-  }, []);
+  }, [updateCurrentPage]);
 
   return (
     <div className="projects-container">
@@ -109,6 +109,7 @@ function Projects() {
           </p>
         </div>
       </div>
+      {isHomePage && (<center><Link to="/projects"><button className="dark">View All</button></Link></center>)}
       {!isHomePage && (
         <div className="featured-project">
           <div className="project-image">

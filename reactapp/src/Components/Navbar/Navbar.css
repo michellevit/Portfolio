@@ -15,6 +15,7 @@
 .navbar-container.smaller {
   padding: 2% 7%;
   background-color: rgba(255, 255, 255, 0.75); 
+  transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-container-background {
@@ -80,6 +81,13 @@ nav li {
 
 .hamburger-menu-container, .hamburger-menu {
   display: none;
+}
+
+.hamburger-menu-container, 
+.hamburger-menu-container.smaller, 
+.navbar-container-background, 
+.navbar-container-background.smaller {
+  transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 700px) and (min-width: 500px) {

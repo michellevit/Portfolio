@@ -59,7 +59,8 @@ function ProductionPlanner() {
         </div>
         <div>
           <h3>Demo</h3>
-          <YouTubeEmbed embedId="bUz8jZRyW24" />
+          TBD
+          {/* <YouTubeEmbed embedId="bUz8jZRyW24" /> */}
         </div>
   </div>
 }

@@ -25,8 +25,8 @@ function CommentAnalyzer() {
         </div>
         <div className="key-features"><h3>Key Features</h3>
         <ul>
-          <li>Uses the Google API to import comments directly from a URL</li>
-          <li>Calculates the total positive, neutral, and negative amounts</li>
+          <li>Uses the Google API to retrieve YouTube comments from a URL</li>
+          <li>Calculates and sorts the positive, neutral, and negative comments</li>
           <li>Uses the Hugging Face model trained on ~58M tweets</li>
 
         </ul>
@@ -38,6 +38,7 @@ function CommentAnalyzer() {
             <li>OpenPyXL</li>
             <li>Google API</li>
             <li>Hugging Face</li>
+            <li>TensorFlow</li>
             </ul>
             <div className='logo-images'>
               <img src={pythonLogo} alt="Python logo" />
@@ -48,7 +49,7 @@ function CommentAnalyzer() {
         </div>
         <div>
           <h3>Demo</h3>
-          <YouTubeEmbed embedId="bUz8jZRyW24" />
+          <YouTubeEmbed embedId="EcYErMu0cjQ" />
         </div>
   </div>
 }
