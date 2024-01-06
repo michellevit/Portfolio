@@ -25,6 +25,10 @@ function SiteBlocker() {
           <button id="git-repo" className="light">View Github Repository</button>
           </a>
         </div>
+        <div>
+          <h3>Demo</h3>
+          <YouTubeEmbed embedId="i5OJ-5s9mCA" />
+        </div>
         <div className="key-features"><h3>Key Features</h3>
         <ul>
           <li>Chrome storage</li>
@@ -49,11 +53,7 @@ function SiteBlocker() {
             </div>
           
         </div>
-        <div>
-          <h3>Demo</h3>
-          <YouTubeEmbed embedId="i5OJ-5s9mCA" />
-        </div>
-  </div>
+          </div>
 }
 
 export default SiteBlocker;

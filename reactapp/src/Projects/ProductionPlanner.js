@@ -28,6 +28,10 @@ function ProductionPlanner() {
           <button id="git-repo" className="light">View Github Repository</button>
           </a>
         </div>
+        <div>
+          <h3>Demo</h3>
+          <YouTubeEmbed embedId="9lm4YkIrcTY" />
+        </div>
         <div className="key-features"><h3>Key Features</h3>
         <ul>
           <li>Real-time data updates</li>
@@ -56,11 +60,6 @@ function ProductionPlanner() {
               <img src={githubLogo} alt="GitHub logo" />
             </div>
           
-        </div>
-        <div>
-          <h3>Demo</h3>
-          TBD
-          {/* <YouTubeEmbed embedId="bUz8jZRyW24" /> */}
         </div>
   </div>
 }

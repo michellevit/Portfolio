@@ -27,6 +27,10 @@ function AmazonChecker() {
           <button id="git-repo" className="light">View Github Repository</button>
           </a>
       </div>
+      <div>
+        <h3>Demo</h3>
+        <YouTubeEmbed embedId="lD-wTry930w" />
+      </div>
       <div className="key-features">
         <h3>Key Features</h3>
         <ul>
@@ -47,10 +51,6 @@ function AmazonChecker() {
           <img id="openpy" src={openpyxlLogo} alt="OpenPyXL logo" />
           <img src={githubLogo} alt="GitHub logo" />
         </div>
-      </div>
-      <div>
-        <h3>Demo</h3>
-        <YouTubeEmbed embedId="lD-wTry930w" />
       </div>
     </div>
   );

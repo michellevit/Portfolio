@@ -24,6 +24,10 @@ function KibbeQuiz() {
           <button id="git-repo" className="light">View Github Repository</button>
           </a>
         </div>
+        <div>
+          <h3>Demo</h3>
+          <YouTubeEmbed embedId="9sR0VwgTKxE" />
+        </div>
         <div className="key-features"><h3>Key Features</h3>
         <ul>  
           <li>Custom Algorithm</li>
@@ -47,10 +51,6 @@ function KibbeQuiz() {
               <img src={githubLogo} alt="GitHub logo" />
             </div>
           
-        </div>
-        <div>
-          <h3>Demo</h3>
-          <YouTubeEmbed embedId="9sR0VwgTKxE" />
         </div>
   </div>
 }

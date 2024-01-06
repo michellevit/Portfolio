@@ -23,6 +23,10 @@ function CommentAnalyzer() {
           <button id="git-repo" className="light">View Github Repository</button>
           </a>
         </div>
+        <div>
+          <h3>Demo</h3>
+          <YouTubeEmbed embedId="EcYErMu0cjQ" />
+        </div>
         <div className="key-features"><h3>Key Features</h3>
         <ul>
           <li>Uses the Google API to retrieve YouTube comments from a URL</li>
@@ -46,10 +50,6 @@ function CommentAnalyzer() {
               <img src={githubLogo} alt="GitHub logo" />
             </div>
           
-        </div>
-        <div>
-          <h3>Demo</h3>
-          <YouTubeEmbed embedId="EcYErMu0cjQ" />
         </div>
   </div>
 }
