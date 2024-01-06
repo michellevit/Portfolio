@@ -1,6 +1,6 @@
 .navbar-container {
   display: flex;
-  position: sticky;
+  position: relative; /* if sticky navbar -> change this to 'sticky' */
   flex-direction: row;
   background-color: rgba(255, 255, 255, 1);
   color: black;
@@ -11,6 +11,7 @@
   z-index: 10;
   transition: padding 0.3s ease, background-color 0.3s ease;
 }
+
 
 .navbar-container.smaller {
   padding: 2% 7%;
@@ -32,8 +33,6 @@
   background-color: rgba(255, 255, 255, 0.75); 
   transition: padding 0.3s ease, background-color 0.3s ease;
 }
-
-
 
 nav {
   display: flex;

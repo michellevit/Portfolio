@@ -10,23 +10,23 @@ function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false);
+    // cSTICKY NAVBAR CODE
+    // const upperThreshold = 100;
+    // const lowerThreshold = 50;
 
-    const upperThreshold = 100;
-    const lowerThreshold = 50;
+    // const handleScroll = () => {
+    //   const offset = window.scrollY;
+    //   if (offset > upperThreshold && !scrolled) {
+    //     setScrolled(true);
+    //   } else if (offset < lowerThreshold && scrolled) {
+    //     setScrolled(false);
+    //   }
+    // };
 
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > upperThreshold && !scrolled) {
-        setScrolled(true);
-      } else if (offset < lowerThreshold && scrolled) {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    // window.addEventListener('scroll', handleScroll);
+    // return () => {
+    //   window.removeEventListener('scroll', handleScroll);
+    // };
   }, [scrolled]);
 
   const handleHamburgerMenu = () => {
