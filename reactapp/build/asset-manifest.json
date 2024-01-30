@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.150e283e.css",
-    "main.js": "/static/js/main.0db80df8.js",
+    "main.css": "/static/css/main.bb333d5c.css",
+    "main.js": "/static/js/main.9181a90f.js",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.408922bab782ebecf34e.jpg",
     "static/media/huggingface-logo.png": "/static/media/huggingface-logo.680c5d04be8df645a376.png",
     "static/media/production-planner-mockup.jpg": "/static/media/production-planner-mockup.b50d611667748b0670eb.jpg",
@@ -14,13 +14,13 @@
     "static/media/wordpress-logo.png": "/static/media/wordpress-logo.264bf46407c43b948d74.png",
     "static/media/python-logo.png": "/static/media/python-logo.632369df831d16241b59.png",
     "static/media/django-logo.png": "/static/media/django-logo.4c677b78d12c96ea7add.png",
-    "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.609a2dc9742df4252749dc4bb2fb9350.svg",
+    "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.34bbf5dc3b085a801732fcfa2ec6183f.svg",
     "index.html": "/index.html",
-    "main.150e283e.css.map": "/static/css/main.150e283e.css.map",
-    "main.0db80df8.js.map": "/static/js/main.0db80df8.js.map"
+    "main.bb333d5c.css.map": "/static/css/main.bb333d5c.css.map",
+    "main.9181a90f.js.map": "/static/js/main.9181a90f.js.map"
   },
   "entrypoints": [
-    "static/css/main.150e283e.css",
-    "static/js/main.0db80df8.js"
+    "static/css/main.bb333d5c.css",
+    "static/js/main.9181a90f.js"
   ]
 }

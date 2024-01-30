@@ -11,13 +11,11 @@ Table of Contents:
 
 ----------
 1. Project Description
-
 This website was written in React and Node.js to display my projects.
 
 
 ----------
 2. How to deploy on Dreamhost (React + Node.js)
-
 -Register domain and add hosting
 -Enable Passenger + Node.js (Domain Dashboard > Additional Settings)
 -Login to SSH + install nvm (node version manager)
@@ -43,6 +41,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
 TROUBLESHOOTING:
 -TO RESTART APP:
 ----Add a folder called "tmp" to the app folder 
@@ -63,7 +62,6 @@ TROUBLESHOOTING:
 
 ----------
 3. How to update react files on DreamHost
-
 -Open a terminal window and navigate/cd to the project's 'reactapp' directory
 --Run: npm run build
 -Login to DreamHost and go to the domain's 'File Manager' 
@@ -73,5 +71,4 @@ TROUBLESHOOTING:
 
 ----------
 4. Credits
-
 Michelle Flandin

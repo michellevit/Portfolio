@@ -21,11 +21,11 @@ function ProductionPlanner() {
         <div><img src={projectPic} alt="Production Planner project snapshot" /></div>
         <div>{projectDescriptions.production_planner.long}</div>
         <a
-            href="https://github.com/michellevit/Production-Planner"
+            href="https://production-planner-demo.michellef.dev/open-orders"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <button id="git-repo" className="light">View Github Repository</button>
+          <button id="git-repo" className="light">View Demo</button>
           </a>
         </div>
         <div>
@@ -35,6 +35,7 @@ function ProductionPlanner() {
         <div className="key-features"><h3>Key Features</h3>
         <ul>
           <li>Real-time data updates</li>
+          <li>Server-Sent Events (SSE) for real-time backend-frontend updates</li>
           <li>Queryset search and filters</li>
           <li>Pagination</li>
           <li>Database indexing</li>
