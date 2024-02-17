@@ -59,6 +59,7 @@ button:hover {
 button.dark {
   color: white;
   background-color: black;
+  margin-right: 10px;
 }
 
 button.dark:hover {

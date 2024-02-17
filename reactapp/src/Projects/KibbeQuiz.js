@@ -17,7 +17,14 @@ function KibbeQuiz() {
         {/* <div><img src={projectPic} alt="Amazon inventory checker project snapshot" /></div> */}
         <div>{projectDescriptions.kbt_quiz.long}</div>
         <a
-            href="https://github.com/michellevit/Kibbe-Quiz/blob/main/quiz.js#L395"
+            href="https://kibbebodytypes.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          <button id="git-repo" className="dark">View Website</button>
+          </a>
+        <a
+            href="https://github.com/michellevit/Kibbe-Quiz/"
             target="_blank"
             rel="noopener noreferrer"
           >

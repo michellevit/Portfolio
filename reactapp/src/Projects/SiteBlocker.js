@@ -5,7 +5,7 @@ import projectDescriptions from './ProjectDescriptions.json';
 import projectPic from "../static/site-blocker-mockup.jpg";
 import javascriptLogo from "../static/logos/javascript-logo.png";
 import htmlLogo from "../static/logos/html-logo.png";
-import githubLogo from "../static/logos/github-logo.png";
+import Logo from "../static/logos/github-logo.png";
 
 
 
