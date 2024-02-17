@@ -18,19 +18,26 @@ function ProductionPlanner() {
   return <div className="single-project-container">
         <h2>Production Planner</h2>
         <div className='introduction'>
-        <div><img src={projectPic} alt="Production Planner project snapshot" /></div>
+        {/* <div><img src={projectPic} alt="Production Planner project snapshot" /></div> */}
         <div>{projectDescriptions.production_planner.long}</div>
         <a
-            href="https://production-planner-demo.michellef.dev/open-orders"
+            href="https://production-planner-demo.michellef.dev"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <button id="git-repo" className="light">View Demo</button>
+          <button id="git-repo" className="dark">Try Demo</button>
+          </a>
+          <a
+            href="https://github.com/michellevit/Production-Planner"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          <button id="git-repo" className="light">View GitHub</button>
           </a>
         </div>
         <div>
-          <h3>Demo</h3>
-          <YouTubeEmbed embedId="9lm4YkIrcTY" />
+          <h3>Video Overview</h3>
+          <YouTubeEmbed embedId="J0YNExrDqck" />
         </div>
         <div className="key-features"><h3>Key Features</h3>
         <ul>

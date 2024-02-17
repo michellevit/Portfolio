@@ -12,20 +12,17 @@ function AmazonChecker() {
     <div className="single-project-container">
       <h2>Amazon Checker</h2>
       <div className="introduction">
-        <div>
-          <img
-            src={projectPic}
-            alt="Amazon inventory checker project snapshot"
-          />
-        </div>
+        {/* <div><img src={projectPic} alt="Amazon inventory checker project snapshot"/></div> */}
         <div>{projectDescriptions.amazon_checker.long}</div>
         <a
-            href="https://github.com/michellevit/Amazon-Inventory-Checker"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          <button id="git-repo" className="light">View Github Repository</button>
-          </a>
+          href="https://github.com/michellevit/Amazon-Inventory-Checker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button id="git-repo" className="light">
+            View GitHub Repository
+          </button>
+        </a>
       </div>
       <div>
         <h3>Demo</h3>

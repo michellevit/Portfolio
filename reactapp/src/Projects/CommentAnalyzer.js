@@ -13,14 +13,14 @@ function CommentAnalyzer() {
   return <div className="single-project-container">
         <h2>YouTube Comment Sentiment Analyzer</h2>
         <div className='introduction'>
-        <div><img src={projectPic} alt="Comment Analyzer project snapshot" /></div>
+        {/* <div><img src={projectPic} alt="Comment Analyzer project snapshot" /></div> */}
         <div>{projectDescriptions.comment_analyzer.long}</div>
         <a
             href="https://github.com/michellevit/Comment-Sentiment-Analyzer"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <button id="git-repo" className="light">View Github Repository</button>
+          <button id="git-repo" className="light">View GitHub Repository</button>
           </a>
         </div>
         <div>

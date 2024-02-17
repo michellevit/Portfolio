@@ -15,14 +15,14 @@ function SiteBlocker() {
   return <div className="single-project-container">
         <h2>Site Blocker Chrome Extension</h2>
         <div className='introduction'>
-        <div><img src={projectPic} alt="Site Blocker Chrome extension project snapshot" /></div>
+        {/* <div><img src={projectPic} alt="Site Blocker Chrome extension project snapshot" /></div> */}
         <div>{projectDescriptions.site_blocker.long}</div>
         <a
             href="https://github.com/michellevit/Site-Blocker-Chrome-Extension"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <button id="git-repo" className="light">View Github Repository</button>
+          <button id="git-repo" className="light">View GitHub Repository</button>
           </a>
         </div>
         <div>

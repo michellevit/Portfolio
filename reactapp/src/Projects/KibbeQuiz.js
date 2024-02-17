@@ -14,14 +14,14 @@ function KibbeQuiz() {
   return <div className="single-project-container">
         <h2>Kibbe Quiz</h2>
         <div className='introduction'>
-        <div><img src={projectPic} alt="Amazon inventory checker project snapshot" /></div>
+        {/* <div><img src={projectPic} alt="Amazon inventory checker project snapshot" /></div> */}
         <div>{projectDescriptions.kbt_quiz.long}</div>
         <a
             href="https://github.com/michellevit/Kibbe-Quiz/blob/main/quiz.js#L395"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <button id="git-repo" className="light">View Github Repository</button>
+          <button id="git-repo" className="light">View GitHub Repository</button>
           </a>
         </div>
         <div>

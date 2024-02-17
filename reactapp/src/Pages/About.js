@@ -96,7 +96,7 @@ function About() {
             target="_blank"
             rel="noopener noreferrer"
           >
-          <button className="light">View Github</button></a>
+          <button className="light">View GitHub</button></a>
         </div>
       </div>
       <div className="about-picture">

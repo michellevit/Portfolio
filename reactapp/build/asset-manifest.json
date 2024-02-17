@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.bb333d5c.css",
-    "main.js": "/static/js/main.9181a90f.js",
+    "main.js": "/static/js/main.9a2b5096.js",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.408922bab782ebecf34e.jpg",
     "static/media/huggingface-logo.png": "/static/media/huggingface-logo.680c5d04be8df645a376.png",
+    "static/media/comment-analyzer-mockup.jpg": "/static/media/comment-analyzer-mockup.aa5de9738baa41be49ca.jpg",
     "static/media/production-planner-mockup.jpg": "/static/media/production-planner-mockup.b50d611667748b0670eb.jpg",
-    "static/media/comment-analyzer-mockup.jpg": "/static/media/comment-analyzer-mockup.c862370bc6fc5dd11824.jpg",
     "static/media/amazon-checker-mockup.jpg": "/static/media/amazon-checker-mockup.1289dd530bacf69ce565.jpg",
     "static/media/ORM-example.jpg": "/static/media/ORM-example.0011bc3f890ef9081dc5.jpg",
     "static/media/site-blocker-mockup.jpg": "/static/media/site-blocker-mockup.06d6313f8b19e4ced3ab.jpg",
@@ -17,10 +17,10 @@
     "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.34bbf5dc3b085a801732fcfa2ec6183f.svg",
     "index.html": "/index.html",
     "main.bb333d5c.css.map": "/static/css/main.bb333d5c.css.map",
-    "main.9181a90f.js.map": "/static/js/main.9181a90f.js.map"
+    "main.9a2b5096.js.map": "/static/js/main.9a2b5096.js.map"
   },
   "entrypoints": [
     "static/css/main.bb333d5c.css",
-    "static/js/main.9181a90f.js"
+    "static/js/main.9a2b5096.js"
   ]
 }
