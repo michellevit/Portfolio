@@ -84,7 +84,7 @@ function Contact() {
           onChange={handleChange}
           required
         />
-        <button type="submit" className="dark">Send</button>
+        <button type="submit" className="dark" id="contact-form">Send</button>
         </form>
         {successMessage && <div className={successClass}>{successMessage}</div>}
         {showLinkedIn && (
