@@ -8,7 +8,7 @@
 A portfolio website, to showcase my projects, written in React and Node.js.
 
 
-<a href="https://michellef.dev" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=node.js"></a>
+<a href="https://michellef.dev" target="_blank"><img src="https://img.shields.io/badge/Website-green?style=for-the-badge&logo=node.js"></a>
 
 
 ## Table of Contents
