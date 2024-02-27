@@ -13,8 +13,8 @@ A portfolio website, to showcase my projects, written in React and Node.js.
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
-- [How to deploy on Dreamhost](#how-to-deploy)
-- [How to update react files on DreamHost](#how-to-update)
+- [How To Deploy on DreamHost](#how-to-deploy)
+- [How To Update React Files on DreamHost](#how-to-update)
 - [Troubleshooting](#troubleshooting)
 - [Credits](#credits)
 
@@ -25,16 +25,16 @@ A portfolio website, to showcase my projects, written in React and Node.js.
   - DreamHost
 
 
-## How to deploy on Dreamhost<a name="how-to-deploy"></a>
+## How To Deploy on DreamHost<a name="how-to-deploy"></a>
 - Register domain and add hosting
 - Enable Passenger + Node.js (Domain Dashboard > Additional Settings)
 - Login to SSH + install nvm (node version manager)
-  - https://help.dreamhost.com/hc/en-us/articles/360029083351-Installing-a-custom-version-of-NVM-and-Node-js
+  - https://help.DreamHost.com/hc/en-us/articles/360029083351-Installing-a-custom-version-of-NVM-and-Node-js
   - to login to the SSH, open the terminal and enter: `shh username@websitename`
     - username+password are in DreamHost domain dashboard 'Manage Your Site' section
 - In SSH, install node (Passenger only supports up to v.13.14.0)
   - after installing, run `npm install` in the 'app' folder
-  - https://help.dreamhost.com/hc/en-us/articles/115004415628-Node-js-installing-packages
+  - https://help.DreamHost.com/hc/en-us/articles/115004415628-Node-js-installing-packages
 - In cPanel, go to 'website name* folder -> public folder -> add .htaccess file
 - In cPanel home/username -> add app folder (must be called 'app') with the node.js project + react build file inside
 - In SSH add '.credentials' folder (with CHMOD 700) to home folder (e.g. cd ~)
@@ -45,14 +45,14 @@ A portfolio website, to showcase my projects, written in React and Node.js.
 - Add the google application credentials file to the .credentials folder (using scp) with chmod 700
 - Make sure the react Contact.js has the correct recaptcha site key
   - Make sure the .env has the correct environment variables and that the .env file chmod is 600
-- Add `export GOOGLE_APPLICATION_CREDENTIALS='/path/to/file` to the .bashrc
+- Add `export GOOGLE_APPLICATION_CREDENTIALS='/path/to/file'` to the .bashrc
   - Add the following to .bashrc (by going 'cd~' then nano '.bashrc'):
     - `export NVM_DIR="$HOME/.nvm"`
-    - Load nvm: `[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"`  # This loads nvm
+    - Load nvm: `[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"`
     - Loads nvm bash_completion: `[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"`
 
 
-## How to update react files on DreamHost<a name="how-to-update"></a>
+## How To Update React Files on DreamHost<a name="how-to-update"></a>
 - Open a terminal window and navigate/cd to the project's 'reactapp' directory
   - Run `npm run build`
 - Login to DreamHost and go to the domain's 'File Manager' 
