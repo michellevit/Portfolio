@@ -2,7 +2,7 @@
 
 ![React Version](https://img.shields.io/badge/React-18.2.0-blue.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-v16.13.0-green.svg)
-![DreamHost](https://img.shields.io/badge/hosted%20on-DreamHost-darkblue.svg)
+![DreamHost](https://img.shields.io/badge/Hosted%20on-DreamHost-darkblue.svg)
 
 
 A portfolio website, to showcase my projects, written in React and Node.js.
