@@ -12,6 +12,7 @@
     "node": "20.x"
   },
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@google-cloud/recaptcha-enterprise": "^5.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
