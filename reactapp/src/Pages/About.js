@@ -57,7 +57,7 @@ function About() {
     <div className="about-container">
       <div className="about-text">
         <h2>
-          Hello! I'm TEST, a <span id="e1">developer</span> based in
+          Hello! I'm Michelle, a <span id="e1">developer</span> based in
           Vancouver.
         </h2>
         <p>
