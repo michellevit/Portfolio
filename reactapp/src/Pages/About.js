@@ -39,10 +39,14 @@ function About() {
       color: "#fdc3bf",
     });
     const a9 = annotate(document.querySelector("#e9"), {
-      type: "circle",
+      type: "highlight",
       color: "#e7cffe",
     });
-    const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7, a8, a9]);
+    const e10 = annotate(document.querySelector("#e10"), {
+      type: "circle",
+      color: "#f6c7e0",
+    });
+    const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7, a8, a9, e10]);
     const screenWidth = window.innerWidth;
     if (screenWidth >= 0) {
       ag.show();
@@ -57,26 +61,30 @@ function About() {
           Vancouver.
         </h2>
         <p>
-          I love building tools that are{" "}
-          <span id="e2">user-friendly, simple,</span> and{" "}
-          <span id="e3">practical</span>.
+          I love building applications that {" "}
+          <span id="e2">solve real-world problems</span> and{" "}
+          <span id="e3">save people time</span>.
         </p>
         <p>
-          While studying at UBC I was introduced to computer science, and
-          afterwards I continued to learn by working on projects of increasing
-          complexity - from <Link to="/amazon-checker">automating small tasks with{" "}
-          <span id="e4">Python</span></Link> to <Link to="/production-planner">a full-stack web application using{" "}
-          <span id="e5">Django, MYSQL, and React</span></Link>.
+          I first encountered computer science at{" "}
+          <span id="e4">UBC</span>, and though my path led me into{" "}
+          <span id="e5">administration and accounting</span>,{" "}
+          I found myself gravitating back to towards coding as I discovered the value in{" "}
+          <Link to="/amazon-checker"><span id="e6">automating simple tasks</span></Link>{" "}
+          and{" "}
+          <Link to="/production-planner"><span id="e7">modernizing workflows</span></Link>.
         </p>
         <p>
-          Through these experiences, I had the opportunity to work both
-          independently and as part of a team, and developed a working style
-          that leans towards <span id="e6">flexibility, </span>
-          <span id="e7">clarity,</span> and <span id="e8">collaboration</span>.
+          I'm currently working on integrating courier APIs into my{" "}
+          <Link to="/production-planner"><span id="e8">Production Planner</span></Link>{" "}
+          app, and am creating a{" "}
+          <Link to="/fantasy-dg"><span id="e9">Fantasy Disc Golf</span></Link>{" "}
+          app as a
+          fun side-project. 
         </p>
         <p>
           Please don't hesitate to{" "}
-          <span id="e9" className="about-contact">
+          <span id="e10" className="about-contact">
             <li>
               <Link to="/contact">contact me</Link>
             </li>
@@ -100,7 +108,7 @@ function About() {
         </div>
       </div>
       <div className="about-picture">
-        <img src={profilePic} alt="Picture of Michelle in Vancouver" />
+        <img src={profilePic} alt="Michelle on a hike in Vancouver" />
       </div>
     </div>
   );

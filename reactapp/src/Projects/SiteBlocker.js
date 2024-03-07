@@ -5,7 +5,7 @@ import projectDescriptions from './ProjectDescriptions.json';
 import projectPic from "../static/site-blocker-mockup.jpg";
 import javascriptLogo from "../static/logos/javascript-logo.png";
 import htmlLogo from "../static/logos/html-logo.png";
-import Logo from "../static/logos/github-logo.png";
+import gitHubLogo from "../static/logos/github-logo.png";
 
 
 
@@ -49,7 +49,7 @@ function SiteBlocker() {
             <div className='logo-images'>
               <img src={javascriptLogo} alt="JavaScript logo" />
               <img src={htmlLogo} alt="HTML logo" />
-              <img src={githubLogo} alt="GitHub logo" />
+              <img src={gitHubLogo} alt="GitHub logo" />
             </div>
           
         </div>

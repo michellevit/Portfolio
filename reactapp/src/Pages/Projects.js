@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Projects.css";
-import projectPic1 from "../static/production-planner-mockup.jpg";
-import projectPic2 from "../static/amazon-checker-mockup.jpg";
-import projectPic3 from "../static/kbt-mockup.jpg";
-import projectPic4 from "../static/site-blocker-mockup.jpg";
-import projectPic5 from "../static/comment-analyzer-mockup.jpg";
+import productionPlannerPic from "../static/production-planner-mockup.jpg";
+// import fantasyDGPic from "../static/fantasy-dg-mockup.jpg";
+import amazonCheckerPic from "../static/amazon-checker-mockup.jpg";
+import kbtPic from "../static/kbt-mockup.jpg";
+import siteBlockerPic from "../static/site-blocker-mockup.jpg";
+import commentAnalyzerPic from "../static/comment-analyzer-mockup.jpg";
 import projectDescriptions from "../Projects/ProjectDescriptions.json";
 import { Link, useLocation } from "react-router-dom";
 
@@ -14,6 +15,7 @@ function Projects() {
   const [projectText3, setProjectText3] = useState("");
   const [projectText4, setProjectText4] = useState("");
   const [projectText5, setProjectText5] = useState("");
+  // const [projectText6, setProjectText6] = useState("");
   const [isHomePage, setIsHomePage] = useState(true);
   const location = useLocation();
   const updateProjectText = () => {
@@ -24,12 +26,14 @@ function Projects() {
       setProjectText3(projectDescriptions.kbt_quiz.long);
       setProjectText4(projectDescriptions.site_blocker.long);
       setProjectText5(projectDescriptions.comment_analyzer.long);
+      // setProjectText6(projectDescriptions.fantasy_dg.long);
     } else {
       setProjectText1(projectDescriptions.production_planner.short);
       setProjectText2(projectDescriptions.amazon_checker.short);
       setProjectText3(projectDescriptions.kbt_quiz.short);
       setProjectText4(projectDescriptions.site_blocker.short);
       setProjectText5(projectDescriptions.comment_analyzer.short);
+      // setProjectText6(projectDescriptions.fantasy_dg.short);
     }
   };
   const updateCurrentPage = () => {
@@ -49,7 +53,7 @@ function Projects() {
       <h2>{isHomePage ? "Featured Projects" : "Projects"}</h2>
       <div className="featured-project">
         <div className="project-image">
-          <img src={projectPic1} alt="Production Planner project snapshot" />
+          <img src={productionPlannerPic} alt="Production Planner project snapshot" />
           <Link to="/production-planner">
             <div className="project-image-text">
               <h2>
@@ -68,10 +72,34 @@ function Projects() {
           </p>
         </div>
       </div>
+      {/* <div className="featured-project">
+        <div className="project-image">
+          <img
+            src={fantasyDGPic}
+            alt="Fantasy disc golf website snapshot"
+          />
+          <Link to="/fantasy-dg">
+            <div className="project-image-text">
+              <h2>
+                Rails<br></br>TypeScript/React<br></br>Postgres
+                </h2>
+            </div>
+          </Link>
+        </div>
+        <div className="project-text">
+          <h3>Fantasy Disc Golf Website</h3>
+          <p>{projectText6}</p>
+          <p className="read-more-link">
+            <Link to="/fantasy-dg">
+              Read more<span>&#10230;</span>
+            </Link>
+          </p>
+        </div>
+      </div> */}
       <div className="featured-project">
         <div className="project-image">
           <img
-            src={projectPic2}
+            src={amazonCheckerPic}
             alt="Amazon inventory checker project snapshot"
           />
           <Link to="/amazon-checker">
@@ -90,9 +118,10 @@ function Projects() {
           </p>
         </div>
       </div>
+      {/* {!isHomePage && ( */}
       <div className="featured-project">
         <div className="project-image">
-          <img src={projectPic3} alt="JavaScript quiz project snapshot" />
+          <img src={kbtPic} alt="JavaScript quiz project snapshot" />
           <Link to="/kibbe-quiz">
             <div className="project-image-text">
               <h2>JavaScript</h2>
@@ -109,12 +138,13 @@ function Projects() {
           </p>
         </div>
       </div>
+      {/* )} */}
       {isHomePage && (<center><Link to="/projects"><button className="dark">View All</button></Link></center>)}
       {!isHomePage && (
         <div className="featured-project">
           <div className="project-image">
             <img
-              src={projectPic4}
+              src={siteBlockerPic}
               alt="Site Blocker Chrome extension project snapshot"
             />
             <Link to="/site-blocker">
@@ -137,7 +167,7 @@ function Projects() {
       {!isHomePage && (
         <div className="featured-project">
           <div className="project-image">
-            <img src={projectPic5} alt="Comment Analyzer project snapshot" />
+            <img src={commentAnalyzerPic} alt="Comment Analyzer project snapshot" />
             <Link to="/comment-analyzer">
               <div className="project-image-text">
                 <h2>Python</h2>
