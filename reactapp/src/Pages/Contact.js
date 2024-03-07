@@ -14,15 +14,17 @@ function Contact() {
   const [successMessage, setSuccessMessage] = useState('');
   const [successClass, setSuccessClass] = useState('');
   const [showLinkedIn, setShowLinkedIn] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.honeypot) { 
+    if (formData.honeypot || isSending) { 
       return;
     }
+    setIsSending(true);
     grecaptcha.enterprise.ready(async () => {
       try {
         // Generate a new reCAPTCHA token
@@ -47,6 +49,8 @@ function Contact() {
         setSuccessMessage(<span>The message failed to send.<br />Please try contacting me through LinkedIn.</span>);
         setSuccessClass('success-message error-message');
         setShowLinkedIn(true);
+      } finally {
+        setIsSending(false);
       }
     });
   };
@@ -84,7 +88,9 @@ function Contact() {
           onChange={handleChange}
           required
         />
-        <button type="submit" className="dark" id="contact-form">Send</button>
+        <button type="submit" className={`dark ${isSending ? 'sending' : ''}`} id="contact-form">
+          {isSending ? 'Sending...' : 'Send'}
+        </button>
         </form>
         {successMessage && <div className={successClass}>{successMessage}</div>}
         {showLinkedIn && (

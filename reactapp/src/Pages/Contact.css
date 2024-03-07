@@ -70,6 +70,11 @@
   transition: all 0.3s ease-in;
 }
 
+
+.dark.sending {
+  background-color: #e7cffe; 
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
