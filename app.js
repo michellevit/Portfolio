@@ -11,10 +11,10 @@ const port = process.env.PORT || 3001;
 
 
 // serve the React application's build directory as static files
-app.use(express.static(path.join(__dirname, 'reactapp/build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'reactapp/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 const recaptchaClient = new RecaptchaEnterpriseServiceClient();
