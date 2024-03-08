@@ -4,7 +4,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-v16.13.0-green.svg)
 ![Heroku](https://img.shields.io/badge/Platform-Heroku-lightgrey.svg)
 
-A portfolio website, to showcase my projects, written in React and Node.js.
+A portfolio website, to showcase my projects, written in React and Node.js and deployed on Heroku.
 
 
 <a href="https://michellef.dev" target="_blank"><img src="https://img.shields.io/badge/Website-green?style=for-the-badge&logo=node.js"></a>
