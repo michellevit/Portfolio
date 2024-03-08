@@ -11,6 +11,8 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 
+console.log('HELLO MICHELLE');
+
 // serve the React application's build directory as static files
 app.use(express.json());
 app.use(cors({ origin: 'https://portfolio.michellef.dev' }));
@@ -42,6 +44,7 @@ const recaptchaKey = process.env.RECAPTCHA_SITE_KEY;
 app.post('/api/sendmail', async (req, res) => {
   const { name, email, message, recaptchaToken } = req.body;
   const recaptcha_action = 'submit';
+  console.log('Received request to send email:', req.body);
   // Function to create an assessment for reCAPTCHA Enterprise
   async function createAssessment(token) {
     const client = new RecaptchaEnterpriseServiceClient();
@@ -88,6 +91,8 @@ app.post('/api/sendmail', async (req, res) => {
         text: `Message from: ${name} <${email}>\n\n${message}`,
         html: `<b>Message from:</b> ${name} &lt;${email}&gt;<br><br>${message}`,
       });
+
+      console.log('Email sent:', info);
 
       res.send('Message sent: ' + info.messageId);
     } else {
