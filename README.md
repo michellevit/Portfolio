@@ -13,8 +13,8 @@ A portfolio website, to showcase my projects, written in React and Node.js.
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
-- [How To Deploy on DreamHost](#how-to-deploy)
-- [How To Update React Files on DreamHost](#how-to-update)
+- [PRE-HEROKU: How To Deploy on DreamHost](#how-to-deploy)
+- [How To Update the App via Heroku](#how-to-update)
 - [Troubleshooting](#troubleshooting)
 - [Credits](#credits)
 
@@ -26,6 +26,7 @@ A portfolio website, to showcase my projects, written in React and Node.js.
 
 
 ## How To Deploy on DreamHost<a name="how-to-deploy"></a>
+- **NOTE: This app is now hosted on Heroku, not DreamHost. Passenger support was removed**
 - Register domain and add hosting
 - Enable Passenger + Node.js (Domain Dashboard > Additional Settings)
 - Login to SSH + install nvm (node version manager)
@@ -52,30 +53,15 @@ A portfolio website, to showcase my projects, written in React and Node.js.
     - Loads nvm bash_completion: `[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"`
 
 
-## How To Update React Files on DreamHost<a name="how-to-update"></a>
-- Open a terminal window and navigate/cd to the project's 'reactapp' directory
-  - Run `npm run build`
-- Login to DreamHost and go to the domain's 'File Manager' 
-  - Open the 'app' folder
-  - Replace the old 'build' file with the newly created one
+## How To Update the App via Heroku<a name="how-to-update"></a>
+- Just make the changes to the files, and push to GitHub
+  - The app is connected to Heroku and automatically deploys after every push to main
+  - The reactapp is built via Heroku's Nodejs buildpack (which runs the 'heroku-postbuild' script in the root folder's package.json)
 
 
 ## Troubleshooting<a name="troubleshooting"></a>
-#### To restart app:
- - Add a folder called "tmp" to the app folder 
- - Run `touch tmp/restart.txt`
-#### If Node/nvm 'not found' on SSH:
- - This often happens when ssh is opened the first time
- - Run `source ~/.bashrc` in ssh
-#### Other:
-- Check the error log: nano ~/logs/*website-name*/https/error.log
-  - New errors will be at the bottom, and the file clears after each day
-- Location of Google API reCAPCTHA key
-  - Visit the Google Cloud Console and log in with your credentials
-  - Select the 'Portfolio-Website' project
-  - Navigate to the hamburger menu (≡) on the top left corner
-  - Go to “Security” and then select “reCAPTCHA Enterprise”.
-  - Key ID will be in the 'Keys' tab
+- Reference -> [How to Safely use Google Application Credentials on Heroku](https://learnings.desipenguin.com/post/goog-cred-heroku/)
+
 
 
 ## Credits<a name="credits"></a>
