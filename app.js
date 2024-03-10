@@ -14,7 +14,7 @@ const port = process.env.PORT || 3001;
 
 // serve the React application's build directory as static files
 app.use(express.json());
-app.use(cors({ origin: 'https://portfolio.michellef.dev' }));
+app.use(cors({ origin: 'https://michellef.dev' }));
 app.use(express.static(path.join(__dirname, 'reactapp', 'build')));
 
 // Test route to make sure your server is working

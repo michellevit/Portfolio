@@ -21,7 +21,7 @@ A portfolio website designed to showcase my projects, developed using Node.js an
 ## Technologies Used<a name="technologies-used"></a>
   - React
   - Node.js
-  - DreamHost
+  - Heroku
 
 
 ## How To Deploy on DreamHost<a name="how-to-deploy"></a>
