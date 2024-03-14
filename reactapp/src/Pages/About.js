@@ -77,7 +77,7 @@ function About() {
         <p>
           I'm currently working on integrating courier APIs into my{" "}
           <Link to="/production-planner"><span id="e8">Production Planner</span></Link>{" "}
-          app, and am creating a{" "}
+          app, and creating a{" "}
           <Link to="/fantasy-dg"><span id="e9">Fantasy Disc Golf</span></Link>{" "}
           app as a
           fun side-project. 
