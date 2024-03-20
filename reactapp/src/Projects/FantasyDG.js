@@ -14,7 +14,7 @@ import githubLogo from "../static/logos/github-logo.png";
 function FantasyDG() {
   return (
     <div className="single-project-container">
-      <h2>Fantasy Disc Golf App</h2>
+      <h2>Fantasy Disc Golf Website</h2>
       <div className="introduction">
         {/* <div>
           <img src={projectPic} alt="FantasyDG project snapshot" />
