@@ -64,7 +64,7 @@ function About() {
           I first encountered computer science at{" "}
           <span id="e1">UBC</span>, and though my path led me into{" "}
           <span id="e2">administration and accounting</span>,{" "}
-          I found myself gravitating back to towards coding as I discovered the value in{" "}
+          I found myself gravitating back towards coding as I discovered the value in{" "}
           <Link to="/amazon-checker"><span id="e3">automating simple tasks</span></Link>{" "}
           and{" "}
           <Link to="/production-planner"><span id="e4">modernizing workflows</span></Link>.
