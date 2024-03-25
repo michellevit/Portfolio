@@ -6,7 +6,7 @@ import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
 import ProductionPlanner from "./Projects/ProductionPlanner";
-import FantasyDG from "./Projects/FantasyDG";
+import DGDraft from "./Projects/DGDraft";
 import AmazonChecker from "./Projects/AmazonChecker";
 import KibbeQuiz from "./Projects/KibbeQuiz";
 import SiteBlocker from "./Projects/SiteBlocker";
@@ -38,7 +38,7 @@ function App() {
                 path="/production-planner"
                 element={<ProductionPlanner />}
               />
-              <Route path="/fantasy-dg" element={<FantasyDG />} />
+              <Route path="/dg-draft" element={<DGDraft />} />
               <Route path="/amazon-checker" element={<AmazonChecker />} />
               <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
               <Route path="/site-blocker" element={<SiteBlocker />} />

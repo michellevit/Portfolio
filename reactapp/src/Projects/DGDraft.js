@@ -2,7 +2,7 @@ import React from "react";
 import "./SingleProject.css";
 // import YouTubeEmbed from "./YouTubeEmbed";
 import projectDescriptions from "./ProjectDescriptions.json";
-// import projectPic from "../static/fantasydg-mockup.jpg";
+import projectPic from "../static/dgdraft-mockup.jpg";
 import reactLogo from "../static/logos/react-logo.png";
 import typescriptLogo from "../static/logos/typescript-logo.png";
 import rubyLogo from "../static/logos/ruby-logo.png";
@@ -11,14 +11,14 @@ import postgresLogo from "../static/logos/postgres-logo.png";
 import herokuLogo from "../static/logos/heroku-logo.png";
 import githubLogo from "../static/logos/github-logo.png";
 
-function FantasyDG() {
+function DGDraft() {
   return (
     <div className="single-project-container">
       <h2>Fantasy Disc Golf Website</h2>
       <div className="introduction">
-        {/* <div>
-          <img src={projectPic} alt="FantasyDG project snapshot" />
-        </div> */}
+        <div>
+          <img src={projectPic} alt="Fantasy Disc Golf project snapshot" />
+        </div>
         <div>{projectDescriptions.fantasy_dg.long}</div>
         <a
           href="https://dgdraft.com"
@@ -30,7 +30,7 @@ function FantasyDG() {
           </button>
         </a>
         <a
-          href="https://github.com/michellevit/DG-Bets/"
+          href="https://github.com/michellevit/DG-Draft/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -47,11 +47,10 @@ function FantasyDG() {
         <h3>Key Features</h3>
         <ul>
           <li>Token-based authentication</li>
-          <li>Google login integration (TBD)</li>
-          <li>Password recovery (TBD)</li>
+          <li>User login and account creation</li>
+          <li>Dynamic Leaderboards</li>
           <li>Real-time data synchronization for drafts (TBD)</li>
           <li>Interactive player profiles (TBD)</li>
-          <li>Dynamic Leaderboards (TBD)</li>
         </ul>
       </div>
       <div className="technologies-used">
@@ -62,6 +61,7 @@ function FantasyDG() {
           <li>Ruby</li>
           <li>Rails</li>
           <li>Postgres</li>
+          <li>Heroku</li>
           <li>GitHub</li>
         </ul>
         <div className="logo-images">
@@ -80,4 +80,4 @@ function FantasyDG() {
   );
 }
 
-export default FantasyDG;
+export default DGDraft;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Projects.css";
 import productionPlannerPic from "../static/production-planner-mockup.jpg";
-// import fantasyDGPic from "../static/fantasy-dg-mockup.jpg";
+import dgDraftPic from "../static/dgdraft-mockup.jpg";
 import amazonCheckerPic from "../static/amazon-checker-mockup.jpg";
 import kbtPic from "../static/kbt-mockup.jpg";
 import siteBlockerPic from "../static/site-blocker-mockup.jpg";
@@ -72,30 +72,6 @@ function Projects() {
           </p>
         </div>
       </div>
-      {/* <div className="featured-project">
-        <div className="project-image">
-          <img
-            src={fantasyDGPic}
-            alt="Fantasy disc golf website snapshot"
-          />
-          <Link to="/fantasy-dg">
-            <div className="project-image-text">
-              <h2>
-                Rails<br></br>TypeScript/React<br></br>Postgres
-                </h2>
-            </div>
-          </Link>
-        </div>
-        <div className="project-text">
-          <h3>Fantasy Disc Golf Website</h3>
-          <p>{projectText6}</p>
-          <p className="read-more-link">
-            <Link to="/fantasy-dg">
-              Read more<span>&#10230;</span>
-            </Link>
-          </p>
-        </div>
-      </div> */}
       <div className="featured-project">
         <div className="project-image">
           <img
@@ -118,7 +94,31 @@ function Projects() {
           </p>
         </div>
       </div>
-      {/* {!isHomePage && ( */}
+      <div className="featured-project">
+        <div className="project-image">
+          <img
+            src={dgDraftPic}
+            alt="Fantasy disc golf website snapshot"
+          />
+          <Link to="/dg-draft">
+            <div className="project-image-text">
+              <h2>
+                Rails<br></br>React/TypeScript<br></br>Postgres
+                </h2>
+            </div>
+          </Link>
+        </div>
+        <div className="project-text">
+          <h3>Fantasy Disc Golf App</h3>
+          <p>{projectText6}</p>
+          <p className="read-more-link">
+            <Link to="/dg-draft">
+              Read more<span>&#10230;</span>
+            </Link>
+          </p>
+        </div>
+      </div>
+      {!isHomePage && (
       <div className="featured-project">
         <div className="project-image">
           <img src={kbtPic} alt="JavaScript quiz project snapshot" />
@@ -138,7 +138,7 @@ function Projects() {
           </p>
         </div>
       </div>
-      {/* )} */}
+      )}
       {isHomePage && (<center><Link to="/projects"><button className="dark">View All</button></Link></center>)}
       {!isHomePage && (
         <div className="featured-project">
