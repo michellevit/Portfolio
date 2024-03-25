@@ -15,7 +15,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 function App() {
-  const location = useLocation(); 
+  const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -23,11 +23,7 @@ function App() {
     <div className="app">
       <Navbar />
       <TransitionGroup>
-        <CSSTransition
-          key={location.key}
-          classNames="fade" 
-          timeout={300} 
-        >
+        <CSSTransition key={location.key} classNames="fade" timeout={300}>
           <div className="main-container">
             <Routes>
               <Route path="/" element={<Home />} />
