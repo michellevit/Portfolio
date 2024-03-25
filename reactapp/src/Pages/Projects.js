@@ -15,7 +15,7 @@ function Projects() {
   const [projectText3, setProjectText3] = useState("");
   const [projectText4, setProjectText4] = useState("");
   const [projectText5, setProjectText5] = useState("");
-  // const [projectText6, setProjectText6] = useState("");
+  const [projectText6, setProjectText6] = useState("");
   const [isHomePage, setIsHomePage] = useState(true);
   const location = useLocation();
   const updateProjectText = () => {
@@ -26,14 +26,14 @@ function Projects() {
       setProjectText3(projectDescriptions.kbt_quiz.long);
       setProjectText4(projectDescriptions.site_blocker.long);
       setProjectText5(projectDescriptions.comment_analyzer.long);
-      // setProjectText6(projectDescriptions.fantasy_dg.long);
+      setProjectText6(projectDescriptions.dg_draft.long);
     } else {
       setProjectText1(projectDescriptions.production_planner.short);
       setProjectText2(projectDescriptions.amazon_checker.short);
       setProjectText3(projectDescriptions.kbt_quiz.short);
       setProjectText4(projectDescriptions.site_blocker.short);
       setProjectText5(projectDescriptions.comment_analyzer.short);
-      // setProjectText6(projectDescriptions.fantasy_dg.short);
+      setProjectText6(projectDescriptions.dg_draft.short);
     }
   };
   const updateCurrentPage = () => {
