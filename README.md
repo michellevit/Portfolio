@@ -1,6 +1,6 @@
 # Portfolio Website
 
-![React Version](https://img.shields.io/badge/React-18.2.0-blue.svg)
+![React Version](https://img.shields.io/badge/React-18.2.0-61dafb.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-v16.13.0-green.svg)
 ![Heroku](https://img.shields.io/badge/Platform-Heroku-3B2F63.svg)
 
