@@ -51,12 +51,12 @@ function BoilerplateGateway() {
           <li>Heroku API</li>
         </ul>
         <div className="logo-images">
-          <a href="https://vercel.com"><img src={nextjsLogo} alt="Next.js logo" /></a>
+          <a href="https://vercel.com"><img src={nextjsLogo} alt="Next.js logo" height="20px"/></a>
           <img src={nodejsLogo} alt="Node.js logo" />
           <img src={reactLogo} alt="React logo" />
           <a href="https://gumroad.com/"><img src={gumroadLogo} alt="Gumroad logo" /></a>
           <img src={githubLogo} alt="GitHub logo" />
-          <img src={herokuLogo} alt="Heroku logo" />
+          <img src={herokuLogo} alt="Heroku logo" height="30px"/>
         </div>
       </div>
     </div>
