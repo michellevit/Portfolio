@@ -114,7 +114,7 @@ function Projects() {
           <Link to="/boilerplate-gateway">
             <div className="project-image-text">
               <h2>
-                Next.js<br></br>Gumroad/GitHub API<br></br>Heroku
+                Next.js<br></br>Gumroad & GitHub API<br></br>Heroku
                 </h2>
             </div>
           </Link>
@@ -141,7 +141,7 @@ function Projects() {
           <Link to="/dg-draft">
             <div className="project-image-text">
               <h2>
-                Rails<br></br>React/TypeScript<br></br>Postgres
+                Rails<br></br>React & TypeScript<br></br>Postgres
                 </h2>
             </div>
           </Link>
