@@ -35,8 +35,8 @@ function BoilerplateGateway() {
       <div className="key-features">
         <h3>Key Features</h3>
         <ul>
-          <li>Gumroad API-Driven License Authentication</li>
-          <li>Automated GitHub Repository Sync</li>
+          <li>Gumroad API for License Authentication</li>
+          <li>GitHub API for Repository Management</li>
           <li>Heroku CI/CD Pipeline Integration</li>
         </ul>
       </div>
