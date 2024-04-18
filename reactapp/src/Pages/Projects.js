@@ -4,6 +4,7 @@ import productionPlannerPic from "../static/production-planner-mockup.jpg";
 import dgDraftPic from "../static/dgdraft-mockup.jpg";
 import amazonCheckerPic from "../static/amazon-checker-mockup.jpg";
 import kbtPic from "../static/kbt-mockup.jpg";
+import boilerplateGatewayPic from "../static/boilerplate-gateway-mockup.jpg";
 import siteBlockerPic from "../static/site-blocker-mockup.jpg";
 import commentAnalyzerPic from "../static/comment-analyzer-mockup.jpg";
 import projectDescriptions from "../Projects/ProjectDescriptions.json";
@@ -16,6 +17,7 @@ function Projects() {
   const [projectText4, setProjectText4] = useState("");
   const [projectText5, setProjectText5] = useState("");
   const [projectText6, setProjectText6] = useState("");
+  const [projectText7, setProjectText7] = useState("");
   const [isHomePage, setIsHomePage] = useState(true);
   const location = useLocation();
   const updateProjectText = () => {
@@ -27,6 +29,7 @@ function Projects() {
       setProjectText4(projectDescriptions.site_blocker.long);
       setProjectText5(projectDescriptions.comment_analyzer.long);
       setProjectText6(projectDescriptions.dg_draft.long);
+      setProjectText7(projectDescriptions.boilerplate_gateway.long);
     } else {
       setProjectText1(projectDescriptions.production_planner.short);
       setProjectText2(projectDescriptions.amazon_checker.short);
@@ -34,6 +37,8 @@ function Projects() {
       setProjectText4(projectDescriptions.site_blocker.short);
       setProjectText5(projectDescriptions.comment_analyzer.short);
       setProjectText6(projectDescriptions.dg_draft.short);
+      setProjectText7(projectDescriptions.boilerplate_gateway.short);
+
     }
   };
   const updateCurrentPage = () => {
@@ -51,6 +56,8 @@ function Projects() {
   return (
     <div className="projects-container">
       <h2>{isHomePage ? "Featured Projects" : "Projects"}</h2>
+
+      {/* Production Planner Project */}
       <div className="featured-project">
         <div className="project-image">
           <img src={productionPlannerPic} alt="Production Planner project snapshot" />
@@ -72,6 +79,8 @@ function Projects() {
           </p>
         </div>
       </div>
+
+      {/* Amazon Inventory Checker Project */}
       <div className="featured-project">
         <div className="project-image">
           <img
@@ -94,6 +103,35 @@ function Projects() {
           </p>
         </div>
       </div>
+
+      {/* Boilerplate Access Gateway Project */}
+      <div className="featured-project">
+        <div className="project-image">
+          <img
+            src={boilerplateGatewayPic}
+            alt="Boilerplate access gateway project snapshot"
+          />
+          <Link to="/boilerplate-gateway">
+            <div className="project-image-text">
+              <h2>
+                Next.js<br></br>Gumroad/GitHub API<br></br>Heroku
+                </h2>
+            </div>
+          </Link>
+        </div>
+        <div className="project-text">
+          <h3>Boilerplate Access Gateway</h3>
+          <p>{projectText7}</p>
+          <p className="read-more-link">
+            <Link to="/boilerplate-gateway">
+              Read more<span>&#10230;</span>
+            </Link>
+          </p>
+        </div>
+      </div>
+
+      {/* DG Draft Project */}
+      {!isHomePage && (
       <div className="featured-project">
         <div className="project-image">
           <img
@@ -118,6 +156,9 @@ function Projects() {
           </p>
         </div>
       </div>
+      )}
+
+      {/* KBT Quiz Project */}
       {!isHomePage && (
       <div className="featured-project">
         <div className="project-image">
@@ -139,7 +180,10 @@ function Projects() {
         </div>
       </div>
       )}
+
       {isHomePage && (<center><Link to="/projects"><button className="dark">View All</button></Link></center>)}
+      
+      {/* Site Blocker Project */}
       {!isHomePage && (
         <div className="featured-project">
           <div className="project-image">
@@ -164,6 +208,8 @@ function Projects() {
           </div>
         </div>
       )}
+
+      {/* YouTube Comment Analyzer Project */}
       {!isHomePage && (
         <div className="featured-project">
           <div className="project-image">

@@ -5,12 +5,13 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
-import ProductionPlanner from "./Projects/ProductionPlanner";
-import DGDraft from "./Projects/DGDraft";
 import AmazonChecker from "./Projects/AmazonChecker";
-import KibbeQuiz from "./Projects/KibbeQuiz";
-import SiteBlocker from "./Projects/SiteBlocker";
+import BoilerplateGateway from "./Projects/BoilerplateGateway";
 import CommentAnalyzer from "./Projects/CommentAnalyzer";
+import DGDraft from "./Projects/DGDraft";
+import KibbeQuiz from "./Projects/KibbeQuiz";
+import ProductionPlanner from "./Projects/ProductionPlanner";
+import SiteBlocker from "./Projects/SiteBlocker";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -30,15 +31,16 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/amazon-checker" element={<AmazonChecker />} />
+              <Route path="/boilerplate-gateway" element={<BoilerplateGateway />} />
+              <Route path="/comment-analyzer" element={<CommentAnalyzer />} />
+              <Route path="/dg-draft" element={<DGDraft />} />
+              <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
               <Route
                 path="/production-planner"
                 element={<ProductionPlanner />}
               />
-              <Route path="/dg-draft" element={<DGDraft />} />
-              <Route path="/amazon-checker" element={<AmazonChecker />} />
-              <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
               <Route path="/site-blocker" element={<SiteBlocker />} />
-              <Route path="/comment-analyzer" element={<CommentAnalyzer />} />
             </Routes>
           </div>
         </CSSTransition>
