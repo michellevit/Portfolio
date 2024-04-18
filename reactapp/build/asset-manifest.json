@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.4e71a329.css",
-    "main.js": "/static/js/main.55392061.js",
+    "main.js": "/static/js/main.61826870.js",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.00455fb5954cc400842b.jpg",
     "static/media/huggingface-logo.png": "/static/media/huggingface-logo.680c5d04be8df645a376.png",
     "static/media/comment-analyzer-mockup.jpg": "/static/media/comment-analyzer-mockup.aa5de9738baa41be49ca.jpg",
     "static/media/production-planner-mockup.jpg": "/static/media/production-planner-mockup.b50d611667748b0670eb.jpg",
     "static/media/amazon-checker-mockup.jpg": "/static/media/amazon-checker-mockup.1289dd530bacf69ce565.jpg",
+    "static/media/boilerplate-gateway-mockup.jpg": "/static/media/boilerplate-gateway-mockup.34adfe08acf98e956844.jpg",
     "static/media/dgdraft-mockup.jpg": "/static/media/dgdraft-mockup.b6d4326736d1f5bdb042.jpg",
     "static/media/ORM-example.jpg": "/static/media/ORM-example.0011bc3f890ef9081dc5.jpg",
     "static/media/site-blocker-mockup.jpg": "/static/media/site-blocker-mockup.06d6313f8b19e4ced3ab.jpg",
@@ -15,14 +16,16 @@
     "static/media/wordpress-logo.png": "/static/media/wordpress-logo.264bf46407c43b948d74.png",
     "static/media/python-logo.png": "/static/media/python-logo.632369df831d16241b59.png",
     "static/media/django-logo.png": "/static/media/django-logo.4c677b78d12c96ea7add.png",
+    "static/media/nodejs-logo.svg": "/static/media/nodejs-logo.dd47e26ed1d7dddf018e5cbffc40f76d.svg",
+    "static/media/nextjs-logo.svg": "/static/media/nextjs-logo.f9cae5fd7b181274067d1a5e255da274.svg",
     "static/media/rails-logo.svg": "/static/media/rails-logo.3648688df5f5cb1b83291c11f040e1c6.svg",
     "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.34bbf5dc3b085a801732fcfa2ec6183f.svg",
     "index.html": "/index.html",
     "main.4e71a329.css.map": "/static/css/main.4e71a329.css.map",
-    "main.55392061.js.map": "/static/js/main.55392061.js.map"
+    "main.61826870.js.map": "/static/js/main.61826870.js.map"
   },
   "entrypoints": [
     "static/css/main.4e71a329.css",
-    "static/js/main.55392061.js"
+    "static/js/main.61826870.js"
   ]
 }
