@@ -54,12 +54,9 @@
   animation: fadeIn 2s; 
 }
 
-#contact-form-button {
-  margin: 5px;
-}
 
-#contact-form {
-  margin: auto auto !important;
+button#contact-form {
+  margin: 5px auto;
 }
 
 .linkedInButton button#linkedButton {
