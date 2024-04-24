@@ -100,7 +100,7 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button type="button" className="light">LinkedIn</button>
+              <button type="button" className="light submit-contact-button">LinkedIn</button>
             </a>
           </div>
         )}
