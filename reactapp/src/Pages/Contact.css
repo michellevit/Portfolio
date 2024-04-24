@@ -54,7 +54,7 @@
   animation: fadeIn 2s; 
 }
 
-.submit-contact-button {
+#contact-form-button {
   margin: 5px;
 }
 
