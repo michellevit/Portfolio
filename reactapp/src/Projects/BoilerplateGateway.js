@@ -48,7 +48,7 @@ function BoilerplateGateway() {
           <li>React</li>
           <li>Gumroad API</li>
           <li>GitHub API</li>
-          <li>Heroku API</li>
+          <li>Heroku</li>
         </ul>
         <div className="logo-images">
           <a href="https://vercel.com"><img src={nextjsLogo} alt="Next.js logo" height="20px"/></a>
