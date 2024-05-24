@@ -73,7 +73,7 @@ function About() {
           I'm currently working on integrating courier APIs into my{" "}
           <Link to="/production-planner"><span id="e5">Production Planner</span></Link>{" "}
           app, and creating a{" "}
-          <Link to="/fantasy-dg"><span id="e6">Fantasy Disc Golf</span></Link>{" "}
+          <Link to="/dg-draft"><span id="e6">Fantasy Disc Golf</span></Link>{" "}
           app as a
           fun side-project. 
         </p>
@@ -103,7 +103,7 @@ function About() {
         </div>
       </div>
       <div className="about-picture">
-        <img src={profilePic} alt="Michelle on a hike in Vancouver" />
+        <img src={profilePic} alt="Me at the Grand Canyon in AZ, USA." />
       </div>
     </div>
   );
