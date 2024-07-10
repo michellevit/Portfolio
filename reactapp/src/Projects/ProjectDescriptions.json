@@ -13,7 +13,7 @@
     },
     "site_blocker": {
       "short": "A Chrome extension to block sites and improve productivity.",
-      "long": "This Chrome browser extension uses the local storage feature to block chosen website addresses, and keep them blocked across all browser sessions for enhanced focus and productivity.."
+      "long": "This Chrome browser extension uses the local storage feature to block chosen website addresses, and keep them blocked across all browser sessions for enhanced focus and productivity."
     },
     "comment_analyzer": {
       "short": "A script to sort YouTube comments by sentiment.",
