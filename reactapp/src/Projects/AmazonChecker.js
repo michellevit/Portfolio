@@ -27,7 +27,7 @@ function AmazonChecker() {
       </div>
       <div>
         <h3>Demo</h3>
-        <YouTubeEmbed embedId="JX_15M3vQFNk546g" />
+        <YouTubeEmbed embedId="WcHKO0UPXGo" />
       </div>
       <div className="key-features">
         <h3>Key Features</h3>
