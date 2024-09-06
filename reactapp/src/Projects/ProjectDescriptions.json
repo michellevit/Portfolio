@@ -4,8 +4,8 @@
       "long": "This application streamlines the sales-to-shipping process by displaying orders from the QuickBooks database in a dynamic React interface, and managing large amounts of data effectively with a Django/MySQL backend."
     },
     "amazon_checker": {
-      "short": "A script to automate the Amazon order confirmation process.",
-      "long": "This Python script speeds up order management by aggregating Amazon's weekly order request data, allowing vendors to easily compare the requested quantities against available inventory, and instantly calculate and submit the orders to confirm."
+      "short": "A Python/Tkinter app to automate the Amazon order confirmation process.",
+      "long": "This Python app features a Tkinter GUI and uses specialized algorithms to interact with Amazon Vendor Central spreadsheets and speed up the order confirmation process."
     },
     "kbt_quiz": {
       "short": "A quiz that helps 5000+ users a month find their unique body type.",
