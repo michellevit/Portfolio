@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
+import MattIs32 from "./Pages/MattIs32";
 import AmazonChecker from "./Projects/AmazonChecker";
 import BoilerplateGateway from "./Projects/BoilerplateGateway";
 import CommentAnalyzer from "./Projects/CommentAnalyzer";
@@ -36,6 +37,7 @@ function App() {
               <Route path="/comment-analyzer" element={<CommentAnalyzer />} />
               <Route path="/dg-draft" element={<DGDraft />} />
               <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
+              <Route path="/matt-is-32" element={<MattIs32 />} />
               <Route
                 path="/production-planner"
                 element={<ProductionPlanner />}
