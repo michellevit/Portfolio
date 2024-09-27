@@ -1,4 +1,8 @@
+/* MattIs32.css */
+
 .birthday-container {
+  background-image: url("../static/confetti.png");
+  background-color: #00A6ED;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -8,95 +12,200 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-bottom: 0 !important;
 }
+
+.birthday-message {
+  font-size: 4rem;
+  color: #3477ff;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  animation: bounce 2s infinite;
+  -webkit-text-stroke: 2px white;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.video-container {
+  margin-top: 30px;
+  border: 5px solid #00A6ED;
+  padding: 0px;
+  background-color: #00A6ED;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.video-container iframe:hover {
+  box-shadow: 0 0 20px 10px #F9C23C;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/** Balloons **/
+
+.balloons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.balloon {
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+  border: 3px solid white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  bottom: -30px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background-color: #444; 
+}
+
+.balloon:after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 20px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+  border-radius: 50%;
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+/* Existing Balloons */
+.balloon1 {
+  background: linear-gradient(135deg, #F9C23C, #FFDD57);
+  animation-delay: 0s;
+}
+
+.balloon2 {
+  background: linear-gradient(135deg, #F70A8D, #FF9AB8);
+  animation-delay: 2s;
+}
+
+.balloon3 {
+  background: linear-gradient(135deg, #40de60, #aad5b2);
+  animation-delay: 4s;
+}
+
+/* New Balloons */
+.balloon4 {
+  background: linear-gradient(135deg, #FFC300, #FF5733);
+  animation-delay: 6s;
+}
+
+.balloon5 {
+  background: linear-gradient(135deg, #33FFF9, #33FF57);
+  animation-delay: 8s;
+}
+
+.balloon6 {
+  background: linear-gradient(135deg, #DAF7A6, #FFC300);
+  animation-delay: 10s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+
+
+/** Confetti **/
+.confetti {
+  position: fixed;
+  top: -10%;
+  animation: confettiFall 6s linear;  
+  z-index: 0;
+}
+
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg); 
+  }
+}
+
+
+
+/* Mobile Responsiveness */
+
+@media (max-width: 750px) {
+
+  .birthday-container {
+    justify-content: flex-start; 
+    padding-top: 80px; 
+  }
+
   .birthday-message {
-    font-size: 3rem;
-    color: #3477ff;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    animation: bounce 2s infinite;
+    font-size: 1.8rem; 
+    margin-bottom: 80px;
+    -webkit-text-stroke: 1px white;
   }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-  
+
   .balloons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
   }
-  
+
   .balloon {
-    width: 60px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #ffcccc;
-    position: relative;
-    animation: float 6s ease-in-out infinite;
+    width: 40px;
+    height: 50px; 
+    margin: 0 10px;
   }
-  
-  .balloon:before {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 2px;
-    height: 20px;
-    background-color: #999;
-  }
-  
-  .balloon1 {
-    background-color: #00ffae;
-    animation-delay: 0s;
-  }
-  
-  .balloon2 {
-    background-color: #00fff7;
-    animation-delay: 2s;
-  }
-  
-  .balloon3 {
-    background-color: #76eec6;
-    animation-delay: 4s;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-50px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
+
   .video-container {
-    margin-top: 30px;
-    border: 5px solid #3477ff;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin: 0 auto;
   }
-  
-  .confetti {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: url('./static/confetti.png');
-    background-size: cover;
-    opacity: 0.8;
+
+  .video-container iframe {
+    width: 100%; 
+    height: auto;
   }
-  
+}
+
