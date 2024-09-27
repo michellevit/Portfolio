@@ -23,6 +23,9 @@ function App() {
   }, [location]);
   return (
     <div className="app">
+      <Routes>
+        <Route path="/matt-is-32" element={<MattIs32 />} />
+      </Routes>
       <Navbar />
       <TransitionGroup>
         <CSSTransition key={location.key} classNames="fade" timeout={300}>
@@ -37,7 +40,6 @@ function App() {
               <Route path="/comment-analyzer" element={<CommentAnalyzer />} />
               <Route path="/dg-draft" element={<DGDraft />} />
               <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
-              <Route path="/matt-is-32" element={<MattIs32 />} />
               <Route
                 path="/production-planner"
                 element={<ProductionPlanner />}
