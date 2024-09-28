@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import "./CurrentlyReading.css";
 import booksData from './Books.json';
 
-
 const CurrentlyReading = () => {
   const [activeYears, setActiveYears] = useState([]);
 
   const { currentBook, previousBooks } = booksData;
 
-  // Group previous books by year
+  // Group previous books by year and sort them alphabetically by title
   const readingData = previousBooks.reduce((acc, book) => {
     if (!acc[book.year]) {
       acc[book.year] = [];
@@ -20,6 +19,11 @@ const CurrentlyReading = () => {
     });
     return acc;
   }, {});
+
+  // Sort books within each year alphabetically by title
+  Object.keys(readingData).forEach(year => {
+    readingData[year].sort((a, b) => a.title.localeCompare(b.title));
+  });
 
   const toggleYear = (year) => {
     if (activeYears.includes(year)) {
@@ -36,8 +40,8 @@ const CurrentlyReading = () => {
       {currentBook && (
         <div className="current-book">
           <h3>Currently Reading:</h3>
-          <a href={currentBook.url} class="current-book" target="_blank" rel="noopener noreferrer">
-            {currentBook.title} by {currentBook.author}
+          <a href={currentBook.url} className="current-book" target="_blank" rel="noopener noreferrer">
+            <strong>{currentBook.title}</strong> by {currentBook.author}
           </a>
         </div>
       )}
@@ -55,7 +59,7 @@ const CurrentlyReading = () => {
               {readingData[year].map((book, index) => (
                 <li key={index}>
                   <a href={book.url} target="_blank" rel="noopener noreferrer">
-                    {book.title} by {book.author}
+                    <strong>{book.title}</strong> by {book.author}
                   </a>
                 </li>
               ))}
