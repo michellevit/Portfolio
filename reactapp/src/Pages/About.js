@@ -5,6 +5,8 @@ import { annotate, annotationGroup } from "rough-notation";
 import { Link } from "react-router-dom";
 
 function About() {
+  const [isHomePage, setIsHomePage] = useState(true);
+  const location = useLocation();
   useEffect(() => {
     const a1 = annotate(document.querySelector("#e1"), {
       type: "highlight",
@@ -52,6 +54,19 @@ function About() {
       ag.show();
     }
   });
+
+  const updateCurrentPage = () => {
+    if (location.pathname !== "/") {
+      setIsHomePage(false);
+    }
+  };
+  useEffect(() => {
+    updateProjectText();
+    updateCurrentPage();
+    window.addEventListener("resize", updateProjectText);
+    return () => window.removeEventListener("resize", updateProjectText);
+  }, [updateCurrentPage]);
+
 
   return (
     <div className="about-container">

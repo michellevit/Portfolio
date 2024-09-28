@@ -16,10 +16,10 @@
 }
 
 .birthday-message {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #3477ff;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 200px;
   margin-bottom: 80px;
   font-family: "Comic Sans MS", cursive, sans-serif;
   animation: bounce 2s infinite;
@@ -43,8 +43,16 @@
   background-color: #00A6ED;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  max-width: 80%; 
+  margin-left: auto;
+  margin-right: auto; 
 }
 
+.video-container iframe {
+  width: 100%; 
+  height: auto; 
+  max-height: 400px; 
+}
 .video-container iframe:hover {
   box-shadow: 0 0 20px 10px #F9C23C;
   transition: box-shadow 0.3s ease-in-out;
@@ -62,7 +70,7 @@
 
 .balloon {
   width: 60px;
-  height: 80px;
+  height: 70px;
   border-radius: 50%;
   position: relative;
   animation: float 6s ease-in-out infinite;
