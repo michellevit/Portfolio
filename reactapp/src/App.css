@@ -57,7 +57,7 @@ button:hover {
 }
 
 button.dark {
-  color: white;
+  color: var(--color-accent-light);
   background-color: black;
   margin-right: 10px;
 }

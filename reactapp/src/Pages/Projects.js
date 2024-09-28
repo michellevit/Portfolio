@@ -18,7 +18,7 @@ function Projects() {
   const [projectText5, setProjectText5] = useState("");
   const [projectText6, setProjectText6] = useState("");
   const [projectText7, setProjectText7] = useState("");
-  const [isHomePage, setIsHomePage] = useState(true);
+  const [isProjectPage, setIsProjectPage] = useState(true);
   const location = useLocation();
   const updateProjectText = () => {
     const screenWidth = window.innerWidth;
@@ -42,8 +42,8 @@ function Projects() {
     }
   };
   const updateCurrentPage = () => {
-    if (location.pathname !== "/") {
-      setIsHomePage(false);
+    if (location.pathname !== "/projects") {
+      setIsProjectPage(false);
     }
   };
   useEffect(() => {
@@ -55,7 +55,7 @@ function Projects() {
 
   return (
     <div className="projects-container">
-      <h2>{isHomePage ? "Featured Projects" : "Projects"}</h2>
+      <h2>{isProjectPage ? "Projects" : "Featured Projects"}</h2>
 
       {/* Production Planner Project */}
       <div className="featured-project">
@@ -131,7 +131,7 @@ function Projects() {
       </div>
 
       {/* DG Draft Project */}
-      {!isHomePage && (
+      {isProjectPage && (
       <div className="featured-project">
         <div className="project-image">
           <img
@@ -159,7 +159,7 @@ function Projects() {
       )}
 
       {/* KBT Quiz Project */}
-      {!isHomePage && (
+      {isProjectPage && (
       <div className="featured-project">
         <div className="project-image">
           <img src={kbtPic} alt="JavaScript quiz project snapshot" />
@@ -181,10 +181,10 @@ function Projects() {
       </div>
       )}
 
-      {isHomePage && (<center><Link to="/projects"><button className="dark">View All</button></Link></center>)}
+      {!isProjectPage && (<center><Link to="/projects"><button className="dark">View All</button></Link></center>)}
       
       {/* Site Blocker Project */}
-      {!isHomePage && (
+      {isProjectPage && (
         <div className="featured-project">
           <div className="project-image">
             <img
@@ -210,7 +210,7 @@ function Projects() {
       )}
 
       {/* YouTube Comment Analyzer Project */}
-      {!isHomePage && (
+      {isProjectPage && (
         <div className="featured-project">
           <div className="project-image">
             <img src={commentAnalyzerPic} alt="Comment Analyzer project snapshot" />
