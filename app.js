@@ -16,6 +16,8 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors({ origin: 'https://michellef.dev' }));
 app.use(express.static(path.join(__dirname, 'reactapp', 'build')));
+app.use(express.static(path.join(__dirname, 'reactapp', 'public')));
+
 
 // Test route to make sure your server is working
 app.get('*', (req, res) => {

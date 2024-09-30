@@ -1,3 +1,4 @@
+// Resume.js
 import React, { useEffect } from 'react';
 
 const Resume = () => {
