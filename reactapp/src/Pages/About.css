@@ -36,7 +36,7 @@
 
 .about-text .about-contact a:hover {
  opacity: 0.5;
- color: black;
+ color: var(--color-main-dark);
  transition: all 0.3s ease-out;
 }
  
@@ -60,7 +60,7 @@
 .about-picture img {
   width: 100%;
   max-width: 275px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 var(--color-main-dark-detail), 0 6px 20px 0 var(--color-main-dark-detail);
   border-radius: 15px;
 }
 

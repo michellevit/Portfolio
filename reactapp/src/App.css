@@ -14,17 +14,17 @@
 }
 
 h2 {
-  color: black;
+  color: var(--color-main-dark);
   margin-top: 0;
 }
 
 h3 {
-  color: black;
+  color: var(--color-main-dark);
   font-size: 0.8rem;
 }
 
 p {
-  color: #555;
+  color: var(--color-main-dark);
   font-size: 0.8rem;
 }
 
@@ -45,7 +45,7 @@ a {
 button {
   width: fit-content;
   cursor: pointer;
-  border: solid 1px black;
+  border: solid 1px var(--color-main-dark);
   border-radius: 5px;
   padding: 10px 25px;
   margin: 10px auto 0 auto;
@@ -57,24 +57,24 @@ button:hover {
 }
 
 button.dark {
-  color: var(--color-accent-light);
-  background-color: black;
+  color: var(--color-main-light);
+  background-color: var(--color-main-dark);
   margin-right: 10px;
 }
 
 button.dark:hover {
-  color: black;
-  background-color: #e7cffe;
+  color: var(--color-main-dark);
+  background-color: var(--color-main-accent);
 }
 
 button.light {
   color: black;
-  background-color: white;
+  background-color: var(--color-main-light);
 }
 
 button.light:hover {
-  background-color: #e7cffe;
-  color: black;
+  background-color: var(--color-main-accent);
+  color: var(--color-main-dark);
 }
 
 .fade-enter {

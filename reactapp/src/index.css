@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Poppins:wght@300&display=swap');
 
-@import './colors.css';
-
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -21,6 +19,22 @@ body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+:root {
+  --color-main-light: #ffffff;
+  --color-main-light-detail: #f7f7f7;
+  --color-main-dark: #000000;
+  --color-main-dark-detail: #333; 
+  --accent-color-values: 	231, 207, 254;  /* Accent color (lavendar) - note: must be rgba vals due to use in projects.css */
+  --color-main-accent: rgba(var(--accent-color-values), 1); 
+
+  --color-highlight-opacity: 0.6; /* About Me highlight opacity value */
+  --color-highlight-one: rgba(231, 207, 254, var(--color-highlight-opacity)); /* About Me Highlight Color 1 */
+  --color-highlight-two: rgba(246, 199, 224, var(--color-highlight-opacity)); /* About Me Highlight Color 2 */
+  --color-highlight-three: rgba(240, 221, 129, var(--color-highlight-opacity)); /* About Me Highlight Color 3 */
+  --color-highlight-four: rgba(253, 195, 191, var(--color-highlight-opacity)); /* About Me Highlight Color 4 */
 }
 
 

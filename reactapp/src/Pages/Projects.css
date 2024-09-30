@@ -49,14 +49,10 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  color: white;
-  background-color: rgb(231, 207, 254, 0.5);
+  color: var(--color-main-light);
+  background-color: rgba(var(--accent-color-values), 0.5);
   text-shadow: #fff 1px 0 20px;
   transition: opacity 0.6s;
-}
-
-.project-image:hover .project-image-text {
-  opacity: 1;
 }
 
 .project-image:hover .project-image-text {

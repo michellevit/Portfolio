@@ -26,7 +26,7 @@
   max-width: 600px;
   min-width: 225px;
   margin: 0 auto;
-  color: #555;
+  color: var(--color-main-dark-detail);
 }
 
 .single-project-container button#git-repo {
@@ -52,12 +52,12 @@
     width: fit-content;
     margin: auto;
     margin-bottom: 20px;
-    color: #555;
+    color: var(--color-main-dark-detail);
 }
 
 .single-project-container .key-features img {
     width: 100%;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px 0 var(--color-main-dark-detail), 0 6px 20px 0 var(--color-main-dark-detail);
     border-radius: 15px;
   }
 

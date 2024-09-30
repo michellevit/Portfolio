@@ -10,46 +10,55 @@ import { Link } from "react-router-dom";
 function About() {
   const [isAboutPage, setIsAboutPage] = useState(false);
   const location = useLocation();
+
+  const rootStyles = getComputedStyle(document.documentElement);
+
+  const colorHighlightOne = rootStyles.getPropertyValue('--color-highlight-one').trim();
+  const colorHighlightTwo = rootStyles.getPropertyValue('--color-highlight-two').trim();
+  const colorHighlightThree = rootStyles.getPropertyValue('--color-highlight-three').trim();
+  const colorHighlightFour = rootStyles.getPropertyValue('--color-highlight-four').trim();
+
+
   useEffect(() => {
     const a1 = annotate(document.querySelector("#e1"), {
       type: "highlight",
-      color: "#e7cffe",
+      color: colorHighlightOne,
     });
     const a2 = annotate(document.querySelector("#e2"), {
       type: "highlight",
-      color: "#f6c7e0",
+      color: colorHighlightTwo,
     });
     const a3 = annotate(document.querySelector("#e3"), {
       type: "highlight",
-      color: "#f0dd81",
+      color: colorHighlightThree,
     });
     const a4 = annotate(document.querySelector("#e4"), {
       type: "highlight",
-      color: "#fdc3bf",
+      color: colorHighlightFour,
     });
     const a5 = annotate(document.querySelector("#e5"), {
       type: "highlight",
-      color: "#e7cffe",
+      color: colorHighlightOne,
     });
     const a6 = annotate(document.querySelector("#e6"), {
       type: "highlight",
-      color: "#f6c7e0",
+      color: colorHighlightTwo,
     });
     const a7 = annotate(document.querySelector("#e7"), {
       type: "circle",
-      color: "#f0dd81",
+      color: colorHighlightThree,
     });
     // const a8 = annotate(document.querySelector("#e8"), {
     //   type: "highlight",
-    //   color: "#fdc3bf",
+    //   color: colorHighlightFour,
     // });
     // const a9 = annotate(document.querySelector("#e9"), {
     //   type: "highlight",
-    //   color: "#e7cffe",
+    //   color: colorHighlightOne,
     // });
     // const e10 = annotate(document.querySelector("#e10"), {
     //   type: "circle",
-    //   color: "#f6c7e0",
+    //   color: colorHighlightTwo,
     // });
     const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7]);
     const screenWidth = window.innerWidth;
