@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const Resume = () => {
   useEffect(() => {
-    window.location.href = '/Michelle%20Flandin%20-%20Resume.pdf';
+    window.location.href = '/Michelle_Flandin_Resume.pdf';
   }, []);
 
   return null; 
