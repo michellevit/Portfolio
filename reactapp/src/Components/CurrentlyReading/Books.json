@@ -1,10 +1,16 @@
 {
     "currentBook": {
-      "title": "Thinking, Fast and Slow",
-      "author": "Daniel Kahneman",
-      "url": "https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow?from_search=true&from_srp=true&qid=QZ7vKCO3OH&rank=1"
+      "title": "The Beginning of Infinity",
+      "author": "David Deutsch",
+      "url": "https://www.goodreads.com/book/show/10483171-the-beginning-of-infinity"
     },
     "previousBooks": [
+      {
+        "year": 2024,
+        "title": "Thinking, Fast and Slow",
+        "author": "Daniel Kahneman",
+        "url": "https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow?from_search=true&from_srp=true&qid=QZ7vKCO3OH&rank=1"
+      },
       {
         "year": 2024,
         "title": "Faraday, Maxwell, and the Electromagnetic Field",
