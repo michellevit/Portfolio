@@ -119,7 +119,7 @@ function About() {
           </p>
           <div className="about-buttons">
             <a
-              href="https://www.linkedin.com/in/michelle-flandin/"
+              href="https://www.linkedin.com/in/mflandin/"
               target="_blank"
               rel="noopener noreferrer"
             >
