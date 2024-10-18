@@ -42,17 +42,17 @@
   
   .year-button:hover {
     background-color: #419971;
-    color: var(--color-main-dark);
+    color: var(--color-main-light);
   }
 
   .year-button.active {
     background-color: #419971; 
-    color: var(--color-main-dark);
+    color: var(--color-main-light);
   }
 
   .year-button.active:hover {
     background-color: #419971; 
-    color: var(--color-main-dark);
+    color: var(--color-main-light);
   }
   
   .book-list {
