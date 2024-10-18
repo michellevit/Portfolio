@@ -29,7 +29,7 @@
   }
   
   .year-button {
-    background-color: #419971; 
+    background-color: #41997150; 
     color: var(--color-main-light);
     border: 1px solid var(--color-main-dark-detail);
     padding: 10px;
@@ -41,17 +41,17 @@
   }
   
   .year-button:hover {
-    background-color: #41997150;
+    background-color: #419971;
     color: var(--color-main-dark);
   }
 
   .year-button.active {
-    background-color: #41997150; 
+    background-color: #419971; 
     color: var(--color-main-dark);
   }
 
   .year-button.active:hover {
-    background-color: #41997150; 
+    background-color: #419971; 
     color: var(--color-main-dark);
   }
   
