@@ -1,4 +1,4 @@
-// reactapp/src/FoxAnimation/omponents/FoxAnimation.js
+// reactapp/src/FoxAnimation/components/FoxAnimation.js
 // Note: phaser was installed for this project, to uninstall - in reactapp, run `npm uninstall phaser`
 
 import React, { useEffect } from 'react';
@@ -12,9 +12,10 @@ const FoxAnimation = () => {
     if (!game) { 
       const config = {
         type: Phaser.AUTO,
-        width: 1200,
-        height: 800,
+        width: window.innerWidth,
+        height: window.innerHeight,
         scale: {
+          mode: Phaser.Scale.FIT,
           autoCenter: Phaser.Scale.CENTER_BOTH 
         },
         scene: {
@@ -45,7 +46,7 @@ const FoxAnimation = () => {
             });
 
             // Add the fox sprite
-            const fox = this.add.sprite(400, 300, 'fox').setScale(3);
+            const fox = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'fox').setScale(3);
 
             // Chain the animations
             fox.play('full-loop'); // Start with the normal run animation
@@ -71,7 +72,17 @@ const FoxAnimation = () => {
       game = new Phaser.Game(config);
     }
 
+    // Event listener to handle screen resizing
+    const resize = () => {
+      if (game && game.scale) {
+        game.scale.resize(window.innerWidth, window.innerHeight);
+      }
+    };
+
+    window.addEventListener('resize', resize);
+
     return () => {
+      window.removeEventListener('resize', resize);
       if (game) {
         game.destroy(true, false);
         game = null;
