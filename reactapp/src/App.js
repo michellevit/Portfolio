@@ -12,7 +12,7 @@ import DGDraft from "./Projects/DGDraft";
 import KibbeQuiz from "./Projects/KibbeQuiz";
 import ProductionPlanner from "./Projects/ProductionPlanner";
 import SiteBlocker from "./Projects/SiteBlocker";
-import Resume from "./Pages/Resume";
+// import Resume from "./Pages/Resume";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -37,7 +37,7 @@ function App() {
               <Route path="/comment-analyzer" element={<CommentAnalyzer />} />
               <Route path="/dg-draft" element={<DGDraft />} />
               <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
-              <Route path="/resume" element={<Resume />} />
+              {/* <Route path="/resume" element={<Resume />} /> */}
               <Route
                 path="/production-planner"
                 element={<ProductionPlanner />}
