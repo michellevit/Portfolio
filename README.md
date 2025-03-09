@@ -1,7 +1,6 @@
 # Portfolio Website
 
 ![React Version](https://img.shields.io/badge/React-18.2.0-61dafb.svg)
-![Node.js](https://img.shields.io/badge/Node.js-v16.13.0-6da360.svg)
 ![GitHub Pages](https://img.shields.io/badge/Platform-GitHub%20Pages-222.svg)
 
 A portfolio website designed to showcase my projects, developed using React, and previously deployed on Heroku, now hosted on GitHub Pages using a static site approach.
@@ -17,7 +16,6 @@ A portfolio website designed to showcase my projects, developed using React, and
 
 ## Technologies Used<a name="technologies-used"></a>
   - React
-  - Node.js
   - GitHub Pages
 
 ## Deployment<a name="deployment"></a>

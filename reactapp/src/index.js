@@ -7,6 +7,15 @@ import FoxAnimation from "./Components/FoxAnimation/FoxAnimation";
 import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
+// Check if we were redirected from GitHub Pages' 404.html
+const urlParams = new URLSearchParams(window.location.search);
+const redirectPath = urlParams.get("redirect");
+
+// If a redirect exists, update the browser history to correct the route
+if (redirectPath) {
+  window.history.replaceState(null, "", redirectPath);
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -21,21 +30,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-
-// ORIGINAL CODE:
-
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import "./index.css";
-// import App from "./App";
-// import { BrowserRouter } from "react-router-dom";
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </React.StrictMode>
-// );
