@@ -4,31 +4,36 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import './Contact.css';
 
 function Contact() {
-  const [state, handleSubmit] = useForm("mpwpabkn");
+  const [state, handleSubmit] = useForm("mpwpabkn"); // Ensure this is your correct Formspree form ID
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   
-  const recaptchaRef = useRef();
+  const recaptchaRef = useRef(); // Reference for reCAPTCHA
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault(); 
+    event.preventDefault(); // Prevent default form submission
     setIsSubmitting(true);
-    setErrorMessage(null); 
+    setErrorMessage(null); // Reset previous errors
 
     try {
       // Manually trigger reCAPTCHA validation
       const token = await recaptchaRef.current.executeAsync();
+      recaptchaRef.current.reset(); // Reset reCAPTCHA for future submissions
+
       if (!token) {
         setErrorMessage("Please complete the reCAPTCHA.");
         setIsSubmitting(false);
         return;
       }
 
-      setRecaptchaToken(token);
+      console.log("reCAPTCHA Token:", token); // Debugging check
 
-      // Submit form with reCAPTCHA token
-      const result = await handleSubmit(event, { recaptchaToken: token });
+      // Create a new FormData object and append the reCAPTCHA token
+      const formData = new FormData(event.target);
+      formData.append("g-recaptcha-response", token);
+
+      // Submit form data with reCAPTCHA token to Formspree
+      const result = await handleSubmit(formData);
 
       if (result && result.errors) {
         console.error("Form error:", result.errors);
