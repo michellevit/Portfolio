@@ -4,22 +4,28 @@ import "./index.css";
 import App from "./App";
 import MattIs32 from "./Components/MattIs32/MattIs32";
 import FoxAnimation from "./Components/FoxAnimation/FoxAnimation";
-import { Route, Routes } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, useNavigate } from "react-router-dom";
 
-// Check if we were redirected from GitHub Pages' 404.html
-const urlParams = new URLSearchParams(window.location.search);
-const redirectPath = urlParams.get("redirect");
-
-// If a redirect exists, update the browser history to correct the route
-if (redirectPath) {
-  window.history.replaceState(null, "", redirectPath);
+// Function to fix GitHub Pages 404 redirects
+function RedirectHandler() {
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectPath = urlParams.get("redirect");
+    
+    if (redirectPath) {
+      navigate(redirectPath, { replace: true });
+    }
+  }, []);
+  
+  return null;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <RedirectHandler />
       <Routes>
         {/* Route for MattIs32 - will show only this component */}
         <Route path="/matt-is-32" element={<MattIs32 />} />

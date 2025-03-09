@@ -1,45 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQZSMBY1FW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-RQZSMBY1FW');
   </script>
+
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>Michelle Flandin | Portfolio</title>
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh"></script>
 
   <!-- Redirect script for GitHub Pages -->
   <script>
     (function() {
-      var redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect !== location.href) {
-        history.replaceState(null, null, redirect);
+      var pathname = window.location.pathname;
+      if (pathname !== "/" && !pathname.startsWith("/index.html")) {
+        var newUrl = window.location.origin + "/?redirect=" + pathname;
+        window.location.replace(newUrl);
       }
     })();
-
-    if (window.location.pathname !== "/") {
-      window.location.replace("/#" + window.location.pathname);
-    }
   </script>
 </head>
-
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 </body>
-
 </html>
