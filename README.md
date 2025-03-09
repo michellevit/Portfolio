@@ -32,12 +32,13 @@ A portfolio website designed to showcase my projects, developed using React, and
 
 ```powershell
 cd *project root*
-git add .
-git commit -m "Commit message"
-git push origin main
 cd reactapp
 npm run build
 npm run deploy
+cd ..
+git add .
+git commit -m "Commit message"
+git push origin main
 ```
 
 - **Modifying the Deployment Setup**:

@@ -11,42 +11,46 @@ function Contact() {
   const recaptchaRef = useRef(); // Reference for reCAPTCHA
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
     setIsSubmitting(true);
-    setErrorMessage(null); // Reset previous errors
-
+    setErrorMessage(null);
+  
     try {
+      console.log("🔹 reCAPTCHA execution starting...");
+  
       // Manually trigger reCAPTCHA validation
       const token = await recaptchaRef.current.executeAsync();
-      recaptchaRef.current.reset(); // Reset reCAPTCHA for future submissions
-
+      console.log("✅ reCAPTCHA Token:", token);
+  
       if (!token) {
         setErrorMessage("Please complete the reCAPTCHA.");
         setIsSubmitting(false);
         return;
       }
-
-      console.log("reCAPTCHA Token:", token); // Debugging check
-
-      // Create a new FormData object and append the reCAPTCHA token
+  
+      recaptchaRef.current.reset(); // Reset reCAPTCHA for future submissions
+  
+      // Create a new FormData object and append reCAPTCHA token
       const formData = new FormData(event.target);
       formData.append("g-recaptcha-response", token);
-
-      // Submit form data with reCAPTCHA token to Formspree
+  
+      console.log("🚀 Sending form data:", formData);
+  
+      // Submit form with reCAPTCHA token to Formspree
       const result = await handleSubmit(formData);
-
+  
       if (result && result.errors) {
-        console.error("Form error:", result.errors);
+        console.error("❌ Form error:", result.errors);
         setErrorMessage("There was an issue with the form submission.");
       }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("❌ Submission error:", error);
       setErrorMessage("Failed to send the message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
-
+  
   if (state.succeeded) {
     return (
       <div className="contact-container">
