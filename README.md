@@ -30,14 +30,15 @@ A portfolio website designed to showcase my projects, developed using React, and
 ## How To Update the GitHub Pages App<a name="how-to-update"></a>
 * Note: When you run npm run deploy using the gh-pages package, this script handles deploying the contents of your build directory directly to the gh-pages branch on GitHub. This branch is specifically used for serving your site on GitHub Pages, and the deployment process does not typically require you to manually push changes to this branch. The gh-pages tool automates this for you.
 
-- **Local Changes**:
-  1. Navigate to the `reactapp` directory within the project.
-  2. Make necessary changes to the codebase.
-  3. Run `npm run build` to create an optimized production build.
-
-- **Deploying Changes**:
-  1. After building the project, run `npm run deploy` to update the static site on GitHub Pages.
-  2. This script pushes the build directory to the `gh-pages` branch, automatically updating the hosted website.
+```powershell
+cd *project root*
+git add .
+git commit -m "Commit message"
+git push origin main
+cd reactapp
+npm run build
+npm run deploy
+```
 
 - **Modifying the Deployment Setup**:
   1. To change the GitHub Pages configuration, update the `homepage` in `package.json` to reflect the new repository path or custom domain.
