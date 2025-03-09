@@ -88,6 +88,7 @@ function Contact() {
 
         <button type="submit" id="contact-form" disabled={isSubmitting} className="dark">
           {isSubmitting ? 'Sending...' : 'Send'}
+          onClick={() => console.log("🚀 Submit Button Clicked!")}
         </button>
       </form>
     </div>
