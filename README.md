@@ -2,66 +2,50 @@
 
 ![React Version](https://img.shields.io/badge/React-18.2.0-61dafb.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-v16.13.0-6da360.svg)
-![Heroku](https://img.shields.io/badge/Platform-Heroku-6762a6.svg)
+![GitHub Pages](https://img.shields.io/badge/Platform-GitHub%20Pages-222.svg)
 
-A portfolio website designed to showcase my projects, developed using Node.js and React, and deployed on Heroku.
+A portfolio website designed to showcase my projects, developed using React, and previously deployed on Heroku, now hosted on GitHub Pages using a static site approach.
 
-
-<a href="https://michellef.dev" target="_blank"><img src="https://img.shields.io/badge/Website-6da360?style=for-the-badge&logo=node.js"></a>
-
+<a href="https://michellef.dev" target="_blank"><img src="https://img.shields.io/badge/Website-michellef.dev-6da360?style=for-the-badge&logo=github"></a>
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
-- [PRE-HEROKU: How To Deploy on DreamHost](#how-to-deploy)
-- [How To Update the App via Heroku](#how-to-update)
+- [Deployment](#deployment)
+- [How To Update the GitHub Pages App](#how-to-update)
 - [Troubleshooting](#troubleshooting)
 - [Credits](#credits)
-
 
 ## Technologies Used<a name="technologies-used"></a>
   - React
   - Node.js
-  - Heroku
+  - GitHub Pages
 
+## Deployment<a name="deployment"></a>
+### Previous Hosting on Heroku
+- **NOTE:** This app was previously hosted on Heroku with backend capabilities.
+- Heroku provided a dynamic server environment, which supported features like server-side rendering and API routes.
 
-## How To Deploy on DreamHost<a name="how-to-deploy"></a>
-- **NOTE: This app is now hosted on Heroku, not DreamHost. Passenger support was removed**
-- Register domain and add hosting
-- Enable Passenger + Node.js (Domain Dashboard > Additional Settings)
-- Login to SSH + install nvm (node version manager)
-  - https://help.DreamHost.com/hc/en-us/articles/360029083351-Installing-a-custom-version-of-NVM-and-Node-js
-  - to login to the SSH, open the terminal and enter: `shh username@websitename`
-    - username+password are in DreamHost domain dashboard 'Manage Your Site' section
-- In SSH, install node (Passenger only supports up to v.13.14.0)
-  - after installing, run `npm install` in the 'app' folder
-  - https://help.DreamHost.com/hc/en-us/articles/115004415628-Node-js-installing-packages
-- In cPanel, go to 'website name* folder -> public folder -> add .htaccess file
-- In cPanel home/username -> add app folder (must be called 'app') with the node.js project + react build file inside
-- In SSH add '.credentials' folder (with CHMOD 700) to home folder (e.g. cd ~)
-- Add GOOGLE_APPLICATION_CREDENTIALS file to .credentials folder (set CHMOD 700)
-  - For this you will need to create a project in console.cloud.google.com in the Security -> ReCapctha Enterprise section
-  - Then you will need to go to APIs and Services to enable/create the API (and restrict the key to a specific domain)
-  - Download the Google application credentials file (.json file) -> Google Console -> IAM and admin -> Service Accounts -> Create Service Account -> Add key -> create new key -> save
-- Add the google application credentials file to the .credentials folder (using scp) with chmod 700
-- Make sure the react Contact.js has the correct recaptcha site key
-  - Make sure the .env has the correct environment variables and that the .env file chmod is 600
-- Add `export GOOGLE_APPLICATION_CREDENTIALS='/path/to/file'` to the .bashrc
-  - Add the following to .bashrc (by going 'cd~' then nano '.bashrc'):
-    - `export NVM_DIR="$HOME/.nvm"`
-    - Load nvm: `[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"`
-    - Loads nvm bash_completion: `[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"`
+### Current Hosting on GitHub Pages
+- The website is now statically hosted using GitHub Pages for more cost-efficient hosting.
+- GitHub Pages supports static sites, which prompted the conversion of all dynamic backend functionality to use client-side solutions or third-party services like Formspree for form handling.
 
+## How To Update the GitHub Pages App<a name="how-to-update"></a>
+- **Local Changes**:
+  1. Navigate to the `reactapp` directory within the project.
+  2. Make necessary changes to the codebase.
+  3. Run `npm run build` to create an optimized production build.
 
-## How To Update the App via Heroku<a name="how-to-update"></a>
-- Just make the changes to the files, and push to GitHub
-  - The app is connected to Heroku and automatically deploys after every push to main
-  - The reactapp is built via Heroku's Nodejs buildpack (which runs the 'heroku-postbuild' script in the root folder's package.json)
+- **Deploying Changes**:
+  1. After building the project, run `npm run deploy` to update the static site on GitHub Pages.
+  2. This script pushes the build directory to the `gh-pages` branch, automatically updating the hosted website.
 
+- **Modifying the Deployment Setup**:
+  1. To change the GitHub Pages configuration, update the `homepage` in `package.json` to reflect the new repository path or custom domain.
+  2. Ensure that the `gh-pages` package is configured correctly in the `reactapp/package.json`.
 
 ## Troubleshooting<a name="troubleshooting"></a>
-- Reference -> [How to Safely use Google Application Credentials on Heroku](https://learnings.desipenguin.com/post/goog-cred-heroku/)
-
-
+- Issues with GitHub Pages deployment can often be traced back to path issues in the `homepage` field of `package.json` or DNS settings for custom domains.
+- Check the console in the developer tools of your browser for any 404 errors, which typically indicate missing files or incorrect paths.
 
 ## Credits<a name="credits"></a>
 Michelle Flandin

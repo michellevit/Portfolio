@@ -1,3 +1,6 @@
+// Note: this app is now using Formspree for the contact form, and is deployed via GitHub pages which does not support backends.
+
+
 require('dotenv').config();
 const express = require('express');
 const path = require('path');

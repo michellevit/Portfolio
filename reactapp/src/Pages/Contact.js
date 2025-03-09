@@ -1,110 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import './Contact.css';
-/* global grecaptcha */
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    honeypot: '', 
-  });
-  const [recaptchaToken, setRecaptchaToken] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [successClass, setSuccessClass] = useState('');
-  const [showLinkedIn, setShowLinkedIn] = useState(false);
-  const [isSending, setIsSending] = useState(false);
+  const [state, handleSubmit] = useForm("mpwpabkn");
   
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (formData.honeypot || isSending) { 
-      return;
-    }
-    setIsSending(true);
-    grecaptcha.enterprise.ready(async () => {
-      try {
-        // Generate a new reCAPTCHA token
-        const newToken = await grecaptcha.enterprise.execute('6Lcz8AMpAAAAAOQKiyLWE8Rssx6mQvuGFdsM8sWh', { action: 'submit' });
-        setRecaptchaToken(newToken);
-
-        // Post form data with the new reCAPTCHA token
-        const response = await axios.post('/api/sendmail', {
-          ...formData,
-          recaptchaToken: newToken,
-        });
-
-        // Handling success response
-        setSuccessMessage(<span>Thank you - your message has been sent successfully.<br />I will get back to you as soon as possible.</span>);
-        setSuccessClass('success-message');
-        setFormData({ name: '', email: '', message: '' }); 
-        setShowLinkedIn(false);
-        setRecaptchaToken("");
-
-      } catch (error) {
-        console.error('Error sending message:', error);
-        setSuccessMessage(<span>The message failed to send.<br />Please try contacting me through LinkedIn.</span>);
-        setSuccessClass('success-message error-message');
-        setShowLinkedIn(true);
-      } finally {
-        setIsSending(false);
-      }
-    });
-  };
+  if (state.succeeded) {
+      return (
+        <div className="contact-container">
+          <h2>Contact Me</h2>
+          <p>Thank you for your message! I will get back to you as soon as possible.</p>
+        </div>
+      );
+  }
 
   return (
     <div className="contact-container">
       <h2>Contact Me</h2>
       <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Your Name:</label>
         <input
-          type="text"
-          name="honeypot"
-          style={{ display: "none" }}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
+          id="name"
+          type="text" 
           name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
           required
         />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
+
+        <label htmlFor="email">Email Address:</label>
         <input
-          type="email"
+          id="email"
+          type="email" 
           name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
           required
         />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
+
+        <label htmlFor="message">Your Message:</label>
         <textarea
+          id="message"
           name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
           required
         />
-        <button type="submit" className={`dark ${isSending ? 'sending' : ''}`} id="contact-form">
-          {isSending ? 'Sending...' : 'Send'}
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
+
+        <button type="submit" disabled={state.submitting}>
+          {state.submitting ? 'Sending...' : 'Send'}
         </button>
-        </form>
-        {successMessage && <div className={successClass}>{successMessage}</div>}
-        {showLinkedIn && (
-          <div className="linkedInButton">
-            <a
-              href="https://www.linkedin.com/in/michelle-f-ba0a5017b/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button type="button" className="light">LinkedIn</button>
-            </a>
-          </div>
-        )}
-      
+      </form>
     </div>
   );
 }
