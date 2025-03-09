@@ -26,8 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build && cp public/CNAME build/CNAME",
+    "deploy": "gh-pages -d build -b gh-pages && gh api repos/:owner/:repo/pages --method PATCH --field cname=michellef.dev"
   },
   "eslintConfig": {
     "extends": [
