@@ -13,7 +13,7 @@ function Contact() {
         </div>
       );
   }
-
+  
   return (
     <div className="contact-container">
       <h2>Contact Me</h2>
@@ -44,7 +44,7 @@ function Contact() {
         />
         <ValidationError prefix="Message" field="message" errors={state.errors} />
 
-        <button type="submit" disabled={state.submitting}>
+        <button type="submit" id="contact-form" disabled={state.submitting} className="dark">
           {state.submitting ? 'Sending...' : 'Send'}
         </button>
       </form>

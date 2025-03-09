@@ -30,6 +30,8 @@ A portfolio website designed to showcase my projects, developed using React, and
 - GitHub Pages supports static sites, which prompted the conversion of all dynamic backend functionality to use client-side solutions or third-party services like Formspree for form handling.
 
 ## How To Update the GitHub Pages App<a name="how-to-update"></a>
+* Note: When you run npm run deploy using the gh-pages package, this script handles deploying the contents of your build directory directly to the gh-pages branch on GitHub. This branch is specifically used for serving your site on GitHub Pages, and the deployment process does not typically require you to manually push changes to this branch. The gh-pages tool automates this for you.
+
 - **Local Changes**:
   1. Navigate to the `reactapp` directory within the project.
   2. Make necessary changes to the codebase.
