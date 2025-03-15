@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.097cd49b.css",
-    "main.js": "/static/js/main.f82638b3.js",
+    "main.js": "/static/js/main.4768695e.js",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.408922bab782ebecf34e.jpg",
     "static/media/confetti.png": "/static/media/confetti.c0bf3f2d7ceda745567f.png",
     "static/media/huggingface-logo.png": "/static/media/huggingface-logo.680c5d04be8df645a376.png",
@@ -19,15 +19,15 @@
     "static/media/python-logo.png": "/static/media/python-logo.632369df831d16241b59.png",
     "static/media/django-logo.png": "/static/media/django-logo.4c677b78d12c96ea7add.png",
     "static/media/nodejs-logo.svg": "/static/media/nodejs-logo.dd47e26ed1d7dddf018e5cbffc40f76d.svg",
-    "static/media/nextjs-logo.svg": "/static/media/nextjs-logo.f9cae5fd7b181274067d1a5e255da274.svg",
-    "static/media/rails-logo.svg": "/static/media/rails-logo.3648688df5f5cb1b83291c11f040e1c6.svg",
+    "static/media/nextjs-logo.svg": "/static/media/nextjs-logo.992ab5fe5751f8c93e35d28c8b1df15a.svg",
+    "static/media/rails-logo.svg": "/static/media/rails-logo.a7b3954d96cd029936268d781c0aed61.svg",
     "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.34bbf5dc3b085a801732fcfa2ec6183f.svg",
     "index.html": "/index.html",
     "main.097cd49b.css.map": "/static/css/main.097cd49b.css.map",
-    "main.f82638b3.js.map": "/static/js/main.f82638b3.js.map"
+    "main.4768695e.js.map": "/static/js/main.4768695e.js.map"
   },
   "entrypoints": [
     "static/css/main.097cd49b.css",
-    "static/js/main.f82638b3.js"
+    "static/js/main.4768695e.js"
   ]
 }

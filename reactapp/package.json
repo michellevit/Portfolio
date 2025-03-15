@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "https://michellevit.github.io/Portfolio-Website", 
+  "homepage": "https://michellef.dev",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "phaser": "^3.86.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-confetti": "^6.4.0",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^3.1.0",
     "react-router-dom": "^6.17.0",
