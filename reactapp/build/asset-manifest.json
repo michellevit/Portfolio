@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.097cd49b.css",
-    "main.js": "/static/js/main.4768695e.js",
+    "main.css": "/static/css/main.f7e7a65c.css",
+    "main.js": "/static/js/main.49e788ca.js",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.408922bab782ebecf34e.jpg",
+    "static/media/godel.png": "/static/media/godel.a8590ceb485f9ba90b44.png",
     "static/media/confetti.png": "/static/media/confetti.c0bf3f2d7ceda745567f.png",
+    "static/media/world.jpg": "/static/media/world.a4f910020b97aaa931da.jpg",
     "static/media/huggingface-logo.png": "/static/media/huggingface-logo.680c5d04be8df645a376.png",
+    "static/media/wittgenstein.png": "/static/media/wittgenstein.c68462f0d135814312f5.png",
     "static/media/comment-analyzer-mockup.jpg": "/static/media/comment-analyzer-mockup.aa5de9738baa41be49ca.jpg",
     "static/media/amazon-checker-mockup.jpg": "/static/media/amazon-checker-mockup.2f00a49f89b0d351f3b0.jpg",
     "static/media/production-planner-mockup.jpg": "/static/media/production-planner-mockup.b50d611667748b0670eb.jpg",
@@ -14,7 +17,10 @@
     "static/media/site-blocker-mockup.jpg": "/static/media/site-blocker-mockup.06d6313f8b19e4ced3ab.jpg",
     "static/media/kbt-mockup.jpg": "/static/media/kbt-mockup.dbe0f141eae604a4c624.jpg",
     "static/media/pyinstaller-logo.png": "/static/media/pyinstaller-logo.71bf737bf6255ee24b51.png",
+    "static/media/egg1.png": "/static/media/egg1.abc63ae2522b2994ca6a.png",
     "static/media/javascript-logo.png": "/static/media/javascript-logo.66a3dfbc82fdbf70e8a6.png",
+    "static/media/egg2.png": "/static/media/egg2.1939dc67e7ba427c06b4.png",
+    "static/media/egg3.png": "/static/media/egg3.6e24d5582c198dbd1ec0.png",
     "static/media/wordpress-logo.png": "/static/media/wordpress-logo.264bf46407c43b948d74.png",
     "static/media/python-logo.png": "/static/media/python-logo.632369df831d16241b59.png",
     "static/media/django-logo.png": "/static/media/django-logo.4c677b78d12c96ea7add.png",
@@ -23,11 +29,11 @@
     "static/media/rails-logo.svg": "/static/media/rails-logo.a7b3954d96cd029936268d781c0aed61.svg",
     "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.34bbf5dc3b085a801732fcfa2ec6183f.svg",
     "index.html": "/index.html",
-    "main.097cd49b.css.map": "/static/css/main.097cd49b.css.map",
-    "main.4768695e.js.map": "/static/js/main.4768695e.js.map"
+    "main.f7e7a65c.css.map": "/static/css/main.f7e7a65c.css.map",
+    "main.49e788ca.js.map": "/static/js/main.49e788ca.js.map"
   },
   "entrypoints": [
-    "static/css/main.097cd49b.css",
-    "static/js/main.4768695e.js"
+    "static/css/main.f7e7a65c.css",
+    "static/js/main.49e788ca.js"
   ]
 }

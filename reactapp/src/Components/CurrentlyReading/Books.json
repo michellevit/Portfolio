@@ -6,6 +6,18 @@
     },
     "previousBooks": [
       {
+        "year": 2025,
+        "title": "Tomorrow, and Tomorrow, and Tomorrow",
+        "author": "Gabrielle Zevin",
+        "url": "https://www.goodreads.com/book/show/58784475-tomorrow-and-tomorrow-and-tomorrow"
+      },
+      {
+        "year": 2025,
+        "title": "The Little Prince",
+        "author": "Antoine de Saint-Exupéry",
+        "url": "https://www.goodreads.com/book/show/157993.The_Little_Prince"
+      },
+      {
         "year": 2024,
         "title": "Thinking, Fast and Slow",
         "author": "Daniel Kahneman",
