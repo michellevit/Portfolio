@@ -20,13 +20,13 @@ function ProductionPlanner() {
         <div className='introduction'>
         {/* <div><img src={projectPic} alt="Production Planner project snapshot" /></div> */}
         <div>{projectDescriptions.production_planner.long}</div>
-        <a
+        {/* <a
             href="https://production-planner-demo.michellef.dev"
             target="_blank"
             rel="noopener noreferrer"
           >
           <button id="git-repo" className="dark">Try Demo</button>
-          </a>
+          </a> */}
           <a
             href="https://github.com/michellevit/Production-Planner"
             target="_blank"

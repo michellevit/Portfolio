@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f7e7a65c.css",
-    "main.js": "/static/js/main.49e788ca.js",
+    "main.css": "/static/css/main.c92ff55e.css",
+    "main.js": "/static/js/main.50fab3a5.js",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.408922bab782ebecf34e.jpg",
     "static/media/godel.png": "/static/media/godel.a8590ceb485f9ba90b44.png",
     "static/media/confetti.png": "/static/media/confetti.c0bf3f2d7ceda745567f.png",
@@ -29,11 +29,11 @@
     "static/media/rails-logo.svg": "/static/media/rails-logo.a7b3954d96cd029936268d781c0aed61.svg",
     "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.34bbf5dc3b085a801732fcfa2ec6183f.svg",
     "index.html": "/index.html",
-    "main.f7e7a65c.css.map": "/static/css/main.f7e7a65c.css.map",
-    "main.49e788ca.js.map": "/static/js/main.49e788ca.js.map"
+    "main.c92ff55e.css.map": "/static/css/main.c92ff55e.css.map",
+    "main.50fab3a5.js.map": "/static/js/main.50fab3a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7e7a65c.css",
-    "static/js/main.49e788ca.js"
+    "static/css/main.c92ff55e.css",
+    "static/js/main.50fab3a5.js"
   ]
 }
