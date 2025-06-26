@@ -7,7 +7,6 @@
   padding-bottom: 50px;
 }
 
-
 .main-container {
   margin: 30px 7%;
   height: fit-content;
@@ -41,8 +40,8 @@ a {
   margin-bottom: 75px;
 }
 
-
 button {
+  font-family: inherit;
   width: fit-content;
   cursor: pointer;
   border: solid 1px var(--color-main-dark);
@@ -96,14 +95,10 @@ button.light:hover {
   transition: opacity 300ms ease-in;
 }
 
-
 @media screen and (max-width: 500px) {
-
   h2 {
     font-size: 1.2rem;
   }
-
-
 }
 
 @media screen and (min-width: 800px) {
@@ -112,4 +107,3 @@ button.light:hover {
     justify-content: center;
   }
 }
-  

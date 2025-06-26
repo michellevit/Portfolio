@@ -6,48 +6,54 @@ import profilePic from "../static/ProfilePic.jpg";
 import { annotate, annotationGroup } from "rough-notation";
 import { Link } from "react-router-dom";
 
-
 function About() {
   const [isAboutPage, setIsAboutPage] = useState(false);
   const location = useLocation();
 
   const rootStyles = getComputedStyle(document.documentElement);
 
-  const colorHighlightOne = rootStyles.getPropertyValue('--color-highlight-one').trim();
-  const colorHighlightTwo = rootStyles.getPropertyValue('--color-highlight-two').trim();
-  const colorHighlightThree = rootStyles.getPropertyValue('--color-highlight-three').trim();
-  const colorHighlightFour = rootStyles.getPropertyValue('--color-highlight-four').trim();
-
+  const colorHighlightOne = rootStyles
+    .getPropertyValue("--color-highlight-one")
+    .trim();
+  const colorHighlightTwo = rootStyles
+    .getPropertyValue("--color-highlight-two")
+    .trim();
+  const colorHighlightThree = rootStyles
+    .getPropertyValue("--color-highlight-three")
+    .trim();
+  const colorHighlightFour = rootStyles
+    .getPropertyValue("--color-highlight-four")
+    .trim();
 
   useEffect(() => {
-    const a1 = annotate(document.querySelector("#e1"), {
-      type: "highlight",
-      color: colorHighlightOne,
-    });
-    const a2 = annotate(document.querySelector("#e2"), {
-      type: "highlight",
-      color: colorHighlightTwo,
-    });
-    const a3 = annotate(document.querySelector("#e3"), {
-      type: "highlight",
-      color: colorHighlightThree,
-    });
+    // const a1 = annotate(document.querySelector("#e1"), {
+    //   type: "highlight",
+    //   color: colorHighlightOne,
+    // });
+    // const a2 = annotate(document.querySelector("#e2"), {
+    //   type: "highlight",
+    //   color: colorHighlightTwo,
+    // });
+    // const a3 = annotate(document.querySelector("#e3"), {
+    //   type: "highlight",
+    //   color: colorHighlightThree,
+    // });
     const a4 = annotate(document.querySelector("#e4"), {
       type: "highlight",
       color: colorHighlightFour,
     });
-    const a5 = annotate(document.querySelector("#e5"), {
-      type: "highlight",
-      color: colorHighlightOne,
-    });
-    const a6 = annotate(document.querySelector("#e6"), {
-      type: "highlight",
-      color: colorHighlightTwo,
-    });
-    const a7 = annotate(document.querySelector("#e7"), {
-      type: "circle",
-      color: colorHighlightThree,
-    });
+    // const a5 = annotate(document.querySelector("#e5"), {
+    //   type: "highlight",
+    //   color: colorHighlightOne,
+    // });
+    // const a6 = annotate(document.querySelector("#e6"), {
+    //   type: "highlight",
+    //   color: colorHighlightTwo,
+    // });
+    // const a7 = annotate(document.querySelector("#e7"), {
+    //   type: "circle",
+    //   color: colorHighlightThree,
+    // });
     // const a8 = annotate(document.querySelector("#e8"), {
     //   type: "highlight",
     //   color: colorHighlightFour,
@@ -60,7 +66,8 @@ function About() {
     //   type: "circle",
     //   color: colorHighlightTwo,
     // });
-    const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7]);
+    // const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7]);
+    const ag = annotationGroup([a4]);
     const screenWidth = window.innerWidth;
     if (screenWidth >= 0) {
       ag.show();
@@ -79,11 +86,23 @@ function About() {
     <div className="about-container">
       <div className="about-main-content">
         <div className="about-text">
-          <h2>
-            Hello! I'm Michelle, a <span id="e1">developer</span> based in
-            Vancouver.
-          </h2>
+          <h2>Hello! I'm Michelle.</h2>
+          <p>I like to code.</p>
           <p>
+            Currently working on:{" "}
+            <a
+              href="https://fennec.michellef.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span id="e4">this animation</span>.
+            </a>
+          </p>
+          <p>
+            Favourite project:{" "}
+            <Link to="/production-planner">Production Planner</Link>.
+          </p>
+          {/* <p>
             I first encountered computer science at <span id="e1">UBC</span>,
             and though my path led me into{" "}
             <span id="e2">administration and accounting</span>, I found myself
@@ -116,23 +135,21 @@ function About() {
               </li>
             </span>{" "}
             if you have any questions about my work.
-          </p>
+          </p> */}
           <div className="about-buttons">
-            <a
-              href="https://www.linkedin.com/in/mflandin/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button id="linked" className="dark">
-                View LinkedIn
-              </button>
-            </a>
             <a
               href="https://github.com/michellevit"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="light">View GitHub</button>
+              <button className="dark">GitHub</button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mflandin/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="light">LinkedIn</button>
             </a>
           </div>
         </div>
