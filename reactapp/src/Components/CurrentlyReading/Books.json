@@ -1,347 +1,345 @@
 {
-    "currentBook": {
-      "title": "The Beginning of Infinity",
-      "author": "David Deutsch",
-      "url": "https://www.goodreads.com/book/show/10483171-the-beginning-of-infinity"
+  "currentBook": {
+    "title": "Snow Crash",
+    "author": "Neal Stephenson",
+    "url": "https://www.goodreads.com/book/show/40651883-snow-crash"
+  },
+  "previousBooks": [
+    {
+      "year": 2025,
+      "title": "Tomorrow, and Tomorrow, and Tomorrow",
+      "author": "Gabrielle Zevin",
+      "url": "https://www.goodreads.com/book/show/58784475-tomorrow-and-tomorrow-and-tomorrow"
     },
-    "previousBooks": [
-      {
-        "year": 2025,
-        "title": "Tomorrow, and Tomorrow, and Tomorrow",
-        "author": "Gabrielle Zevin",
-        "url": "https://www.goodreads.com/book/show/58784475-tomorrow-and-tomorrow-and-tomorrow"
-      },
-      {
-        "year": 2025,
-        "title": "The Little Prince",
-        "author": "Antoine de Saint-Exupéry",
-        "url": "https://www.goodreads.com/book/show/157993.The_Little_Prince"
-      },
-      {
-        "year": 2024,
-        "title": "Thinking, Fast and Slow",
-        "author": "Daniel Kahneman",
-        "url": "https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow?from_search=true&from_srp=true&qid=QZ7vKCO3OH&rank=1"
-      },
-      {
-        "year": 2024,
-        "title": "Faraday, Maxwell, and the Electromagnetic Field",
-        "author": "Nancy Forbes and Basil Mahon",
-        "url": "https://www.goodreads.com/book/show/18240286-faraday-maxwell-and-the-electromagnetic-field"
-      },
-      {
-        "year": 2024,
-        "title": "The Innovator's Dilemma",
-        "author": "Clayton M. Christensen",
-        "url": "https://www.goodreads.com/book/show/2615.The_Innovator_s_Dilemma?from_search=true&from_srp=true&qid=dTrdIfm4j0&rank=1"
-      },
-      {
-        "year": 2024,
-        "title": "The Song of Achilles",
-        "author": "Madeline Miller",
-        "url": "https://www.goodreads.com/book/show/13623848-the-song-of-achilles"
-      },
-      {
-        "year": 2023,
-        "title": "Titan",
-        "author": "Ron Chernow",
-        "url": "https://www.goodreads.com/book/show/16121.Titan"
-      },
-      {
-        "year": 2023,
-        "title": "The E-myth Revisited",
-        "author": "Michael E. Gerber",
-        "url": "https://www.goodreads.com/book/show/81948.The_E_myth_Revisited"
-      },
-      {
-        "year": 2023,
-        "title": "Culture Series: Consider Phlebas",
-        "author": "Iain M. Banks",
-        "url": "https://www.goodreads.com/book/show/8935689-consider-phlebas"
-      },
-      {
-        "year": 2023,
-        "title": "Culture Series: Player of Games",
-        "author": "Iain M. Banks",
-        "url": "https://www.goodreads.com/book/show/18630.The_Player_of_Games"
-      },
-      {
-        "year": 2023,
-        "title": "The Brothers Karamazov",
-        "author": "Dostoevsky",
-        "url": "https://www.goodreads.com/book/show/4934.The_Brothers_Karamazov"
-      },
-      {
-        "year": 2022,
-        "title": "Self Reliance",
-        "author": "Ralph Waldo Emerson",
-        "url": "https://www.goodreads.com/book/show/123845.Self_Reliance_and_Other_Essays"
-      },
-      {
-        "year": 2022,
-        "title": "Siddhartha",
-        "author": "Hermann Hesse",
-        "url": "https://www.goodreads.com/book/show/13537306-sidhartha"
-      },
-      {
-        "year": 2022,
-        "title": "Where the Crawdads Sing",
-        "author": "Delia Owens",
-        "url": "https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing"
-      },
-      {
-        "year": 2022,
-        "title": "Think Again",
-        "author": "Adam M. Grant",
-        "url": "https://www.goodreads.com/book/show/55539565-think-again"
-      },
-      {
-        "year": 2022,
-        "title": "The Changing World Order",
-        "author": "Ray Dalio",
-        "url": "https://www.goodreads.com/book/show/52962238-principles-for-dealing-with-the-changing-world-order"
-      },
-      {
-        "year": 2022,
-        "title": "The Great Depression: A Diary",
-        "author": "Benjamin Roth",
-        "url": "https://www.goodreads.com/book/show/6601224-the-great-depression"
-      },
-      {
-        "year": 2022,
-        "title": "Walden",
-        "author": "Henry David Thoreau",
-        "url": "https://www.goodreads.com/book/show/16902.Walden"
-      },
-      {
-        "year": 2022,
-        "title": "The Death of Ivan Ilych and Other Stories",
-        "author": "Leo Tolstoy",
-        "url": "https://www.goodreads.com/book/show/655.The_Death_of_Ivan_Ilych_and_Other_Stories"
-      },
-      {
-        "year": 2021,
-        "title": "Liftoff",
-        "author": "Eric Berger",
-        "url": "https://www.goodreads.com/book/show/53402132-liftoff"
-      },
-      {
-        "year": 2021,
-        "title": "Life 3.0",
-        "author": "Max Tegmark",
-        "url": "https://www.goodreads.com/book/show/34272565-life-3-0"
-      },
-      {
-        "year": 2021,
-        "title": "Meditations",
-        "author": "Marcus Aurelius",
-        "url": "https://www.goodreads.com/book/show/30659.Meditations"
-      },
-      {
-        "year": 2021,
-        "title": "Einstein",
-        "author": "Walter Isaacson",
-        "url": "https://www.goodreads.com/book/show/10884.Einstein"
-      },
-      {
-        "year": 2021,
-        "title": "Surely You're Joking, Mr. Feynman!",
-        "author": "Richard Feynman",
-        "url": "https://www.goodreads.com/book/show/35167685-surely-you-re-joking-mr-feynman"
-      },
-      {
-        "year": 2021,
-        "title": "On the Shortness of Life",
-        "author": "Seneca",
-        "url": "https://www.goodreads.com/book/show/97412.On_the_Shortness_of_Life"
-      },
-      {
-        "year": 2021,
-        "title": "What Do You Care What Other People Think?",
-        "author": "Richard Feynman",
-        "url": "https://www.goodreads.com/book/show/35167718-what-do-you-care-what-other-people-think"
-      },
-      {
-        "year": 2021,
-        "title": "A Little History of the World",
-        "author": "E.H. Gombrich",
-        "url": "https://www.goodreads.com/book/show/61505.A_Little_History_of_the_World"
-      },
-      {
-        "year": 2021,
-        "title": "The Secret History",
-        "author": "Donna Tartt",
-        "url": "https://www.goodreads.com/book/show/29044.The_Secret_History"
-      },
-      {
-        "year": 2021,
-        "title": "Anna Karenina",
-        "author": "Leo Tolstoy",
-        "url": "https://www.goodreads.com/book/show/15823480-anna-karenina"
-      },
-      {
-        "year": 2021,
-        "title": "Hitch-22",
-        "author": "Christopher Hitchens",
-        "url": "https://www.goodreads.com/book/show/7332753-hitch-22"
-      },
-      {
-        "year": 2020,
-        "title": "Algorithms to Live By",
-        "author": "Brian Christian",
-        "url": "https://www.goodreads.com/book/show/25666050-algorithms-to-live-by"
-      },
-      {
-        "year": 2020,
-        "title": "Skin in the Game",
-        "author": "Nassim Nicholas Taleb",
-        "url": "https://www.goodreads.com/book/show/36064445-skin-in-the-game"
-      },
-      {
-        "year": 2020,
-        "title": "Recursion",
-        "author": "Blake Crouch",
-        "url": "https://www.goodreads.com/book/show/42046112-recursion"
-      },
-      {
-        "year": 2020,
-        "title": "Slaughterhouse-Five",
-        "author": "Kurt Vonnegut",
-        "url": "https://www.goodreads.com/book/show/4981.Slaughterhouse_Five"
-      },
-
-      {
-        "year": 2020,
-        "title": "The Art of Racing in the Rain",
-        "author": "Garth Stein",
-        "url": "https://www.goodreads.com/book/show/3153910-the-art-of-racing-in-the-rain"
-      },
-      {
-        "year": 2020,
-        "title": "The Singularity is Near",
-        "author": "Ray Kurzweil",
-        "url": "https://www.goodreads.com/book/show/83518.The_Singularity_is_Near"
-      },
-      {
-        "year": 2020,
-        "title": "Atomic Habits",
-        "author": "James Clear",
-        "url": "https://www.goodreads.com/book/show/40121378-atomic-habits"
-      },
-      {
-        "year": 2020,
-        "title": "The Black Swan",
-        "author": "Nassim Nicholas Taleb",
-        "url": "https://www.goodreads.com/book/show/242472.The_Black_Swan"
-      },
-      {
-        "year": 2020,
-        "title": "The Singapore Story",
-        "author": "Lee Kuan Yew",
-        "url": "https://www.goodreads.com/book/show/144409.From_Third_World_to_First"
-      },
-      {
-        "year": 2020,
-        "title": "Ender's Shadow",
-        "author": "Orson Scott Card",
-        "url": "https://www.goodreads.com/book/show/9532.Ender_s_Shadow"
-      },
-      {
-        "year": 2020,
-        "title": "48 Laws of Power",
-        "author": "Robert Greene",
-        "url": "https://www.goodreads.com/book/show/1303.The_48_Laws_of_Power"
-      },
-      {
-        "year": 2020,
-        "title": "Ender's Game",
-        "author": "Orson Scott Card",
-        "url": "https://www.goodreads.com/book/show/375802.Ender_s_Game"
-      },
-      {
-        "year": 2020,
-        "title": "21 Lessons for the 21st Century",
-        "author": "Yuval Noah Harari",
-        "url": "https://www.goodreads.com/book/show/38820046-21-lessons-for-the-21st-century"
-      },
-      {
-        "year": 2020,
-        "title": "Only the Paranoid Survive",
-        "author": "Andrew S. Grove",
-        "url": "https://www.goodreads.com/book/show/66863.Only_the_Paranoid_Survive"
-      },
-      {
-        "year": 2020,
-        "title": "The Art of Learning",
-        "author": "Josh Waitzkin",
-        "url": "https://www.goodreads.com/book/show/857333.The_Art_of_Learning"
-      },
-      {
-        "year": 2019,
-        "title": "The Stranger",
-        "author": "Albert Camus",
-        "url": "https://www.goodreads.com/book/show/49552.The_Stranger"
-      },
-      {
-        "year": 2019,
-        "title": "Fooled By Randomness",
-        "author": "Nassim Nicholas Taleb",
-        "url": "https://www.goodreads.com/book/show/38315.Fooled_by_Randomness"
-      },
-      {
-        "year": 2019,
-        "title": "Norwegian Wood",
-        "author": "Haruki Murakami",
-        "url": "https://www.goodreads.com/book/show/11297.Norwegian_Wood"
-      },
-      {
-        "year": 2019,
-        "title": "High Output Management",
-        "author": "Andrew S. Grove",
-        "url": "https://www.goodreads.com/book/show/324750.High_Output_Management"
-      },
-      {
-        "year": 2019,
-        "title": "Talking to Strangers",
-        "author": "Malcolm Gladwell",
-        "url": "https://www.goodreads.com/book/show/43848929-talking-to-strangers"
-      },
-      {
-        "year": 2019,
-        "title": "Red Notice",
-        "author": "Bill Browder",
-        "url": "https://www.goodreads.com/book/show/22609522-red-notice"
-      },
-      {
-        "year": 2019,
-        "title": "Sapiens",
-        "author": "Yuval Noah Harari",
-        "url": "https://www.goodreads.com/book/show/23692271-sapiens"
-      },
-      {
-        "year": 2019,
-        "title": "Homo Deus",
-        "author": "Yuval Noah Harari",
-        "url": "https://www.goodreads.com/book/show/31138556-homo-deus"
-      },
-      {
-        "year": 2019,
-        "title": "Tuesdays with Morrie",
-        "author": "Mitch Alboum",
-        "url": "https://www.goodreads.com/book/show/6900.Tuesdays_with_Morrie"
-      },
-      {
-        "year": 2024,
-        "title": "Masters of Doom",
-        "author": "David Kushner",
-        "url": "https://www.goodreads.com/book/show/222146.Masters_of_Doom"
-      },
-      {
-        "year": 2024,
-        "title": "Project Hail Mary",
-        "author": "Andy Weir",
-        "url": "https://www.goodreads.com/book/show/54493401-project-hail-mary"
-      }
-    ]
-  }
-  
+    {
+      "year": 2025,
+      "title": "The Little Prince",
+      "author": "Antoine de Saint-Exupéry",
+      "url": "https://www.goodreads.com/book/show/157993.The_Little_Prince"
+    },
+    {
+      "year": 2024,
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "url": "https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow?from_search=true&from_srp=true&qid=QZ7vKCO3OH&rank=1"
+    },
+    {
+      "year": 2024,
+      "title": "Faraday, Maxwell, and the Electromagnetic Field",
+      "author": "Nancy Forbes and Basil Mahon",
+      "url": "https://www.goodreads.com/book/show/18240286-faraday-maxwell-and-the-electromagnetic-field"
+    },
+    {
+      "year": 2024,
+      "title": "The Innovator's Dilemma",
+      "author": "Clayton M. Christensen",
+      "url": "https://www.goodreads.com/book/show/2615.The_Innovator_s_Dilemma?from_search=true&from_srp=true&qid=dTrdIfm4j0&rank=1"
+    },
+    {
+      "year": 2024,
+      "title": "The Song of Achilles",
+      "author": "Madeline Miller",
+      "url": "https://www.goodreads.com/book/show/13623848-the-song-of-achilles"
+    },
+    {
+      "year": 2023,
+      "title": "Titan",
+      "author": "Ron Chernow",
+      "url": "https://www.goodreads.com/book/show/16121.Titan"
+    },
+    {
+      "year": 2023,
+      "title": "The E-myth Revisited",
+      "author": "Michael E. Gerber",
+      "url": "https://www.goodreads.com/book/show/81948.The_E_myth_Revisited"
+    },
+    {
+      "year": 2023,
+      "title": "Culture Series: Consider Phlebas",
+      "author": "Iain M. Banks",
+      "url": "https://www.goodreads.com/book/show/8935689-consider-phlebas"
+    },
+    {
+      "year": 2023,
+      "title": "Culture Series: Player of Games",
+      "author": "Iain M. Banks",
+      "url": "https://www.goodreads.com/book/show/18630.The_Player_of_Games"
+    },
+    {
+      "year": 2023,
+      "title": "The Brothers Karamazov",
+      "author": "Dostoevsky",
+      "url": "https://www.goodreads.com/book/show/4934.The_Brothers_Karamazov"
+    },
+    {
+      "year": 2022,
+      "title": "Self Reliance",
+      "author": "Ralph Waldo Emerson",
+      "url": "https://www.goodreads.com/book/show/123845.Self_Reliance_and_Other_Essays"
+    },
+    {
+      "year": 2022,
+      "title": "Siddhartha",
+      "author": "Hermann Hesse",
+      "url": "https://www.goodreads.com/book/show/13537306-sidhartha"
+    },
+    {
+      "year": 2022,
+      "title": "Where the Crawdads Sing",
+      "author": "Delia Owens",
+      "url": "https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing"
+    },
+    {
+      "year": 2022,
+      "title": "Think Again",
+      "author": "Adam M. Grant",
+      "url": "https://www.goodreads.com/book/show/55539565-think-again"
+    },
+    {
+      "year": 2022,
+      "title": "The Changing World Order",
+      "author": "Ray Dalio",
+      "url": "https://www.goodreads.com/book/show/52962238-principles-for-dealing-with-the-changing-world-order"
+    },
+    {
+      "year": 2022,
+      "title": "The Great Depression: A Diary",
+      "author": "Benjamin Roth",
+      "url": "https://www.goodreads.com/book/show/6601224-the-great-depression"
+    },
+    {
+      "year": 2022,
+      "title": "Walden",
+      "author": "Henry David Thoreau",
+      "url": "https://www.goodreads.com/book/show/16902.Walden"
+    },
+    {
+      "year": 2022,
+      "title": "The Death of Ivan Ilych and Other Stories",
+      "author": "Leo Tolstoy",
+      "url": "https://www.goodreads.com/book/show/655.The_Death_of_Ivan_Ilych_and_Other_Stories"
+    },
+    {
+      "year": 2021,
+      "title": "Liftoff",
+      "author": "Eric Berger",
+      "url": "https://www.goodreads.com/book/show/53402132-liftoff"
+    },
+    {
+      "year": 2021,
+      "title": "Life 3.0",
+      "author": "Max Tegmark",
+      "url": "https://www.goodreads.com/book/show/34272565-life-3-0"
+    },
+    {
+      "year": 2021,
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "url": "https://www.goodreads.com/book/show/30659.Meditations"
+    },
+    {
+      "year": 2021,
+      "title": "Einstein",
+      "author": "Walter Isaacson",
+      "url": "https://www.goodreads.com/book/show/10884.Einstein"
+    },
+    {
+      "year": 2021,
+      "title": "Surely You're Joking, Mr. Feynman!",
+      "author": "Richard Feynman",
+      "url": "https://www.goodreads.com/book/show/35167685-surely-you-re-joking-mr-feynman"
+    },
+    {
+      "year": 2021,
+      "title": "On the Shortness of Life",
+      "author": "Seneca",
+      "url": "https://www.goodreads.com/book/show/97412.On_the_Shortness_of_Life"
+    },
+    {
+      "year": 2021,
+      "title": "What Do You Care What Other People Think?",
+      "author": "Richard Feynman",
+      "url": "https://www.goodreads.com/book/show/35167718-what-do-you-care-what-other-people-think"
+    },
+    {
+      "year": 2021,
+      "title": "A Little History of the World",
+      "author": "E.H. Gombrich",
+      "url": "https://www.goodreads.com/book/show/61505.A_Little_History_of_the_World"
+    },
+    {
+      "year": 2021,
+      "title": "The Secret History",
+      "author": "Donna Tartt",
+      "url": "https://www.goodreads.com/book/show/29044.The_Secret_History"
+    },
+    {
+      "year": 2021,
+      "title": "Anna Karenina",
+      "author": "Leo Tolstoy",
+      "url": "https://www.goodreads.com/book/show/15823480-anna-karenina"
+    },
+    {
+      "year": 2021,
+      "title": "Hitch-22",
+      "author": "Christopher Hitchens",
+      "url": "https://www.goodreads.com/book/show/7332753-hitch-22"
+    },
+    {
+      "year": 2020,
+      "title": "Algorithms to Live By",
+      "author": "Brian Christian",
+      "url": "https://www.goodreads.com/book/show/25666050-algorithms-to-live-by"
+    },
+    {
+      "year": 2020,
+      "title": "Skin in the Game",
+      "author": "Nassim Nicholas Taleb",
+      "url": "https://www.goodreads.com/book/show/36064445-skin-in-the-game"
+    },
+    {
+      "year": 2020,
+      "title": "Recursion",
+      "author": "Blake Crouch",
+      "url": "https://www.goodreads.com/book/show/42046112-recursion"
+    },
+    {
+      "year": 2020,
+      "title": "Slaughterhouse-Five",
+      "author": "Kurt Vonnegut",
+      "url": "https://www.goodreads.com/book/show/4981.Slaughterhouse_Five"
+    },
+    {
+      "year": 2020,
+      "title": "The Art of Racing in the Rain",
+      "author": "Garth Stein",
+      "url": "https://www.goodreads.com/book/show/3153910-the-art-of-racing-in-the-rain"
+    },
+    {
+      "year": 2020,
+      "title": "The Singularity is Near",
+      "author": "Ray Kurzweil",
+      "url": "https://www.goodreads.com/book/show/83518.The_Singularity_is_Near"
+    },
+    {
+      "year": 2020,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "url": "https://www.goodreads.com/book/show/40121378-atomic-habits"
+    },
+    {
+      "year": 2020,
+      "title": "The Black Swan",
+      "author": "Nassim Nicholas Taleb",
+      "url": "https://www.goodreads.com/book/show/242472.The_Black_Swan"
+    },
+    {
+      "year": 2020,
+      "title": "The Singapore Story",
+      "author": "Lee Kuan Yew",
+      "url": "https://www.goodreads.com/book/show/144409.From_Third_World_to_First"
+    },
+    {
+      "year": 2020,
+      "title": "Ender's Shadow",
+      "author": "Orson Scott Card",
+      "url": "https://www.goodreads.com/book/show/9532.Ender_s_Shadow"
+    },
+    {
+      "year": 2020,
+      "title": "48 Laws of Power",
+      "author": "Robert Greene",
+      "url": "https://www.goodreads.com/book/show/1303.The_48_Laws_of_Power"
+    },
+    {
+      "year": 2020,
+      "title": "Ender's Game",
+      "author": "Orson Scott Card",
+      "url": "https://www.goodreads.com/book/show/375802.Ender_s_Game"
+    },
+    {
+      "year": 2020,
+      "title": "21 Lessons for the 21st Century",
+      "author": "Yuval Noah Harari",
+      "url": "https://www.goodreads.com/book/show/38820046-21-lessons-for-the-21st-century"
+    },
+    {
+      "year": 2020,
+      "title": "Only the Paranoid Survive",
+      "author": "Andrew S. Grove",
+      "url": "https://www.goodreads.com/book/show/66863.Only_the_Paranoid_Survive"
+    },
+    {
+      "year": 2020,
+      "title": "The Art of Learning",
+      "author": "Josh Waitzkin",
+      "url": "https://www.goodreads.com/book/show/857333.The_Art_of_Learning"
+    },
+    {
+      "year": 2019,
+      "title": "The Stranger",
+      "author": "Albert Camus",
+      "url": "https://www.goodreads.com/book/show/49552.The_Stranger"
+    },
+    {
+      "year": 2019,
+      "title": "Fooled By Randomness",
+      "author": "Nassim Nicholas Taleb",
+      "url": "https://www.goodreads.com/book/show/38315.Fooled_by_Randomness"
+    },
+    {
+      "year": 2019,
+      "title": "Norwegian Wood",
+      "author": "Haruki Murakami",
+      "url": "https://www.goodreads.com/book/show/11297.Norwegian_Wood"
+    },
+    {
+      "year": 2019,
+      "title": "High Output Management",
+      "author": "Andrew S. Grove",
+      "url": "https://www.goodreads.com/book/show/324750.High_Output_Management"
+    },
+    {
+      "year": 2019,
+      "title": "Talking to Strangers",
+      "author": "Malcolm Gladwell",
+      "url": "https://www.goodreads.com/book/show/43848929-talking-to-strangers"
+    },
+    {
+      "year": 2019,
+      "title": "Red Notice",
+      "author": "Bill Browder",
+      "url": "https://www.goodreads.com/book/show/22609522-red-notice"
+    },
+    {
+      "year": 2019,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "url": "https://www.goodreads.com/book/show/23692271-sapiens"
+    },
+    {
+      "year": 2019,
+      "title": "Homo Deus",
+      "author": "Yuval Noah Harari",
+      "url": "https://www.goodreads.com/book/show/31138556-homo-deus"
+    },
+    {
+      "year": 2019,
+      "title": "Tuesdays with Morrie",
+      "author": "Mitch Alboum",
+      "url": "https://www.goodreads.com/book/show/6900.Tuesdays_with_Morrie"
+    },
+    {
+      "year": 2024,
+      "title": "Masters of Doom",
+      "author": "David Kushner",
+      "url": "https://www.goodreads.com/book/show/222146.Masters_of_Doom"
+    },
+    {
+      "year": 2024,
+      "title": "Project Hail Mary",
+      "author": "Andy Weir",
+      "url": "https://www.goodreads.com/book/show/54493401-project-hail-mary"
+    }
+  ]
+}

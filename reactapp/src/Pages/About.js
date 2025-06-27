@@ -6,18 +6,24 @@ import profilePic from "../static/ProfilePic.jpg";
 import { annotate, annotationGroup } from "rough-notation";
 import { Link } from "react-router-dom";
 
-
 function About() {
   const [isAboutPage, setIsAboutPage] = useState(false);
   const location = useLocation();
 
   const rootStyles = getComputedStyle(document.documentElement);
 
-  const colorHighlightOne = rootStyles.getPropertyValue('--color-highlight-one').trim();
-  const colorHighlightTwo = rootStyles.getPropertyValue('--color-highlight-two').trim();
-  const colorHighlightThree = rootStyles.getPropertyValue('--color-highlight-three').trim();
-  const colorHighlightFour = rootStyles.getPropertyValue('--color-highlight-four').trim();
-
+  const colorHighlightOne = rootStyles
+    .getPropertyValue("--color-highlight-one")
+    .trim();
+  const colorHighlightTwo = rootStyles
+    .getPropertyValue("--color-highlight-two")
+    .trim();
+  const colorHighlightThree = rootStyles
+    .getPropertyValue("--color-highlight-three")
+    .trim();
+  const colorHighlightFour = rootStyles
+    .getPropertyValue("--color-highlight-four")
+    .trim();
 
   useEffect(() => {
     const a1 = annotate(document.querySelector("#e1"), {
@@ -119,25 +125,23 @@ function About() {
           </p>
           <div className="about-buttons">
             <a
-              href="https://www.linkedin.com/in/mflandin/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button id="linked" className="dark">
-                View LinkedIn
-              </button>
-            </a>
-            <a
               href="https://github.com/michellevit"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="light">View GitHub</button>
+              <button className="dark">GitHub</button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mflandin/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="light">LinkedIn</button>
             </a>
           </div>
         </div>
         <div className="about-picture">
-          <img src={profilePic} alt="Me at the Grand Canyon in AZ, USA." />
+          <img src={profilePic} alt="Michelle on a hike in North Vancouver." />
         </div>
       </div>
       {isAboutPage && (
