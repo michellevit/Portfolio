@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.c92ff55e.css",
-    "main.js": "/static/js/main.d2808e53.js",
+    "main.css": "/static/css/main.3cbce7f4.css",
+    "main.js": "/static/js/main.c322c122.js",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.408922bab782ebecf34e.jpg",
     "static/media/godel.png": "/static/media/godel.a8590ceb485f9ba90b44.png",
     "static/media/confetti.png": "/static/media/confetti.c0bf3f2d7ceda745567f.png",
     "static/media/world.jpg": "/static/media/world.a4f910020b97aaa931da.jpg",
     "static/media/huggingface-logo.png": "/static/media/huggingface-logo.680c5d04be8df645a376.png",
     "static/media/wittgenstein.png": "/static/media/wittgenstein.c68462f0d135814312f5.png",
-    "static/media/comment-analyzer-mockup.jpg": "/static/media/comment-analyzer-mockup.aa5de9738baa41be49ca.jpg",
-    "static/media/amazon-checker-mockup.jpg": "/static/media/amazon-checker-mockup.2f00a49f89b0d351f3b0.jpg",
-    "static/media/production-planner-mockup.jpg": "/static/media/production-planner-mockup.b50d611667748b0670eb.jpg",
-    "static/media/boilerplate-gateway-mockup.jpg": "/static/media/boilerplate-gateway-mockup.34adfe08acf98e956844.jpg",
-    "static/media/dgdraft-mockup.jpg": "/static/media/dgdraft-mockup.b6d4326736d1f5bdb042.jpg",
-    "static/media/ORM-example.jpg": "/static/media/ORM-example.0011bc3f890ef9081dc5.jpg",
-    "static/media/site-blocker-mockup.jpg": "/static/media/site-blocker-mockup.06d6313f8b19e4ced3ab.jpg",
-    "static/media/kbt-mockup.jpg": "/static/media/kbt-mockup.dbe0f141eae604a4c624.jpg",
+    "static/media/comment-analyzer.jpg": "/static/media/comment-analyzer.aa5de9738baa41be49ca.jpg",
+    "static/media/amazon-checker.jpg": "/static/media/amazon-checker.2f00a49f89b0d351f3b0.jpg",
+    "static/media/production-planner.jpg": "/static/media/production-planner.b50d611667748b0670eb.jpg",
+    "static/media/boilerplate-gateway.jpg": "/static/media/boilerplate-gateway.34adfe08acf98e956844.jpg",
+    "static/media/dg-draft.jpg": "/static/media/dg-draft.b6d4326736d1f5bdb042.jpg",
+    "static/media/site-blocker.jpg": "/static/media/site-blocker.06d6313f8b19e4ced3ab.jpg",
+    "static/media/kibbe-quiz.jpg": "/static/media/kibbe-quiz.dbe0f141eae604a4c624.jpg",
     "static/media/pyinstaller-logo.png": "/static/media/pyinstaller-logo.71bf737bf6255ee24b51.png",
     "static/media/egg1.png": "/static/media/egg1.abc63ae2522b2994ca6a.png",
     "static/media/javascript-logo.png": "/static/media/javascript-logo.66a3dfbc82fdbf70e8a6.png",
@@ -29,11 +28,11 @@
     "static/media/rails-logo.svg": "/static/media/rails-logo.a7b3954d96cd029936268d781c0aed61.svg",
     "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.34bbf5dc3b085a801732fcfa2ec6183f.svg",
     "index.html": "/index.html",
-    "main.c92ff55e.css.map": "/static/css/main.c92ff55e.css.map",
-    "main.d2808e53.js.map": "/static/js/main.d2808e53.js.map"
+    "main.3cbce7f4.css.map": "/static/css/main.3cbce7f4.css.map",
+    "main.c322c122.js.map": "/static/js/main.c322c122.js.map"
   },
   "entrypoints": [
-    "static/css/main.c92ff55e.css",
-    "static/js/main.d2808e53.js"
+    "static/css/main.3cbce7f4.css",
+    "static/js/main.c322c122.js"
   ]
 }

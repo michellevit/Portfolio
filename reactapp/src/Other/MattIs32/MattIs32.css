@@ -1,0 +1,217 @@
+/* MattIs32.css */
+
+.birthday-container {
+  background-image: url("../../static/other/confetti.png");
+  background-color: #00a6ed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 0 !important;
+}
+
+.birthday-message {
+  font-size: 3rem;
+  color: #3477ff;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  animation: bounce 2s infinite;
+  -webkit-text-stroke: 2px white;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.video-container {
+  margin-top: 30px;
+  border: 5px solid #00a6ed;
+  padding: 0px;
+  background-color: #00a6ed;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+.video-container iframe:hover {
+  box-shadow: 0 0 20px 10px #f9c23c;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/** Balloons **/
+
+.balloons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.balloon {
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+  border: 3px solid white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background-color: #444;
+}
+
+.balloon:after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 20px;
+  height: 40px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+/* Existing Balloons */
+.balloon1 {
+  background: linear-gradient(135deg, #f9c23c, #ffdd57);
+  animation-delay: 0s;
+}
+
+.balloon2 {
+  background: linear-gradient(135deg, #f70a8d, #ff9ab8);
+  animation-delay: 2s;
+}
+
+.balloon3 {
+  background: linear-gradient(135deg, #40de60, #aad5b2);
+  animation-delay: 4s;
+}
+
+/* New Balloons */
+.balloon4 {
+  background: linear-gradient(135deg, #ffc300, #ff5733);
+  animation-delay: 6s;
+}
+
+.balloon5 {
+  background: linear-gradient(135deg, #33fff9, #33ff57);
+  animation-delay: 8s;
+}
+
+.balloon6 {
+  background: linear-gradient(135deg, #daf7a6, #ffc300);
+  animation-delay: 10s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+/** Confetti **/
+.confetti {
+  position: fixed;
+  top: -10%;
+  animation: confettiFall 6s linear;
+  z-index: 0;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 750px) {
+  .birthday-container {
+    justify-content: flex-start;
+    padding-top: 80px;
+  }
+
+  .birthday-message {
+    font-size: 1.8rem;
+    margin-bottom: 80px;
+    -webkit-text-stroke: 1px white;
+  }
+
+  .balloons {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .balloon {
+    width: 40px;
+    height: 50px;
+    margin: 0 10px;
+  }
+
+  .video-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: auto;
+  }
+}

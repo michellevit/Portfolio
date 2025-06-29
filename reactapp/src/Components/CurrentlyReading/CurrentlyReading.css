@@ -1,72 +1,77 @@
 /* CurrentlyReading.css */
 
 .currently-reading {
-    background-color: #F4F1EA;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-  }
-  
-  .currently-reading h3 {
-    font-size: 1.2rem;
-    text-align: center;
-    color: #372213c4;
-  }
-  
-  .currently-reading .current-book {
-    font-size: 0.9rem;
-    text-align: center;
-    color: #372213;
-  }
+  background-color: rgba(244, 241, 234, 1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
 
-  .current-book {
-    margin-bottom: 20px;
-  }
-  
-  .year-block {
-    margin: 10px 0;
-  }
-  
-  .year-button {
-    background-color: #41997150; 
-    color: var(--color-main-light);
-    border: 1px solid var(--color-main-dark-detail);
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    transition: background-color 0.3s;
-  }
-  
-  .year-button:hover {
-    background-color: #419971;
-    color: var(--color-main-light);
-  }
+body.dark .currently-reading {
+  background-color: rgba(244, 241, 234, 0.7);
+  filter: grayscale(80%);
+}
 
-  .year-button.active {
-    background-color: #419971; 
-    color: var(--color-main-light);
-  }
+.currently-reading h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #372213c4;
+}
 
-  .year-button.active:hover {
-    background-color: #419971; 
-    color: var(--color-main-light);
-  }
-  
-  .book-list {
-    list-style-type: none;
-    padding-left: 20px;
-  }
-  
-  .book-list li a {
-    font-size: 0.8rem;
-    color: #372213c5;
-    text-decoration: none;
-  }
-  
-  .book-list li a:hover {
-    text-decoration: underline; 
-  }
-  
+.currently-reading .current-book {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #372213;
+}
+
+.current-book {
+  margin-bottom: 20px;
+}
+
+.year-block {
+  margin: 10px 0;
+}
+
+.year-button {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border: 1px solid var(--color-bg);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.year-button:hover {
+  background-color: var(--color-accent);
+  filter: brightness(80%);
+}
+
+.year-button.active {
+  background-color: var(--color-accent);
+  filter: brightness(80%);
+  color: var(--color-bg);
+}
+
+.year-button.active:hover {
+  background-color: var(--color-accent);
+  filter: brightness(80%);
+}
+
+.book-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.book-list li a {
+  font-size: 0.8rem;
+  color: #372213c5;
+  text-decoration: none;
+}
+
+.book-list li a:hover {
+  text-decoration: underline;
+}

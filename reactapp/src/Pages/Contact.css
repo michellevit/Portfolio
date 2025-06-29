@@ -16,28 +16,29 @@
   margin: auto;
 }
 
-.contact-container form input, .contact-container form textarea  {
+.contact-container form input,
+.contact-container form textarea {
   font-size: 0.8rem;
   margin: 5px 0;
   border-radius: 5px;
-  border: 1px solid var(--color-main-dark-detail);
+  border: 1px solid var(--color-text);
   padding: 5px 7px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
 }
 
-.contact-container form textarea  {
-    resize: none;
-    height: 5rem;
-  }
-
+.contact-container form textarea {
+  resize: none;
+  height: 5rem;
+}
 
 .success-message {
   font-size: 1rem;
   text-align: center;
-  opacity: 1; 
-  overflow: hidden; 
-  transition: max-height 1s ease-in-out; 
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
   animation: fadeIn 1s;
   margin-top: 1rem;
 }
@@ -46,35 +47,36 @@
   color: red;
 }
 
-
 .linkedInButton {
   margin: 0 auto;
-  animation: fadeIn 2s; 
+  animation: fadeIn 2s;
 }
 
-
 button#contact-form {
-  margin: 5px auto;
+  margin: 10px auto;
 }
 
 .linkedInButton button#linkedButton {
-  background-color: var(--color-main-light);
-  color: var(--color-main-dark);
-  border: 1px solid var(--color-main-dark);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
   transition: all 0.3s ease-out;
 }
 
 .linkedInButton button#linkedButton:hover {
-  background-color: var(--color-main-accent);
+  background-color: var(--color-accent);
   transition: all 0.3s ease-in;
 }
 
-
 .dark.sending {
-  background-color: var(--color-main-accent); 
+  background-color: var(--color-accent);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

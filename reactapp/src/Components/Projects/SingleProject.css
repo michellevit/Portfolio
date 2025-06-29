@@ -1,0 +1,103 @@
+.single-project-container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.single-project-container > div {
+  padding: 20px 0;
+}
+
+.single-project-container h2 {
+  text-align: center;
+  min-width: 225px;
+}
+
+.single-project-container h3 {
+  text-align: center;
+  min-width: 225px;
+  font-size: 1.2rem;
+}
+
+.single-project-container .introduction {
+  text-align: center;
+  max-width: 600px;
+  min-width: 225px;
+  margin: 0 auto;
+  color: var(--color-main-dark-detail);
+}
+
+.single-project-container button#git-repo {
+  margin-top: 20px;
+  margin-left: 1rem;
+}
+
+.single-project-container .introduction img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
+}
+
+.single-project-container .key-features,
+.single-project-container .technologies-used {
+  max-width: fit-content;
+  width: 100%;
+  margin: auto;
+}
+
+.single-project-container ul {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 20px;
+  color: var(--color-main-dark-detail);
+}
+
+.single-project-container .key-features img {
+  width: 100%;
+  box-shadow: 0 2px 8px 0 var(--color-main-dark-detail),
+    0 6px 20px 0 var(--color-main-dark-detail);
+  border-radius: 15px;
+}
+
+.single-project-container .logo-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.single-project-container .logo-images img {
+  max-height: 48px;
+}
+
+.single-project-container .logo-images img#django {
+  max-height: 30px;
+}
+
+.single-project-container .logo-images img#openpy {
+  max-height: 30px;
+}
+
+/* YouTubeEmbed  */
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 700px;
+}

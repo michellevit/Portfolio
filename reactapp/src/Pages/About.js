@@ -1,84 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "./About.css";
 import CurrentlyReading from "../Components/CurrentlyReading/CurrentlyReading.js";
 import profilePic from "../static/ProfilePic.jpg";
-import { annotate, annotationGroup } from "rough-notation";
-import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 function About() {
   const [isAboutPage, setIsAboutPage] = useState(false);
   const location = useLocation();
 
-  const rootStyles = getComputedStyle(document.documentElement);
-
-  const colorHighlightOne = rootStyles
-    .getPropertyValue("--color-highlight-one")
-    .trim();
-  const colorHighlightTwo = rootStyles
-    .getPropertyValue("--color-highlight-two")
-    .trim();
-  const colorHighlightThree = rootStyles
-    .getPropertyValue("--color-highlight-three")
-    .trim();
-  const colorHighlightFour = rootStyles
-    .getPropertyValue("--color-highlight-four")
-    .trim();
-
   useEffect(() => {
-    const a1 = annotate(document.querySelector("#e1"), {
-      type: "highlight",
-      color: colorHighlightOne,
-    });
-    const a2 = annotate(document.querySelector("#e2"), {
-      type: "highlight",
-      color: colorHighlightTwo,
-    });
-    const a3 = annotate(document.querySelector("#e3"), {
-      type: "highlight",
-      color: colorHighlightThree,
-    });
-    const a4 = annotate(document.querySelector("#e4"), {
-      type: "highlight",
-      color: colorHighlightFour,
-    });
-    const a5 = annotate(document.querySelector("#e5"), {
-      type: "highlight",
-      color: colorHighlightOne,
-    });
-    const a6 = annotate(document.querySelector("#e6"), {
-      type: "highlight",
-      color: colorHighlightTwo,
-    });
-    const a7 = annotate(document.querySelector("#e7"), {
-      type: "circle",
-      color: colorHighlightThree,
-    });
-    // const a8 = annotate(document.querySelector("#e8"), {
-    //   type: "highlight",
-    //   color: colorHighlightFour,
-    // });
-    // const a9 = annotate(document.querySelector("#e9"), {
-    //   type: "highlight",
-    //   color: colorHighlightOne,
-    // });
-    // const e10 = annotate(document.querySelector("#e10"), {
-    //   type: "circle",
-    //   color: colorHighlightTwo,
-    // });
-    const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7]);
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 0) {
-      ag.show();
-    }
-  });
-
-  const updateCurrentPage = () => {
     setIsAboutPage(location.pathname === "/about");
-  };
-
-  useEffect(() => {
-    updateCurrentPage();
   }, [location]);
 
   return (
@@ -86,64 +18,67 @@ function About() {
       <div className="about-main-content">
         <div className="about-text">
           <h2>
-            Hello! I'm Michelle, a <span id="e1">developer</span> based in
-            Vancouver.
+            <Typewriter
+              words={["Hi, I'm Michelle."]}
+              loop={1}
+              cursor
+              cursorStyle="_"
+              typeSpeed={60}
+              deleteSpeed={0}
+              delaySpeed={1000}
+              wrapperClassName="typewriter-wrapper"
+            />
           </h2>
+          <p>I'm a software developer based in Vancouver, BC.</p>
           <p>
-            I first encountered computer science at <span id="e1">UBC</span>,
-            and though my path led me into{" "}
-            <span id="e2">administration and accounting</span>, I found myself
-            gravitating back towards coding as I discovered the value in{" "}
-            <Link to="/amazon-checker">
-              <span id="e3">automating simple tasks</span>
-            </Link>{" "}
-            and{" "}
-            <Link to="/production-planner">
-              <span id="e4">modernizing workflows</span>
-            </Link>
-            .
+            I started my career in administration and accounting, but I kept
+            turning to code to make my day-to-day work easier. It started as a
+            few simple scripts but quickly turned into building full apps like
+            my <Link to="/amazon-checker">Amazon Checker</Link> and{" "}
+            <Link to="/production-planner">Production Planner</Link> tools.
           </p>
           <p>
-            I'm currently working on integrating courier APIs into my{" "}
-            <Link to="/production-planner">
-              <span id="e5">Production Planner</span>
-            </Link>{" "}
-            app, and creating a{" "}
-            <Link to="/dg-draft">
-              <span id="e6">Fantasy Disc Golf</span>
-            </Link>{" "}
-            app as a fun side-project.
+            Recently I decided to return to school to fill in the gaps of what
+            I'd been learning on my own. I am now studying computer science at{" "}
+            <a href="https://oregonstate.edu/">OSU</a>, balancing academics with
+            a software co-op role at <a href="https://www.amgen.com/">Amgen</a>.
           </p>
           <p>
-            Please don't hesitate to{" "}
-            <span id="e7" className="about-contact">
-              <li>
-                <Link to="/contact">contact me</Link>
-              </li>
-            </span>{" "}
-            if you have any questions about my work.
+            I still code for fun though - currently I'm working on{" "}
+            <Link to="/dg-draft">a fantasy disc golf app</Link> and an{" "}
+            <a href="fennec.michellef.dev">8-bit inspired fox animation</a>
           </p>
+          <p>
+            Feel free to{" "}
+            <Link to="/contact" className="about-contact">
+              send me a message
+            </Link>{" "}
+            if you have any questions about my work!
+          </p>
+
           <div className="about-buttons">
             <a
               href="https://github.com/michellevit"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="dark">GitHub</button>
+              <button>GitHub</button>
             </a>
             <a
               href="https://www.linkedin.com/in/mflandin/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="light">LinkedIn</button>
+              <button>LinkedIn</button>
             </a>
           </div>
         </div>
+
         <div className="about-picture">
           <img src={profilePic} alt="Michelle on a hike in North Vancouver." />
         </div>
       </div>
+
       {isAboutPage && (
         <div className="currently-reading-section">
           <CurrentlyReading />
