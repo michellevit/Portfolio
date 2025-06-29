@@ -46,7 +46,13 @@ function About() {
           <p>
             I still code for fun though - currently I'm working on{" "}
             <Link to="/dg-draft">a fantasy disc golf app</Link> and an{" "}
-            <a href="fennec.michellef.dev">8-bit inspired fox animation</a>
+            <a
+              href="https://fennec.michellef.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              8-bit inspired fox animation
+            </a>
           </p>
           <p>
             Feel free to{" "}
