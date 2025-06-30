@@ -17,7 +17,7 @@
     },
     "amazon_checker": {
         "title": "Amazon Checker",
-        "short": "A Python app to automate the Amazon order confirmation process.",
+        "short": "A Python app to automate the Amazon order process.",
         "long": "This Python app features a Tkinter GUI and uses specialized algorithms to interact with Amazon Vendor Central spreadsheets and speed up the order confirmation process.",
         "tags": [
             "featured",
