@@ -16,7 +16,7 @@ const filterCategories = {
   javascript: "JavaScript",
   api: "APIs",
   sql: "SQL",
-  ml: "ML",
+  // ml: "ML",
 };
 
 function Projects() {
