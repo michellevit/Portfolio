@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
-function SpotifyCallback() {
-  const navigate = useNavigate();
-
+const SpotifyCallback = () => {
   useEffect(() => {
     const code = new URLSearchParams(window.location.search).get("code");
     if (!code) return;
@@ -15,6 +12,14 @@ function SpotifyCallback() {
         );
         const data = await res.json();
         console.log("🎧 Spotify token response:", data);
+
+        if (data.access_token) {
+          // ✅ Save token and redirect
+          localStorage.setItem("spotifyToken", data.access_token);
+          window.location.href = "/dash"; // or "/dashboard" or wherever
+        } else {
+          console.error("No access token received:", data);
+        }
       } catch (err) {
         console.error("🎧 Spotify token fetch error:", err);
       }
@@ -24,6 +29,6 @@ function SpotifyCallback() {
   }, []);
 
   return <p>Authorizing with Spotify...</p>;
-}
+};
 
 export default SpotifyCallback;

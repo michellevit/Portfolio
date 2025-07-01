@@ -199,35 +199,42 @@ exports.getCelestialEvents = functions.https.onRequest((req, res) => {
 });
 
 // Spotify
-
 exports.getSpotifyToken = functions.https.onRequest((req, res) => {
-  const code = req.query.code;
-  const redirectUri = "http://localhost:3000/callback"; // or your prod redirect
+  cors(req, res, async () => {
+    const code = req.query.code;
+    if (!code) return res.status(400).send("Missing code");
 
-  const authString = Buffer.from(`${spotifyId}:${spotifyKey}`).toString(
-    "base64"
-  );
+    const clientId = functions.config().spotify.id;
+    const clientSecret = functions.config().spotify.key;
+    const redirectUri = "https://michellef.dev/spotify-callback";
 
-  axios
-    .post("https://accounts.spotify.com/api/token", null, {
-      params: {
-        grant_type: "authorization_code",
-        code: code,
-        redirect_uri: redirectUri,
-      },
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: `Basic ${authString}`,
-      },
-    })
-    .then((response) => {
+    const credentials = Buffer.from(`${clientId}:${clientSecret}`).toString(
+      "base64"
+    );
+
+    try {
+      const response = await axios.post(
+        "https://accounts.spotify.com/api/token",
+        new URLSearchParams({
+          grant_type: "authorization_code",
+          code,
+          redirect_uri: redirectUri,
+        }),
+        {
+          headers: {
+            Authorization: `Basic ${credentials}`,
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+
       res.json(response.data);
-    })
-    .catch((error) => {
+    } catch (err) {
       console.error(
-        "Spotify error:",
+        "Spotify token error:",
         err.response ? err.response.data : err.message
       );
-      res.status(500).send("Failed to exchange Spotify token");
-    });
+      res.status(500).send("Failed to get Spotify token");
+    }
+  });
 });

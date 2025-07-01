@@ -28,14 +28,7 @@ A portfolio website designed to showcase my projects, developed using React, and
   npm start
   ```
 
-````
-
 ## How to Deploy
-
-### Previous Hosting on Heroku
-
-- **NOTE:** This app was previously hosted on Heroku with backend capabilities.
-- Heroku provided a dynamic server environment, which supported features like server-side rendering and API routes.
 
 ### Current Hosting on GitHub Pages
 
@@ -46,16 +39,11 @@ A portfolio website designed to showcase my projects, developed using React, and
 
 - Note: When you run npm run deploy using the gh-pages package, this script handles deploying the contents of your build directory directly to the gh-pages branch on GitHub. This branch is specifically used for serving your site on GitHub Pages, and the deployment process does not typically require you to manually push changes to this branch. The gh-pages tool automates this for you.
 
+-If you’ve made changes to the frontend React app and want to deploy them to your live GitHub Pages site:
+
 ```powershell
-cd *project root*
-cd reactapp
-npm run build
-npm run deploy
-cd ..
-git add .
-git commit -m "Commit message"
-git push origin main
-````
+cd reactapp && npm run build && npm run deploy && cd .. && git add . && git commit -m "Update" && git push origin main
+```
 
 - **Modifying the Deployment Setup**:
   1. To change the GitHub Pages configuration, update the `homepage` in `package.json` to reflect the new repository path or custom domain.

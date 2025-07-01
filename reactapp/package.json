@@ -31,7 +31,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build && copy public\\CNAME build\\CNAME",
-    "deploy": "gh-pages -b gh-pages -d build"
+    "deploy": "gh-pages -b gh-pages -d build",
+    "deploy-prod": "npm run predeploy && npm run deploy && git add . && git commit -m \"Update\" && git push origin main"
   },
   "eslintConfig": {
     "extends": [
