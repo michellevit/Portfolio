@@ -21,6 +21,8 @@ const stormglassKey = functions.config().stormglass.key;
 const visualcrossingKey = functions.config().visualcrossing.key;
 const astronomyId = functions.config().astronomy.id;
 const astronomyKey = functions.config().astronomy.key;
+const spotifyId = functions.config().spotify.id;
+const spotifyKey = functions.config().spotify.key;
 
 // Horoscope
 exports.getHoroscope = functions.https.onRequest((req, res) => {
@@ -194,4 +196,38 @@ exports.getCelestialEvents = functions.https.onRequest((req, res) => {
       res.status(500).send("Failed to fetch celestial events");
     }
   });
+});
+
+// Spotify
+
+exports.getSpotifyToken = functions.https.onRequest((req, res) => {
+  const code = req.query.code;
+  const redirectUri = "http://localhost:3000/callback"; // or your prod redirect
+
+  const authString = Buffer.from(`${spotifyId}:${spotifyKey}`).toString(
+    "base64"
+  );
+
+  axios
+    .post("https://accounts.spotify.com/api/token", null, {
+      params: {
+        grant_type: "authorization_code",
+        code: code,
+        redirect_uri: redirectUri,
+      },
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Basic ${authString}`,
+      },
+    })
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.error(
+        "Spotify error:",
+        err.response ? err.response.data : err.message
+      );
+      res.status(500).send("Failed to exchange Spotify token");
+    });
 });

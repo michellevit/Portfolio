@@ -6,6 +6,7 @@ import CelestialEvents from "./Widgets/CelestialEvents";
 import Horoscope from "./Widgets/Horoscope";
 import MoonPhase from "./Widgets/MoonPhase";
 import Quotes from "./Widgets/Quotes";
+import Spotify from "./Widgets/Spotify";
 import Tide from "./Widgets/Tide";
 import UVIndex from "./Widgets/UVIndex";
 import Weather from "./Widgets/Weather";
@@ -33,6 +34,7 @@ function Dashboard() {
         <MoonPhase />
         <CelestialEvents />
         <Quotes />
+        <Spotify />
       </Masonry>
     </div>
   );

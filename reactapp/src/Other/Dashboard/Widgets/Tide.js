@@ -36,7 +36,7 @@ function Tide() {
 
   return (
     <div className="widget">
-      <h2>Tides</h2>
+      <h2>Tide</h2>
 
       <div className="widget-content">
         {error && <p className="widget-error">{error}</p>}

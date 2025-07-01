@@ -7,6 +7,8 @@
   display: block;
   break-inside: avoid-column;
   margin-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-bg) transparent;
 }
 
 .widget:hover {
@@ -54,6 +56,22 @@
   margin: 0.5rem 0;
 }
 
+/* Scrollbar WebKit-based browsers (Chrome, Safari, Edge) */
+.widget::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.widget::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.widget::-webkit-scrollbar-thumb {
+  background-color: var(--color-text-muted);
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
 /* WEATHER WIDGET */
 
 .sun-times {
@@ -80,13 +98,13 @@
 .period-item {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-text-muted);
+  border-bottom: 1px solid rgb(165, 165, 165);
   padding: 2px 0;
 }
 
 /* WEATHER */
 .weather-widget {
-  max-height: 300px; /* Adjust as needed */
+  max-height: 300px;
   overflow-y: auto;
 }
 
@@ -172,4 +190,21 @@
   color: #353535;
   font-weight: normal;
   margin: 0.5em 0;
+}
+
+/* SPOTIFY WIDGET */
+
+.spotify-login-btn {
+  display: inline-block;
+  background-color: #1db954;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+}
+.spotify-login-btn:hover {
+  background-color: #1ed760;
 }

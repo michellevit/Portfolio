@@ -13,6 +13,7 @@ import KibbeQuiz from "./Components/Projects/KibbeQuiz";
 import Dashboard from "./Other/Dashboard/Dashboard";
 import ProductionPlanner from "./Components/Projects/ProductionPlanner";
 import SiteBlocker from "./Components/Projects/SiteBlocker";
+import SpotifyCallback from "./Other/Dashboard/Widgets/SpotifyCallback";
 import NotFound from "./Pages/NotFound";
 // import Resume from "./Pages/Resume";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -79,6 +80,7 @@ function App() {
                   element={<ProductionPlanner />}
                 />
                 <Route path="/site-blocker" element={<SiteBlocker />} />
+                <Route path="/spotify-callback" element={<SpotifyCallback />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>

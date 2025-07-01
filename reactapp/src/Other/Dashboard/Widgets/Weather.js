@@ -6,9 +6,10 @@ const locations = {
   "Burnaby Central": { lat: 49.2485, lon: -122.9805 },
   Kitsilano: { lat: 49.2681, lon: -123.155 },
   "Jericho Beach": { lat: 49.2735, lon: -123.1947 },
-  "Scottsdale, Arizona": { lat: 33.6349, lon: -111.8302 },
-  "White Rock, BC": { lat: 49.0275, lon: -122.8026 },
+  "Scottsdale, AZ": { lat: 33.6349, lon: -111.8302 },
+  "White Rock": { lat: 49.0275, lon: -122.8026 },
   "Blaine, WA": { lat: 48.9936, lon: -122.747 },
+  Aldergrove: { lat: 49.1045, lon: -122.5138 },
 };
 
 function Weather() {
