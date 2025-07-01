@@ -6,22 +6,21 @@ function SpotifyCallback() {
 
   useEffect(() => {
     const code = new URLSearchParams(window.location.search).get("code");
+    if (!code) return;
 
-    if (code) {
-      fetch(
-        `https://us-central1-portfolio-mfdev.cloudfunctions.net/getSpotifyToken?code=${code}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("🎧 Spotify access token:", data.access_token);
-          localStorage.setItem("spotify_access_token", data.access_token);
-          navigate("/dash"); // go back to dashboard after auth
-        })
-        .catch((err) => {
-          console.error("Spotify auth failed", err);
-          navigate("/dash");
-        });
-    }
+    const getToken = async () => {
+      try {
+        const res = await fetch(
+          `https://us-central1-portfolio-mfdev.cloudfunctions.net/getSpotifyToken?code=${code}`
+        );
+        const data = await res.json();
+        console.log("🎧 Spotify token response:", data);
+      } catch (err) {
+        console.error("🎧 Spotify token fetch error:", err);
+      }
+    };
+
+    getToken();
   }, []);
 
   return <p>Authorizing with Spotify...</p>;
