@@ -1,6 +1,5 @@
 // src/Projects/index.js
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import "./Projects.css";
 
 import projectData from "../Components/Projects/ProjectData.json";
@@ -20,7 +19,6 @@ const filterCategories = {
 };
 
 function Projects() {
-  const location = useLocation();
   const [selectedTag, setSelectedTag] = useState("all");
 
   const getFilteredProjects = (tag) => {
@@ -83,10 +81,6 @@ function Projects() {
       </div>
     </div>
   );
-}
-
-function formatTitle(slug) {
-  return slug.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export default Projects;

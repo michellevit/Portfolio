@@ -62,10 +62,10 @@ body.dark {
 
 /* Shared highlight colors */
 :root {
-  --color-highlight-one: rgba(185, 139, 255, 0.4); /* lilac */
-  --color-highlight-two: rgba(255, 188, 216, 0.4); /* soft rose */
-  --color-highlight-three: rgba(250, 234, 154, 0.4); /* warm yellow */
-  --color-highlight-four: rgba(189, 235, 195, 0.4); /* mint green */
+  --color-highlight-one: rgba(185, 139, 255, 0.4);
+  --color-highlight-two: rgba(255, 188, 216, 0.4);
+  --color-highlight-three: rgba(250, 234, 154, 0.4);
+  --color-highlight-four: rgba(189, 235, 195, 0.4);
 }
 
 /* ---------------------------------------------------

@@ -1,0 +1,175 @@
+.widget {
+  background-color: var(--color-bg-detail);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px var(--color-bg);
+  padding: 1rem;
+  transition: transform 0.2s;
+  display: block;
+  break-inside: avoid-column;
+  margin-bottom: 1rem;
+}
+
+.widget:hover {
+  transform: translateY(-2px);
+}
+
+.widget h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.widget-content {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.widget select {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  padding: 0.25rem;
+  background-color: var(--color-bg);
+  box-shadow: none;
+  color: var(--color-text);
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.widget select:hover {
+  transform: none;
+}
+
+.widget-content {
+  color: var(--color-text);
+}
+
+.widget-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.widget-list li {
+  margin: 0.5rem 0;
+}
+
+/* WEATHER WIDGET */
+
+.sun-times {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.period {
+  margin-bottom: 0.5rem;
+}
+
+.period-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.period-list {
+  padding: 0;
+  list-style: none;
+  margin: 4px 0;
+}
+
+.period-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-text-muted);
+  padding: 2px 0;
+}
+
+/* WEATHER */
+.weather-widget {
+  max-height: 300px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
+/* AIR QUALITY WIDGET */
+
+.aqi-bar-container {
+  position: relative;
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(to right, #5bb760, #fff597, #fbb143, #ff4c9d);
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.aqi-indicator {
+  position: absolute;
+  top: -6px;
+  width: 14px;
+  height: 24px;
+  background: black;
+  border-radius: 4px;
+  transform: translateX(-50%);
+}
+.aqi-label {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* UV INDEX WIDGET */
+.uv-bar-container {
+  position: relative;
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(to right, #5bb760, #fff597, #fbb143, #ff4c9d);
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.uv-indicator {
+  position: absolute;
+  top: -6px;
+  width: 14px;
+  height: 24px;
+  background: black;
+  border-radius: 4px;
+  transform: translateX(-50%);
+}
+
+.uv-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* TIDE WIDGET */
+.tide-widget {
+  padding: 1rem;
+  border: 1px solid var(--color-bg-detail);
+  border-radius: 1rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tide-widget h3 {
+  margin-bottom: 0.5rem;
+}
+
+.tide-widget ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tide-widget li {
+  margin: 0.5rem 0;
+}
+
+.widget-error {
+  color: #353535;
+  font-weight: normal;
+  margin: 0.5em 0;
+}

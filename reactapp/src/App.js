@@ -10,6 +10,7 @@ import BoilerplateGateway from "./Components/Projects/BoilerplateGateway";
 import CommentAnalyzer from "./Components/Projects/CommentAnalyzer";
 import DGDraft from "./Components/Projects/DGDraft";
 import KibbeQuiz from "./Components/Projects/KibbeQuiz";
+import Dashboard from "./Other/Dashboard/Dashboard";
 import ProductionPlanner from "./Components/Projects/ProductionPlanner";
 import SiteBlocker from "./Components/Projects/SiteBlocker";
 import NotFound from "./Pages/NotFound";
@@ -71,6 +72,7 @@ function App() {
                 <Route path="/comment-analyzer" element={<CommentAnalyzer />} />
                 <Route path="/dg-draft" element={<DGDraft />} />
                 <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
+                <Route path="/dash" element={<Dashboard />} />
                 {/* <Route path="/resume" element={<Resume />} /> */}
                 <Route
                   path="/production-planner"

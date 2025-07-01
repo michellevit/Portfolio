@@ -61,6 +61,46 @@ git push origin main
   1. To change the GitHub Pages configuration, update the `homepage` in `package.json` to reflect the new repository path or custom domain.
   2. Ensure that the `gh-pages` package is configured correctly in the `reactapp/package.json`.
 
+## Modifying Firebase
+
+- When modifying functions/index.js - after you must:
+- Navigate to the root project folder and then run:
+
+```powershell
+npm --prefix functions run lint -- --fix
+firebase deploy --only functions
+```
+
+## Adding an API endpoint to the dash
+
+- Set the API key - open bash in the root and run:
+
+```bash
+firebase functions:config:set YOUR_API_NAME_HERE.key="YOUR_API_KEY_HERE"
+```
+
+- Add the function in the index
+- Deploy the config:
+
+```bash
+firebase deploy --only functions
+```
+
+- Set up the widget accordingly
+- Troubleshooting:
+
+  - Check for errors with a specific function:
+
+  ```bash
+  firebase functions:log --only getMoonPhase
+  ```
+
+  - Check for errors with the API key values:
+
+  ```bash
+   firebase functions:config:get
+  ```
+
 ## Troubleshooting
 
 - Issues with GitHub Pages deployment can often be traced back to path issues in the `homepage` field of `package.json` or DNS settings for custom domains.
