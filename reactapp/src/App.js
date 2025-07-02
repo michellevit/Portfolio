@@ -30,8 +30,7 @@ function RedirectHandler() {
     const redirect = params.get("redirect");
 
     if (redirect) {
-      const newPath = redirect + window.location.search;
-      navigate(newPath);
+      navigate(redirect, { replace: true });
     }
   }, [location.search, navigate]);
 
@@ -40,6 +39,7 @@ function RedirectHandler() {
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [theme, setTheme] = useState("dark");
 
   // Scroll to top on route change
@@ -75,7 +75,7 @@ function App() {
       <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
       <div className="app">
         <EasterEgg />
-        <RedirectHandler /> {/* 🔁 Handles redirect param before routing */}
+        <RedirectHandler />
         <TransitionGroup>
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <div className="main-container">
