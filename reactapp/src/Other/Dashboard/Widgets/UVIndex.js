@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Widgets.css";
 
 const locations = {
-  "Burnaby Mountain": { lat: 49.2781, lon: -122.9199 },
-  "Burnaby Central": { lat: 49.2485, lon: -122.9805 },
-  "Jericho Beach": { lat: 49.2735, lon: -123.1947 },
-  "Scottsdale, AZ": { lat: 33.6349, lon: -111.8302 },
+  Burnaby: { lat: 49.2485, lon: -122.9805 },
 };
 
 function getUvStatus(uv) {
@@ -31,7 +28,7 @@ function getUvStatus(uv) {
 }
 
 function UVIndex() {
-  const [selectedLocation, setSelectedLocation] = useState("Burnaby Mountain");
+  const [selectedLocation, setSelectedLocation] = useState("Burnaby");
   const [uvData, setUvData] = useState(null);
   const [error, setError] = useState(null);
 

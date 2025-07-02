@@ -2,18 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./Widgets.css";
 
 function AirQuality() {
-  const [selectedLocation, setSelectedLocation] = useState("Burnaby Mountain");
+  const [selectedLocation, setSelectedLocation] = useState("Burnaby");
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   const locations = {
-    "Burnaby Mountain": { lat: 49.2781, lon: -122.9199 },
-    "Burnaby Central": { lat: 49.2485, lon: -122.9805 },
-    "Jericho Beach": { lat: 49.2735, lon: -123.1947 },
-    "White Rock": { lat: 49.0275, lon: -122.8026 },
-    Aldergrove: { lat: 49.1045, lon: -122.5138 },
-    "Blaine, WA": { lat: 48.9936, lon: -122.747 },
-    "Scottsdale, AZ": { lat: 33.6349, lon: -111.8302 },
+    Burnaby: { lat: 49.2485, lon: -122.9805 },
   };
 
   useEffect(() => {

@@ -1,38 +1,10 @@
 [
     {
-        "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
-        "author": "Harold Abelson"
+        "text": "The first principle is that you must not fool yourself – and you are the easiest person to fool.",
+        "author": "Richard Feynman"
     },
     {
         "text": "The limits of my language mean the limits of my world.",
         "author": "Ludwig Wittgenstein"
-    },
-    {
-        "text": "Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.",
-        "author": "Isaac Newton"
-    },
-    {
-        "text": "Simplicity is the soul of efficiency.",
-        "author": "Austin Freeman"
-    },
-    {
-        "text": "The most damaging phrase in the language is: 'We've always done it this way.'",
-        "author": "Grace Hopper"
-    },
-    {
-        "text": "The code you write makes you a programmer. The code you delete makes you a good one.",
-        "author": "Mario Fusco"
-    },
-    {
-        "text": "First, solve the problem. Then, write the code.",
-        "author": "John Johnson"
-    },
-    {
-        "text": "I am a human being; nothing human is alien to me.",
-        "author": "Terence"
-    },
-    {
-        "text": "One day, someone will ask you to build something impossible. Say yes.",
-        "author": "Unknown"
     }
 ]
