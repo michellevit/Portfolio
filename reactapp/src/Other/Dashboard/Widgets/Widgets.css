@@ -73,6 +73,10 @@
   transform: none;
 }
 
+.widget .widget-error {
+  text-align: center;
+}
+
 /* Scrollbars (unified) */
 .widget::-webkit-scrollbar {
   width: 6px;
@@ -112,6 +116,12 @@
   font-size: 0.8rem;
   margin-top: 4px;
   text-align: center;
+}
+
+/* Horoscope */
+
+.widget .horoscope-text {
+  margin-top: 0;
 }
 
 /* Quotes */

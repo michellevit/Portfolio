@@ -6,8 +6,15 @@ function MoonPhase() {
   const [error, setError] = useState(null);
 
   const getMoonEmoji = (value) => {
-    const phases = ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"];
-    return phases[Math.round(value * 8) % 8];
+    if (value === 0) return "🌑"; // New Moon
+    if (value > 0 && value < 0.25) return "🌒"; // Waxing Crescent
+    if (value === 0.25) return "🌓"; // First Quarter
+    if (value > 0.25 && value < 0.5) return "🌔"; // Waxing Gibbous
+    if (value === 0.5) return "🌕"; // Full Moon
+    if (value > 0.5 && value < 0.75) return "🌖"; // Waning Gibbous
+    if (value === 0.75) return "🌗"; // Last Quarter
+    if (value > 0.75 && value < 1) return "🌘"; // Waning Crescent
+    return "🌑";
   };
 
   const getMoonLabel = (value) => {
@@ -21,7 +28,7 @@ function MoonPhase() {
       "Last Quarter",
       "Waning Crescent",
     ];
-    return labels[Math.round(value * 8) % 8];
+    return labels[Math.floor(value * 8) % 8];
   };
 
   useEffect(() => {

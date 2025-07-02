@@ -67,7 +67,7 @@ function Horoscope() {
       {error ? (
         <p className="widget-error">{error}</p>
       ) : horoscope ? (
-        <p>{horoscope}</p>
+        <p className="horoscope-text">{horoscope}</p>
       ) : (
         <p>Loading...</p>
       )}
