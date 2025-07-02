@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQZSMBY1FW"></script>
@@ -10,24 +11,27 @@
     gtag('config', 'G-RQZSMBY1FW');
   </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <title>Michelle Flandin | Portfolio</title>
-
   <!-- Redirect script for GitHub Pages -->
   <script>
-    (function() {
+    (function () {
       var pathname = window.location.pathname;
+      var search = window.location.search;
       if (pathname !== "/" && !pathname.startsWith("/index.html")) {
-        var newUrl = window.location.origin + "/?redirect=" + pathname;
+        var newUrl = window.location.origin + "/?redirect=" + pathname + search;
         window.location.replace(newUrl);
       }
     })();
   </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Michelle Flandin | Portfolio</title>
 </head>
+
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 </body>
+
 </html>
