@@ -22,9 +22,11 @@ const Spotify = () => {
           Login available only on <strong>michellef.dev</strong>
         </p>
       ) : (
-        <a className="spotify-login-btn" href={loginUrl}>
-          Connect to Spotify
-        </a>
+        <div className="spotify-button">
+          <a className="spotify-login-btn" href={loginUrl}>
+            Connect to Spotify
+          </a>
+        </div>
       )}
     </div>
   );

@@ -34,7 +34,7 @@ function Dashboard() {
         <MoonPhase />
         <CelestialEvents />
         <Quotes />
-        <Spotify />
+        {/* <Spotify /> */}
       </Masonry>
     </div>
   );
