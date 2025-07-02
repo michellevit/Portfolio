@@ -18,12 +18,17 @@ const SpotifyCallback = () => {
           console.error("Invalid JSON from server:", text);
           throw err;
         }
-        console.log("Spotify token response:", data);
+
+        console.log("🎧 Spotify token response:", data);
 
         if (data.access_token) {
-          // ✅ Save token and redirect
           localStorage.setItem("spotifyToken", data.access_token);
-          window.location.href = "/dash"; // or "/dashboard" or wherever
+          localStorage.setItem("spotifyRefreshToken", data.refresh_token);
+          localStorage.setItem(
+            "spotifyTokenExpiry",
+            Date.now() + data.expires_in * 1000 // in ms
+          );
+          window.location.href = "/dash"; // redirect back to dashboard
         } else {
           console.error("No access token received:", data);
         }

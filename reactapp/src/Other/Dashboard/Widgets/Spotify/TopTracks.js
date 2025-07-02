@@ -6,20 +6,23 @@ const timeRanges = {
   long_term: "All Time",
 };
 
-const TopTracks = () => {
+const TopTracks = ({ token }) => {
   const [tracks, setTracks] = useState({});
-  const token = localStorage.getItem("spotifyToken");
 
   useEffect(() => {
     const fetchTopTracks = async (range) => {
-      const res = await fetch(
-        `https://api.spotify.com/v1/me/top/tracks?time_range=${range}&limit=5`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-      const data = await res.json();
-      setTracks((prev) => ({ ...prev, [range]: data.items }));
+      try {
+        const res = await fetch(
+          `https://api.spotify.com/v1/me/top/tracks?time_range=${range}&limit=5`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+        const data = await res.json();
+        setTracks((prev) => ({ ...prev, [range]: data.items }));
+      } catch (err) {
+        console.error(`🎶 TopTracks (${range}) error:`, err.message);
+      }
     };
 
     if (token) Object.keys(timeRanges).forEach(fetchTopTracks);

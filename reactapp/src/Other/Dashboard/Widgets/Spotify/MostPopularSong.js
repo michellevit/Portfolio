@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-const MostPopularSong = () => {
+const MostPopularSong = ({ token }) => {
   const [song, setSong] = useState(null);
-  const token = localStorage.getItem("spotifyToken");
 
   useEffect(() => {
     const fetchPopular = async () => {
