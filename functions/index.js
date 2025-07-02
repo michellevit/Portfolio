@@ -234,7 +234,7 @@ exports.getSpotifyToken = functions.https.onRequest((req, res) => {
         "Spotify token error:",
         err.response ? err.response.data : err.message
       );
-      res.status(500).send("Failed to get Spotify token");
+      res.status(500).json({ error: "Failed to get Spotify token" });
     }
   });
 });

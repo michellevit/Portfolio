@@ -10,8 +10,15 @@ const SpotifyCallback = () => {
         const res = await fetch(
           `https://us-central1-portfolio-mfdev.cloudfunctions.net/getSpotifyToken?code=${code}`
         );
-        const data = await res.json();
-        console.log("🎧 Spotify token response:", data);
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (err) {
+          console.error("Invalid JSON from server:", text);
+          throw err;
+        }
+        console.log("Spotify token response:", data);
 
         if (data.access_token) {
           // ✅ Save token and redirect
