@@ -139,7 +139,7 @@ function Weather() {
 
                 return (
                   <div key={period} className={periodClass}>
-                    <div className="weather-period-title">{period}</div>
+                    <h3>{period}</h3>
                     <ul className="weather-period-list">
                       {entries.map((entry, idx) => {
                         const isNow = entry.hour === currentHour;

@@ -26,7 +26,7 @@ const Spotify = () => {
     <div className="widget spotify-widget">
       <h2>Spotify</h2>
       {isLocalhost ? (
-        <p className="widget-note">
+        <p className="widget-error">
           Login available only on <strong>michellef.dev</strong>
         </p>
       ) : token ? (
