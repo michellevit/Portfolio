@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import Navbar from "./Components/Navbar/Navbar";
 import EasterEgg from "./Other/Secret/EasterEgg";
 import Home from "./Pages/Home";
@@ -16,8 +19,24 @@ import SiteBlocker from "./Components/Projects/SiteBlocker";
 import SpotifyCallback from "./Other/Dashboard/Widgets/SpotifyCallback";
 import NotFound from "./Pages/NotFound";
 // import Resume from "./Pages/Resume";
-import { Route, Routes, useLocation } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+// 🔁 GitHub Pages redirect support
+function RedirectHandler() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const redirect = params.get("redirect");
+
+    if (redirect) {
+      const newPath = redirect + window.location.search;
+      navigate(newPath);
+    }
+  }, [location.search, navigate]);
+
+  return null;
+}
 
 function App() {
   const location = useLocation();
@@ -44,7 +63,6 @@ function App() {
     }
   }, []);
 
-  // Toggle light/dark mode
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
@@ -57,6 +75,7 @@ function App() {
       <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
       <div className="app">
         <EasterEgg />
+        <RedirectHandler /> {/* 🔁 Handles redirect param before routing */}
         <TransitionGroup>
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <div className="main-container">

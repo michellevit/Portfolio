@@ -23,7 +23,7 @@
 }
 
 .widget-content {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: var(--color-text);
 }
 
@@ -161,6 +161,20 @@
   justify-content: space-between;
   font-size: 0.8rem;
   margin-top: 4px;
+}
+
+.uv-note {
+  font-style: italic;
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+.uv-sunscreen {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin: 0.4rem 0;
 }
 
 /* TIDE WIDGET */

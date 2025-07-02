@@ -38,7 +38,7 @@ function Tide() {
     <div className="widget">
       <h2>Tide</h2>
 
-      <div className="widget-content">
+      <div className="widget-content" style={{ textAlign: "center" }}>
         {error && <p className="widget-error">{error}</p>}
         {!error && tides.length === 0 && <p>Loading...</p>}
         {!error && tides.length > 0 && (

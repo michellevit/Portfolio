@@ -16,7 +16,7 @@ const Spotify = () => {
 
   return (
     <div className="widget">
-      <h2>🎵 Spotify</h2>
+      <h2>Spotify</h2>
       {isLocalhost ? (
         <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)" }}>
           Login available only on <strong>michellef.dev</strong>

@@ -44,7 +44,7 @@ function MoonPhase() {
   return (
     <div className="widget">
       <h2>Moon Phase</h2>
-      <div className="widget-content">
+      <div className="widget-content" style={{ textAlign: "center" }}>
         {error && error}
         {!error && !moonData && "Loading..."}
         {moonData && (
