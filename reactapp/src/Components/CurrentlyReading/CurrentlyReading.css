@@ -9,8 +9,7 @@
 }
 
 body.dark .currently-reading {
-  background-color: rgba(244, 241, 234, 0.7);
-  filter: grayscale(80%);
+  background-color: var(--color-bg-detail);
 }
 
 .currently-reading h3 {
