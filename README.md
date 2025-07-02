@@ -41,7 +41,7 @@ A portfolio website designed to showcase my projects, developed using React, and
 
 -If you’ve made changes to the frontend React app and want to deploy them to your live GitHub Pages site:
 
-```powershell
+```bash
 cd reactapp && npm run build && npm run deploy && cd .. && git add . && git commit -m "Update" && git push origin main
 ```
 
