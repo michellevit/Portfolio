@@ -20,7 +20,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <h1>✨ Daily Dashboard ✨</h1>
+      <h1>🌞 Daily Dashboard</h1>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
