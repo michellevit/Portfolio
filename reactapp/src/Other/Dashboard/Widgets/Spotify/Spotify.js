@@ -27,7 +27,7 @@ const Spotify = () => {
   )}&scope=${encodeURIComponent(scopes)}`;
 
   return (
-    <div className="widget">
+    <div className="widget spotify-widget">
       <h2>Spotify</h2>
       {isLocalhost ? (
         <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)" }}>

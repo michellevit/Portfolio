@@ -6,30 +6,45 @@ const MoodAnalysis = () => {
 
   useEffect(() => {
     const getMood = async () => {
-      const topRes = await fetch(
-        "https://api.spotify.com/v1/me/top/tracks?limit=10&time_range=short_term",
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      const topData = await topRes.json();
-      const ids = topData.items.map((t) => t.id).join(",");
+      try {
+        const topRes = await fetch(
+          "https://api.spotify.com/v1/me/top/tracks?limit=10&time_range=short_term",
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+        const topData = await topRes.json();
+        const ids = topData?.items?.map((t) => t.id).join(",");
 
-      const audioRes = await fetch(
-        `https://api.spotify.com/v1/audio-features?ids=${ids}`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      const audioData = await audioRes.json();
+        if (!ids) {
+          console.warn("No top tracks found");
+          return;
+        }
 
-      const avg = (key) =>
-        (
-          audioData.audio_features.reduce((sum, f) => sum + f[key], 0) /
-          audioData.audio_features.length
-        ).toFixed(2);
+        const audioRes = await fetch(
+          `https://api.spotify.com/v1/audio-features?ids=${ids}`,
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+        const audioData = await audioRes.json();
 
-      setMood({
-        energy: avg("energy"),
-        danceability: avg("danceability"),
-        valence: avg("valence"),
-      });
+        const features = audioData?.audio_features;
+        if (!features || !Array.isArray(features)) {
+          console.warn("No audio features returned");
+          return;
+        }
+
+        const avg = (key) =>
+          (
+            features.reduce((sum, f) => sum + (f?.[key] || 0), 0) /
+            features.length
+          ).toFixed(2);
+
+        setMood({
+          energy: avg("energy"),
+          danceability: avg("danceability"),
+          valence: avg("valence"),
+        });
+      } catch (err) {
+        console.error("🎧 MoodAnalysis error:", err.message);
+      }
     };
 
     if (token) getMood();
@@ -45,7 +60,7 @@ const MoodAnalysis = () => {
           <li>😊 Positivity: {mood.valence}</li>
         </ul>
       ) : (
-        <p>Loading...</p>
+        <p>Loading or unavailable...</p>
       )}
     </>
   );

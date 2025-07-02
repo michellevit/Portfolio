@@ -6,13 +6,27 @@ const MostPopularSong = () => {
 
   useEffect(() => {
     const fetchPopular = async () => {
-      const res = await fetch(
-        "https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF",
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      const data = await res.json();
-      const firstTrack = data.tracks.items[0].track;
-      setSong(firstTrack);
+      try {
+        const res = await fetch(
+          "https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF",
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+
+        if (!res.ok) {
+          throw new Error(`Failed to fetch playlist: ${res.status}`);
+        }
+
+        const data = await res.json();
+        const firstTrack = data?.tracks?.items?.[0]?.track;
+
+        if (firstTrack) {
+          setSong(firstTrack);
+        } else {
+          console.warn("No track data found");
+        }
+      } catch (err) {
+        console.error("🔥 MostPopularSong error:", err.message);
+      }
     };
 
     if (token) fetchPopular();
@@ -26,7 +40,7 @@ const MostPopularSong = () => {
           {song.name} by {song.artists.map((a) => a.name).join(", ")}
         </p>
       ) : (
-        <p>Loading...</p>
+        <p>Loading or unavailable...</p>
       )}
     </>
   );

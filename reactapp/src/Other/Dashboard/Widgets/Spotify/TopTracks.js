@@ -29,10 +29,9 @@ const TopTracks = () => {
 
   return (
     <>
-      <h3>🎶 Your Top Tracks</h3>
       {Object.entries(timeRanges).map(([range, label]) => (
         <div key={range}>
-          <h4>{label}</h4>
+          <h3>🎶 {label}</h3>
           <ol>
             {(tracks[range] || []).map((track) => (
               <li key={track.id}>
