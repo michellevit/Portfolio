@@ -12,6 +12,15 @@ body.dark .currently-reading {
   background-color: var(--color-bg-detail);
 }
 
+body.dark .currently-reading h3 {
+  background-color: var(--color-bg-detail);
+  color: var(--color-text);
+}
+
+body.dark .currently-reading .current-book {
+  color: var(--color-text-muted);
+}
+
 .currently-reading h3 {
   font-size: 1.2rem;
   text-align: center;
@@ -67,7 +76,7 @@ body.dark .currently-reading {
 
 .book-list li a {
   font-size: 0.8rem;
-  color: #372213c5;
+  color: var(--color-text-muted);
   text-decoration: none;
 }
 
