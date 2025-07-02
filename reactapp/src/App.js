@@ -16,7 +16,7 @@ import KibbeQuiz from "./Components/Projects/KibbeQuiz";
 import Dashboard from "./Other/Dashboard/Dashboard";
 import ProductionPlanner from "./Components/Projects/ProductionPlanner";
 import SiteBlocker from "./Components/Projects/SiteBlocker";
-import SpotifyCallback from "./Other/Dashboard/Widgets/SpotifyCallback";
+import SpotifyCallback from "./Other/Dashboard/Widgets/Spotify/SpotifyCallback";
 import NotFound from "./Pages/NotFound";
 // import Resume from "./Pages/Resume";
 
