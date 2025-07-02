@@ -7,7 +7,7 @@ import Horoscope from "./Widgets/Horoscope";
 import MoonPhase from "./Widgets/MoonPhase";
 import Quotes from "./Widgets/Quotes";
 import Spotify from "./Widgets/Spotify/Spotify";
-import Tide from "./Widgets/Tide";
+import Tides from "./Widgets/Tides";
 import UVIndex from "./Widgets/UVIndex";
 import Weather from "./Widgets/Weather";
 
@@ -29,7 +29,7 @@ function Dashboard() {
         <Weather />
         <UVIndex />
         <AirQuality />
-        <Tide />
+        <Tides />
         <MoonPhase />
         <CelestialEvents />
         <Quotes />

@@ -14,31 +14,31 @@ const TopArtists = () => {
     const fetchArtists = async (range) => {
       const res = await fetch(
         `https://api.spotify.com/v1/me/top/artists?time_range=${range}&limit=5`,
-        { headers: { Authorization: `Bearer ${token}` } }
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
       const data = await res.json();
       setArtists((prev) => ({ ...prev, [range]: data.items }));
     };
 
-    if (token) {
-      Object.keys(timeLabels).forEach(fetchArtists);
-    }
+    if (token) Object.keys(timeLabels).forEach(fetchArtists);
   }, [token]);
 
   return (
-    <>
+    <div className="widget-block">
       <h3>👩‍🎤 Your Top Artists</h3>
       {Object.entries(timeLabels).map(([range, label]) => (
         <div key={range}>
           <h4>{label}</h4>
-          <ol>
+          <ol className="widget-list">
             {(artists[range] || []).map((artist) => (
               <li key={artist.id}>{artist.name}</li>
             ))}
           </ol>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

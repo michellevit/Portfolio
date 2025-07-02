@@ -9,21 +9,14 @@ const MostPopularSong = () => {
       try {
         const res = await fetch(
           "https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF",
-          { headers: { Authorization: `Bearer ${token}` } }
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
         );
-
-        if (!res.ok) {
-          throw new Error(`Failed to fetch playlist: ${res.status}`);
-        }
-
+        if (!res.ok) throw new Error(`Fetch error ${res.status}`);
         const data = await res.json();
         const firstTrack = data?.tracks?.items?.[0]?.track;
-
-        if (firstTrack) {
-          setSong(firstTrack);
-        } else {
-          console.warn("No track data found");
-        }
+        if (firstTrack) setSong(firstTrack);
       } catch (err) {
         console.error("🔥 MostPopularSong error:", err.message);
       }
@@ -33,7 +26,7 @@ const MostPopularSong = () => {
   }, [token]);
 
   return (
-    <>
+    <div className="widget-block">
       <h3>🔥 Most Popular on Spotify</h3>
       {song ? (
         <p>
@@ -42,7 +35,7 @@ const MostPopularSong = () => {
       ) : (
         <p>Loading or unavailable...</p>
       )}
-    </>
+    </div>
   );
 };
 

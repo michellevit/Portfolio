@@ -7,15 +7,15 @@ function CelestialEvents() {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const url = `https://us-central1-portfolio-mfdev.cloudfunctions.net/getCelestialEvents`;
-
       try {
-        const res = await fetch(url);
+        const res = await fetch(
+          "https://us-central1-portfolio-mfdev.cloudfunctions.net/getCelestialEvents"
+        );
         if (!res.ok) throw new Error(`Status ${res.status}`);
         const data = await res.json();
-        setEvents(data.data || []);
+        setEvents(data?.data || []);
       } catch (err) {
-        console.error("🌠 Celestial events error:", err);
+        console.error("🌠 Celestial events error:", err.message);
         setError("Error fetching celestial events.");
       }
     };
@@ -26,17 +26,19 @@ function CelestialEvents() {
   return (
     <div className="widget">
       <h2>Celestial Events</h2>
-      <div className="widget-content">
-        {error && <p>{error}</p>}
-        {!error && events.length === 0 && <p>Loading...</p>}
+      {error ? (
+        <p className="widget-error">{error}</p>
+      ) : events.length === 0 ? (
+        <p>Loading...</p>
+      ) : (
         <ul className="widget-list">
           {events.map((e, i) => (
             <li key={i}>
-              <strong>{e.type.replace("_", " ")}:</strong> {e.date}
+              <strong>{e.type.replace(/_/g, " ")}:</strong> {e.date}
             </li>
           ))}
         </ul>
-      </div>
+      )}
     </div>
   );
 }

@@ -22,17 +22,16 @@ const TopTracks = () => {
       setTracks((prev) => ({ ...prev, [range]: data.items }));
     };
 
-    if (token) {
-      Object.keys(timeRanges).forEach(fetchTopTracks);
-    }
+    if (token) Object.keys(timeRanges).forEach(fetchTopTracks);
   }, [token]);
 
   return (
-    <>
+    <div className="widget-block">
+      <h3>🎶 Your Top Tracks</h3>
       {Object.entries(timeRanges).map(([range, label]) => (
         <div key={range}>
-          <h3>🎶 {label}</h3>
-          <ol>
+          <h4>{label}</h4>
+          <ol className="widget-list">
             {(tracks[range] || []).map((track) => (
               <li key={track.id}>
                 {track.name} – {track.artists.map((a) => a.name).join(", ")}
@@ -41,7 +40,7 @@ const TopTracks = () => {
           </ol>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

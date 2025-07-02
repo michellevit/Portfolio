@@ -7,8 +7,7 @@ function MoonPhase() {
 
   const getMoonEmoji = (value) => {
     const phases = ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"];
-    const index = Math.round(value * 8) % 8;
-    return phases[index];
+    return phases[Math.round(value * 8) % 8];
   };
 
   const getMoonLabel = (value) => {
@@ -22,40 +21,46 @@ function MoonPhase() {
       "Last Quarter",
       "Waning Crescent",
     ];
-    const index = Math.round(value * 8) % 8;
-    return labels[index];
+    return labels[Math.round(value * 8) % 8];
   };
 
   useEffect(() => {
-    fetch("https://us-central1-portfolio-mfdev.cloudfunctions.net/getMoonPhase")
-      .then((res) => {
+    const fetchMoonData = async () => {
+      try {
+        const res = await fetch(
+          "https://us-central1-portfolio-mfdev.cloudfunctions.net/getMoonPhase"
+        );
         if (!res.ok) throw new Error("Failed to fetch moon data");
-        return res.json();
-      })
-      .then((data) => {
+        const data = await res.json();
         setMoonData(data);
-      })
-      .catch((err) => {
-        console.error("🌙 MoonPhase widget error:", err);
+      } catch (err) {
+        console.error("🌙 MoonPhase error:", err);
         setError("Could not load moon phase.");
-      });
+      }
+    };
+
+    fetchMoonData();
   }, []);
 
   return (
     <div className="widget">
       <h2>Moon Phase</h2>
-      <div className="widget-content" style={{ textAlign: "center" }}>
-        {error && error}
-        {!error && !moonData && "Loading..."}
-        {moonData && (
-          <>
-            {getMoonEmoji(moonData.moonPhase)}{" "}
+      {error ? (
+        <p className="widget-error">{error}</p>
+      ) : !moonData ? (
+        <p>Loading...</p>
+      ) : (
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: "2rem", lineHeight: "2.5rem" }}>
+            {getMoonEmoji(moonData.moonPhase)}
+          </div>
+          <p>
             {getMoonLabel(moonData.moonPhase)}
             <br />
-            {(moonData.moonPhase * 100).toFixed(0)}% illumination
-          </>
-        )}
-      </div>
+            {Math.round(moonData.moonPhase * 100)}% illumination
+          </p>
+        </div>
+      )}
     </div>
   );
 }

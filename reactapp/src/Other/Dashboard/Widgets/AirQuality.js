@@ -9,40 +9,39 @@ function AirQuality() {
   const locations = {
     "Burnaby Mountain": { lat: 49.2781, lon: -122.9199 },
     "Burnaby Central": { lat: 49.2485, lon: -122.9805 },
-    Kitsilano: { lat: 49.2681, lon: -123.155 },
     "Jericho Beach": { lat: 49.2735, lon: -123.1947 },
-    "Scottsdale, Arizona": { lat: 33.6349, lon: -111.8302 },
-    "White Rock, BC": { lat: 49.0275, lon: -122.8026 },
+    "White Rock": { lat: 49.0275, lon: -122.8026 },
+    Aldergrove: { lat: 49.1045, lon: -122.5138 },
     "Blaine, WA": { lat: 48.9936, lon: -122.747 },
-  };
-
-  const fetchAirQuality = async () => {
-    const { lat, lon } = locations[selectedLocation];
-
-    try {
-      const response = await fetch(
-        `https://us-central1-portfolio-mfdev.cloudfunctions.net/getAirQuality?lat=${lat}&lon=${lon}`
-      );
-
-      if (!response.ok) throw new Error("Air quality API failed");
-      const result = await response.json();
-
-      // Check if data exists and has AQI info
-      if (!result || result.overall_aqi === undefined) {
-        setError("No air quality data found for this location.");
-        setData(null);
-      } else {
-        setData(result);
-        setError(null);
-      }
-    } catch (err) {
-      console.error("Error fetching air quality:", err);
-      setError("Failed to load air quality data.");
-      setData(null);
-    }
+    "Scottsdale, AZ": { lat: 33.6349, lon: -111.8302 },
   };
 
   useEffect(() => {
+    const fetchAirQuality = async () => {
+      const { lat, lon } = locations[selectedLocation];
+
+      try {
+        const response = await fetch(
+          `https://us-central1-portfolio-mfdev.cloudfunctions.net/getAirQuality?lat=${lat}&lon=${lon}`
+        );
+        if (!response.ok) throw new Error("Air quality API failed");
+
+        const result = await response.json();
+
+        if (!result || result.overall_aqi === undefined) {
+          setError("No air quality data found.");
+          setData(null);
+        } else {
+          setError(null);
+          setData(result);
+        }
+      } catch (err) {
+        console.error("🌫️ Air quality fetch error:", err);
+        setError("Failed to load air quality data.");
+        setData(null);
+      }
+    };
+
     fetchAirQuality();
   }, [selectedLocation]);
 
@@ -59,10 +58,10 @@ function AirQuality() {
   return (
     <div className="widget">
       <h2>Air Quality</h2>
+
       <select
         value={selectedLocation}
         onChange={(e) => setSelectedLocation(e.target.value)}
-        className="widget select"
       >
         {Object.keys(locations).map((location) => (
           <option key={location} value={location}>
@@ -70,29 +69,28 @@ function AirQuality() {
           </option>
         ))}
       </select>
+
       {error ? (
-        <div>{error}</div>
-      ) : data ? (
-        <div className="widget-content">
-          {data && status && (
-            <div style={{ marginBottom: "1rem" }}>
-              <strong>AQI:</strong> {data.overall_aqi}
-              <div className="aqi-bar-container">
-                <div
-                  className="aqi-indicator"
-                  style={{
-                    left: `${(data.overall_aqi / 500) * 100}%`,
-                  }}
-                />
-              </div>
-              <div className="aqi-label">
-                <span style={{ color: status.color }}>{status.label}</span>
-              </div>
-            </div>
-          )}
-        </div>
+        <p>{error}</p>
+      ) : data && status ? (
+        <>
+          <p>
+            <strong>AQI:</strong> {data.overall_aqi}
+          </p>
+          <div className="widget-bar-container">
+            <div
+              className="widget-bar-indicator"
+              style={{
+                left: `${(data.overall_aqi / 500) * 100}%`,
+              }}
+            />
+          </div>
+          <div className="widget-bar-label">
+            <span style={{ color: status.color }}>{status.label}</span>
+          </div>
+        </>
       ) : (
-        <div>Loading...</div>
+        <p>Loading...</p>
       )}
     </div>
   );

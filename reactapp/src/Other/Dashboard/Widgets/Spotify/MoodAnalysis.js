@@ -14,10 +14,7 @@ const MoodAnalysis = () => {
         const topData = await topRes.json();
         const ids = topData?.items?.map((t) => t.id).join(",");
 
-        if (!ids) {
-          console.warn("No top tracks found");
-          return;
-        }
+        if (!ids) return;
 
         const audioRes = await fetch(
           `https://api.spotify.com/v1/audio-features?ids=${ids}`,
@@ -25,12 +22,7 @@ const MoodAnalysis = () => {
         );
         const audioData = await audioRes.json();
 
-        const features = audioData?.audio_features;
-        if (!features || !Array.isArray(features)) {
-          console.warn("No audio features returned");
-          return;
-        }
-
+        const features = audioData?.audio_features || [];
         const avg = (key) =>
           (
             features.reduce((sum, f) => sum + (f?.[key] || 0), 0) /
@@ -51,10 +43,10 @@ const MoodAnalysis = () => {
   }, [token]);
 
   return (
-    <>
+    <div className="widget-block">
       <h3>🎧 Your Music Mood</h3>
       {mood ? (
-        <ul>
+        <ul className="widget-list">
           <li>🌟 Energy: {mood.energy}</li>
           <li>🕺 Danceability: {mood.danceability}</li>
           <li>😊 Positivity: {mood.valence}</li>
@@ -62,7 +54,7 @@ const MoodAnalysis = () => {
       ) : (
         <p>Loading or unavailable...</p>
       )}
-    </>
+    </div>
   );
 };
 

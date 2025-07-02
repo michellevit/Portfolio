@@ -8,7 +8,9 @@ const TopTrack = () => {
     const fetchTrack = async () => {
       const res = await fetch(
         "https://api.spotify.com/v1/me/top/tracks?limit=1&time_range=short_term",
-        { headers: { Authorization: `Bearer ${token}` } }
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
       const data = await res.json();
       setTrack(data.items?.[0]);
@@ -18,7 +20,7 @@ const TopTrack = () => {
   }, [token]);
 
   return (
-    <>
+    <div className="widget-block">
       <h3>🎵 Top Track This Week</h3>
       {track ? (
         <p>
@@ -27,7 +29,7 @@ const TopTrack = () => {
       ) : (
         <p>Loading...</p>
       )}
-    </>
+    </div>
   );
 };
 

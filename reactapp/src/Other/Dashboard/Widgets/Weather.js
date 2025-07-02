@@ -4,38 +4,37 @@ import "./Widgets.css";
 const locations = {
   "Burnaby Mountain": { lat: 49.2781, lon: -122.9199 },
   "Burnaby Central": { lat: 49.2485, lon: -122.9805 },
-  Kitsilano: { lat: 49.2681, lon: -123.155 },
   "Jericho Beach": { lat: 49.2735, lon: -123.1947 },
-  "Scottsdale, AZ": { lat: 33.6349, lon: -111.8302 },
   "White Rock": { lat: 49.0275, lon: -122.8026 },
-  "Blaine, WA": { lat: 48.9936, lon: -122.747 },
   Aldergrove: { lat: 49.1045, lon: -122.5138 },
+  "Blaine, WA": { lat: 48.9936, lon: -122.747 },
+  "Scottsdale, AZ": { lat: 33.6349, lon: -111.8302 },
+};
+
+const getEmoji = (code, hour, sunriseHour, sunsetHour) => {
+  const isNight = hour < sunriseHour || hour >= sunsetHour;
+  if (code === 0) return isNight ? "🌙" : "☀️";
+  if ([1, 2].includes(code)) return isNight ? "🌙" : "🌤️";
+  if (code === 3) return "☁️";
+  if (code >= 45 && code <= 48) return "🌫️";
+  if (code >= 51 && code <= 57) return "🌦️";
+  if (code >= 61 && code <= 67) return "🌧️";
+  if (code >= 71 && code <= 77) return "🌨️";
+  if (code >= 80 && code <= 82) return "🌦️";
+  if (code >= 95) return "⛈️";
+  return "❓";
 };
 
 function Weather() {
   const [selectedLocation, setSelectedLocation] = useState("Burnaby Mountain");
   const [forecast, setForecast] = useState([]);
-  const [sunriseTime, setSunriseTime] = useState("");
-  const [sunsetTime, setSunsetTime] = useState("");
+  const [sunrise, setSunrise] = useState("");
+  const [sunset, setSunset] = useState("");
   const [error, setError] = useState(null);
+
   const now = new Date();
   const currentHour = now.getHours();
   const currentEntry = forecast.find((e) => e.hour === currentHour);
-
-  const getEmoji = (code, hour, sunriseHour, sunsetHour) => {
-    const isNight = hour < sunriseHour || hour >= sunsetHour;
-
-    if (code === 0) return isNight ? "🌙" : "☀️";
-    if ([1, 2].includes(code)) return isNight ? "🌙" : "🌤️";
-    if (code === 3) return "☁️";
-    if (code >= 45 && code <= 48) return "🌫️";
-    if (code >= 51 && code <= 57) return "🌦️";
-    if (code >= 61 && code <= 67) return "🌧️";
-    if (code >= 71 && code <= 77) return "🌨️";
-    if (code >= 80 && code <= 82) return "🌦️";
-    if (code >= 95) return "⛈️";
-    return "❓";
-  };
 
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0];
@@ -45,49 +44,50 @@ function Weather() {
 
     fetch(url)
       .then((res) => {
-        if (!res.ok) throw new Error(`Error ${res.status}`);
+        if (!res.ok) throw new Error(`API error: ${res.status}`);
         return res.json();
       })
       .then((data) => {
         const { time, temperature_2m, weathercode } = data.hourly;
-        const sunrise = new Date(data.daily.sunrise[0]);
-        const sunset = new Date(data.daily.sunset[0]);
-        const sunriseHour = sunrise.getHours();
-        const sunsetHour = sunset.getHours();
+        const sunriseDate = new Date(data.daily.sunrise[0]);
+        const sunsetDate = new Date(data.daily.sunset[0]);
 
-        const formatTime = (dateObj) =>
-          `${dateObj.getHours().toString().padStart(2, "0")}:${dateObj
-            .getMinutes()
-            .toString()
-            .padStart(2, "0")}`;
+        setSunrise(formatTime(sunriseDate));
+        setSunset(formatTime(sunsetDate));
 
-        setSunriseTime(formatTime(sunrise));
-        setSunsetTime(formatTime(sunset));
+        const sunriseHour = sunriseDate.getHours();
+        const sunsetHour = sunsetDate.getHours();
 
-        const todayForecast = [];
-
-        for (let i = 0; i < time.length; i++) {
-          if (time[i].startsWith(today)) {
-            const hour = new Date(time[i]).getHours();
-            todayForecast.push({
+        const hourlyForecast = time
+          .map((t, i) => {
+            if (!t.startsWith(today)) return null;
+            const hour = new Date(t).getHours();
+            return {
               hour,
               temp: temperature_2m[i],
-              code: weathercode[i],
               emoji: getEmoji(weathercode[i], hour, sunriseHour, sunsetHour),
-            });
-          }
-        }
+            };
+          })
+          .filter(Boolean);
 
-        setForecast(todayForecast);
+        setForecast(hourlyForecast);
+        setError(null);
       })
       .catch((err) => {
         console.error("Weather fetch error:", err);
         setError("Failed to load weather.");
+        setForecast([]);
       });
   }, [selectedLocation]);
 
+  const formatTime = (date) =>
+    `${date.getHours().toString().padStart(2, "0")}:${date
+      .getMinutes()
+      .toString()
+      .padStart(2, "0")}`;
+
   const groupByPeriod = (entries) => ({
-    Twilight: entries.filter((e) => e.hour >= 0 && e.hour < 6),
+    Twilight: entries.filter((e) => e.hour < 6),
     Morning: entries.filter((e) => e.hour >= 6 && e.hour < 12),
     Afternoon: entries.filter((e) => e.hour >= 12 && e.hour < 18),
     Night: entries.filter((e) => e.hour >= 18),
@@ -96,13 +96,13 @@ function Weather() {
   const grouped = groupByPeriod(forecast);
 
   return (
-    <div className="widget weather-widget">
+    <div className="widget">
       <h2>Weather</h2>
 
       <select
         value={selectedLocation}
         onChange={(e) => setSelectedLocation(e.target.value)}
-        className="widget select"
+        className="widget-select"
       >
         {Object.keys(locations).map((loc) => (
           <option key={loc} value={loc}>
@@ -112,46 +112,61 @@ function Weather() {
       </select>
 
       <div className="widget-content">
-        {error && error}
-        {!error && forecast.length === 0 && "Loading..."}
+        {error && <p className="widget-error">{error}</p>}
+        {!error && forecast.length === 0 && <p>Loading...</p>}
+
         {forecast.length > 0 && (
           <>
-            <div className="sun-times">
+            <div className="weather-current">
               {currentEntry && (
                 <>
                   {currentEntry.emoji} Current:{" "}
                   <strong>{Math.round(currentEntry.temp)}°C</strong>
                 </>
               )}
-              <br />
-              🌅 Sunrise: <strong>{sunriseTime}</strong>
-              <br />
-              🌇 Sunset: <strong>{sunsetTime}</strong>
-              <br />
             </div>
 
-            {["Twilight", "Morning", "Afternoon", "Night"].map((period) => (
-              <div key={period} className="period">
-                <div className="period-title">{period}</div>
-                <ul className="period-list">
-                  {grouped[period].map((entry, idx) => (
-                    <li key={idx} className="period-item">
-                      <span>
-                        {entry.hour.toString().padStart(2, "0")}:00{" "}
-                        {entry.emoji}
-                      </span>
-                      <span>
-                        {entry.hour === currentHour ? (
-                          <strong>{Math.round(entry.temp)}°C</strong>
-                        ) : (
-                          `${Math.round(entry.temp)}°C`
-                        )}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div className="weather-sun-times">
+              🌅 <strong>{sunrise}</strong> | 🌇 <strong>{sunset}</strong>
+            </div>
+
+            <div className="weather-periods">
+              {Object.entries(grouped).map(([period, entries]) => {
+                const allPast = entries.every((e) => e.hour < currentHour);
+                const periodClass = `weather-period-group${
+                  allPast ? " weather-past-entry" : ""
+                }`;
+
+                return (
+                  <div key={period} className={periodClass}>
+                    <div className="weather-period-title">{period}</div>
+                    <ul className="weather-period-list">
+                      {entries.map((entry, idx) => {
+                        const isNow = entry.hour === currentHour;
+                        const itemClass = [
+                          "weather-period-item",
+                          isNow && "weather-current-entry",
+                        ]
+                          .filter(Boolean)
+                          .join(" ");
+
+                        return (
+                          <li key={idx} className={itemClass}>
+                            <span className="weather-time">
+                              {entry.hour.toString().padStart(2, "0")}:00{" "}
+                              {entry.emoji}
+                            </span>
+                            <span className="weather-temp">
+                              {Math.round(entry.temp)}°C
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
           </>
         )}
       </div>

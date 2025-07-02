@@ -16,12 +16,8 @@ function QuotesWidget() {
     <div className="widget">
       <h2>Quote</h2>
       <div className="widget-content">
-        <blockquote style={{ fontStyle: "italic", margin: 0 }}>
-          “{quote.text}”
-        </blockquote>
-        <div style={{ marginTop: "0.5em", fontSize: "small" }}>
-          — {quote.author}
-        </div>
+        <blockquote className="widget-quote">“{quote.text}”</blockquote>
+        <p className="widget-author">— {quote.author}</p>
       </div>
     </div>
   );

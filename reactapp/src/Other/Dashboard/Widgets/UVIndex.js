@@ -3,8 +3,9 @@ import "./Widgets.css";
 
 const locations = {
   "Burnaby Mountain": { lat: 49.2781, lon: -122.9199 },
+  "Burnaby Central": { lat: 49.2485, lon: -122.9805 },
   "Jericho Beach": { lat: 49.2735, lon: -123.1947 },
-  "Scottsdale, Arizona": { lat: 33.6349, lon: -111.8302 },
+  "Scottsdale, AZ": { lat: 33.6349, lon: -111.8302 },
 };
 
 function getUvStatus(uv) {
@@ -12,24 +13,20 @@ function getUvStatus(uv) {
     return {
       label: "Low",
       note: "No sunscreen required.",
-      color: "#a8e6a1",
     };
   if (uv < 6)
     return {
       label: "Moderate",
       note: "Use SPF if outside long.",
-      color: "#fff176",
     };
   if (uv < 8)
     return {
       label: "High",
       note: "Sunscreen and hat advised.",
-      color: "#ffb74d",
     };
   return {
     label: "Very High",
     note: "Avoid midday sun. Sunscreen essential.",
-    color: "#f48fb1",
   };
 }
 
@@ -67,7 +64,7 @@ function UVIndex() {
       <select
         value={selectedLocation}
         onChange={(e) => setSelectedLocation(e.target.value)}
-        className="widget select"
+        className="widget-select"
       >
         {Object.keys(locations).map((loc) => (
           <option key={loc} value={loc}>
@@ -76,32 +73,39 @@ function UVIndex() {
         ))}
       </select>
 
-      {error && <p>{error}</p>}
-      {uvData && (
-        <div className="widget-content">
-          <p>
-            ☀️ <strong>Current UV:</strong> {uvData.uv?.toFixed(1) ?? "N/A"} (
-            {status.label})
-          </p>
-          <div className="uv-bar-container">
-            <div
-              className="uv-indicator"
-              style={{ left: `${(uvData.uv / 11) * 100}%` }}
-            />
-          </div>
-          <div className="uv-label">
-            <span>Low</span>
-            <span>Very High</span>
-          </div>
-          <p className="uv-note">{status.note}</p>
-          <p>
-            🌡️ <strong>UV Max:</strong> {uvData.uv_max?.toFixed(1) ?? "N/A"} at{" "}
-            {uvData.uv_max_time
-              ? new Date(uvData.uv_max_time).toLocaleTimeString()
-              : "N/A"}
-          </p>
-        </div>
-      )}
+      <div className="widget-content">
+        {error && <p className="widget-error">{error}</p>}
+        {!error && !uvData && <p>Loading...</p>}
+        {uvData && (
+          <>
+            <p>
+              ☀️ <strong>Current UV:</strong> {uvData.uv?.toFixed(1) ?? "N/A"} (
+              {status.label})
+            </p>
+
+            <div className="widget-bar-container">
+              <div
+                className="widget-bar-indicator"
+                style={{ left: `${(uvData.uv / 11) * 100}%` }}
+              />
+            </div>
+            <div className="widget-bar-label">
+              <span>Low</span>
+              <span>Very High</span>
+            </div>
+
+            <p className="uv-note">{status.note}</p>
+
+            <p>
+              🌡️ <strong>UV Max:</strong> {uvData.uv_max?.toFixed(1) ?? "N/A"}{" "}
+              at{" "}
+              {uvData.uv_max_time
+                ? new Date(uvData.uv_max_time).toLocaleTimeString()
+                : "N/A"}
+            </p>
+          </>
+        )}
+      </div>
     </div>
   );
 }

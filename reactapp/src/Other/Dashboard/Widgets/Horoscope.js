@@ -18,26 +18,29 @@ const zodiacSigns = [
 
 function Horoscope() {
   const [selectedSign, setSelectedSign] = useState("sagittarius");
-  const [horoscope, setHoroscope] = useState("Loading...");
+  const [horoscope, setHoroscope] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchHoroscope = async () => {
-      const url = `https://us-central1-portfolio-mfdev.cloudfunctions.net/getHoroscope?sign=${selectedSign}&day=today`;
-
       try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          const body = await response.text();
-          throw new Error(`Horoscope API failed — ${response.status}: ${body}`);
+        const res = await fetch(
+          `https://us-central1-portfolio-mfdev.cloudfunctions.net/getHoroscope?sign=${selectedSign}&day=today`
+        );
+
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`API ${res.status}: ${text}`);
         }
 
-        const data = await response.json();
-        if (!data.horoscope) throw new Error("Missing 'horoscope' field.");
+        const data = await res.json();
+        if (!data?.horoscope) throw new Error("Missing horoscope data");
         setHoroscope(data.horoscope);
         setError(null);
       } catch (err) {
-        console.warn("Horoscope error:", err);
+        console.warn("🔮 Horoscope fetch error:", err.message);
+        setError("Failed to load horoscope.");
+        setHoroscope(null);
       }
     };
 
@@ -47,27 +50,27 @@ function Horoscope() {
   return (
     <div className="widget">
       <h2>Horoscope</h2>
-      <select
-        value={selectedSign}
-        onChange={(e) => setSelectedSign(e.target.value)}
-        className="widget select"
-      >
-        {zodiacSigns.map((sign) => (
-          <option key={sign} value={sign}>
-            {sign.charAt(0).toUpperCase() + sign.slice(1)}
-          </option>
-        ))}
-      </select>
-
-      <div className="widget-content">
-        {error && (
-          <strong>
-            {error}
-            <br />
-          </strong>
-        )}
-        {horoscope}
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <select
+          className="widget-select"
+          value={selectedSign}
+          onChange={(e) => setSelectedSign(e.target.value)}
+        >
+          {zodiacSigns.map((sign) => (
+            <option key={sign} value={sign}>
+              {sign.charAt(0).toUpperCase() + sign.slice(1)}
+            </option>
+          ))}
+        </select>
       </div>
+
+      {error ? (
+        <p className="widget-error">{error}</p>
+      ) : horoscope ? (
+        <p>{horoscope}</p>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 }
