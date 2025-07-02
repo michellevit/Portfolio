@@ -96,7 +96,7 @@ const MoodAnalysis = ({ token }) => {
   };
 
   return (
-    <div className="widget spotify-widget">
+    <div className="widget-block">
       <h3>🎧 Your Music Mood</h3>
       {mood ? (
         <>
