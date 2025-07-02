@@ -7,24 +7,35 @@ const MostPopularSong = ({ token }) => {
     const fetchPopular = async () => {
       try {
         const res = await fetch(
-          "https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF?market=US",
+          "https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF/tracks?market=US&limit=1",
           {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           }
         );
-        const data = await res.json();
-        const firstTrack = data?.tracks?.items?.[0]?.track;
+
+        if (!res.ok) {
+          console.error("Spotify API error", res.status, await res.text());
+          return;
+        }
+
+        const { items } = await res.json();
+        const firstTrack = items?.[0]?.track;
         if (!firstTrack) {
           console.warn("No top track found in playlist");
           return;
         }
+
         setSong(firstTrack);
       } catch (err) {
-        console.error("🔥 MostPopularSong error:", err.message);
+        console.error("🔥 MostPopularSong error:", err);
       }
     };
 
-    if (token) fetchPopular();
+    if (token) {
+      fetchPopular();
+    }
   }, [token]);
 
   return (
