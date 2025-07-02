@@ -30,10 +30,9 @@ const TopArtists = ({ token }) => {
 
   return (
     <div className="widget-block">
-      <h3>👩‍🎤 Your Top Artists</h3>
       {Object.entries(timeLabels).map(([range, label]) => (
         <div key={range}>
-          <h4>{label}</h4>
+          <h3>🎤 Top Artists - {label}</h3>
           <ol className="widget-list">
             {(artists[range] || []).map((artist) => (
               <li key={artist.id}>{artist.name}</li>
