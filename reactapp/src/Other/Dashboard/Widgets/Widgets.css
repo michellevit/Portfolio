@@ -52,7 +52,6 @@
 
 .widget li {
   margin: 0.4rem 0;
-  padding-left: 1rem;
   position: relative;
 }
 
@@ -203,14 +202,16 @@
 
 .weather-current-entry {
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.05); /* subtle highlight */
-  padding-left: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
+  margin-left: 0;
+  padding: 2px;
 }
 
 .weather-time,
 .weather-temp {
   font-size: 0.8rem;
+  padding-left: 0;
 }
 
 .weather-period-group.weather-past-entry {

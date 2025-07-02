@@ -24,7 +24,7 @@ const TopTrack = ({ token }) => {
 
   return (
     <div className="widget-block">
-      <h3>🎵 Top Track This Week</h3>
+      <h3>🎵 Top Track - This Week</h3>
       {track ? (
         <p>
           {track.name} by {track.artists.map((a) => a.name).join(", ")}

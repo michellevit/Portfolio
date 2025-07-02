@@ -13,10 +13,12 @@ const MoodAnalysis = ({ token }) => {
           }
         );
         const topData = await topRes.json();
-        const ids = topData?.items?.map((t) => t.id).join(",");
+        if (!topData?.items || topData.items.length === 0) {
+          console.warn("No top tracks found");
+          return;
+        }
 
-        if (!ids) return;
-
+        const ids = topData.items.map((t) => t.id).join(",");
         const audioRes = await fetch(
           `https://api.spotify.com/v1/audio-features?ids=${ids}`,
           {
@@ -25,7 +27,12 @@ const MoodAnalysis = ({ token }) => {
         );
         const audioData = await audioRes.json();
 
-        const features = audioData?.audio_features || [];
+        const features = audioData?.audio_features?.filter(Boolean) || [];
+        if (!features.length) {
+          console.warn("No audio features found");
+          return;
+        }
+
         const avg = (key) =>
           (
             features.reduce((sum, f) => sum + (f?.[key] || 0), 0) /
