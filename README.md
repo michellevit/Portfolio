@@ -9,10 +9,11 @@ A portfolio website designed to showcase my projects, developed using React, and
 
 ## Table of Contents
 
-- [Technologies Used](#technologis-used)
-- [How to Edit](#how-to-edit)
-- [How to Deploy](#how-to-deploy)
-- [How To Update the GitHub Pages App](#how-to-update)
+- [Technologies Used](#technologies-used)
+- [How To Edit](#how-to-edit)
+- [How To Deploy](#how-to-deploy)
+- [How To Update GitHub Pages](#how-to-update-github-pages)
+- [How To Edit the Dashboard](#how-to-edit-the-dashboard)
 - [Troubleshooting](#troubleshooting)
 - [Credits](#credits)
 
@@ -20,6 +21,7 @@ A portfolio website designed to showcase my projects, developed using React, and
 
 - React
 - GitHub Pages
+- Google Firebase
 
 ## How to Edit
 
@@ -35,7 +37,7 @@ A portfolio website designed to showcase my projects, developed using React, and
 - The website is now statically hosted using GitHub Pages for more cost-efficient hosting.
 - GitHub Pages supports static sites, which prompted the conversion of all dynamic backend functionality to use client-side solutions or third-party services like Formspree for form handling.
 
-## How To Update the GitHub Pages App<a name="how-to-update"></a>
+## How To Update GitHub Pages
 
 - Note: When you run npm run deploy using the gh-pages package, this script handles deploying the contents of your build directory directly to the gh-pages branch on GitHub. This branch is specifically used for serving your site on GitHub Pages, and the deployment process does not typically require you to manually push changes to this branch. The gh-pages tool automates this for you.
 
@@ -49,7 +51,9 @@ cd reactapp && npm run build && npm run deploy && cd .. && git add . && git comm
   1. To change the GitHub Pages configuration, update the `homepage` in `package.json` to reflect the new repository path or custom domain.
   2. Ensure that the `gh-pages` package is configured correctly in the `reactapp/package.json`.
 
-## Modifying Firebase
+## How To Edit the Dashboard
+
+### Modifying Firebase
 
 - When modifying functions/index.js - after you must:
 - Navigate to the root project folder and then run:
@@ -59,7 +63,7 @@ npm --prefix functions run lint -- --fix
 firebase deploy --only functions
 ```
 
-## Adding an API endpoint to the dash
+### Adding an API endpoint to the dash
 
 - Set the API key - open bash in the root and run:
 
@@ -88,6 +92,15 @@ firebase deploy --only functions
   ```bash
    firebase functions:config:get
   ```
+
+### Updating Kindle Quotes
+
+- Connect Kindle device to computer
+  - Note: This cannot be done without the device (i.e., solely using the online platform) due to Kindle's strict copyright policy
+- Copy the 'My Clippings.txt' file
+- Add the file to the 'KindleUtil' folder
+- Run ```python clipping-converter.py'
+- Copy the 'KindleQuotes.json' file into the folder `reactapp/src/Other/Dashboard/Widgets/'
 
 ## Troubleshooting
 

@@ -74,6 +74,24 @@ exports.getAirQuality = functions.https.onRequest((req, res) => {
   });
 });
 
+// Humidity
+exports.getWeather = functions.https.onRequest((req, res) => {
+  cors(req, res, async () => {
+    const { lat, lon } = req.query;
+    if (!lat || !lon) return res.status(400).send("Missing lat/lon");
+    try {
+      const result = await axios.get("https://api.api-ninjas.com/v1/weather", {
+        params: { lat, lon },
+        headers: { "X-Api-Key": ninjasKey },
+      });
+      res.json(result.data);
+    } catch (err) {
+      console.error("Weather error:", err.response?.data || err.message);
+      res.status(500).send("Error fetching weather");
+    }
+  });
+});
+
 // UV Index
 exports.getUVIndex = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {

@@ -1,3 +1,5 @@
+// src/Components/Widgets/UVIndex.js
+
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
 
@@ -6,35 +8,22 @@ const locations = {
 };
 
 function getUvStatus(uv) {
-  if (uv < 3)
-    return {
-      label: "Low",
-      note: "No sunscreen required.",
-    };
-  if (uv < 6)
-    return {
-      label: "Moderate",
-      note: "Use SPF if outside long.",
-    };
-  if (uv < 8)
-    return {
-      label: "High",
-      note: "Sunscreen and hat advised.",
-    };
+  if (uv < 3) return { label: "Low", note: "No sunscreen required." };
+  if (uv < 6) return { label: "Moderate", note: "Use SPF if outside long." };
+  if (uv < 8) return { label: "High", note: "Sunscreen and hat advised." };
   return {
     label: "Very High",
     note: "Avoid midday sun. Sunscreen essential.",
   };
 }
 
-function UVIndex() {
+export default function UVIndex() {
   const [selectedLocation, setSelectedLocation] = useState("Burnaby");
   const [uvData, setUvData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const { lat, lon } = locations[selectedLocation];
-
     fetch(
       `https://us-central1-portfolio-mfdev.cloudfunctions.net/getUVIndex?lat=${lat}&lon=${lon}`
     )
@@ -47,7 +36,7 @@ function UVIndex() {
         setError(null);
       })
       .catch((err) => {
-        console.error(err);
+        console.error("UV fetch error:", err);
         setError("Failed to fetch UV data.");
         setUvData(null);
       });
@@ -58,6 +47,7 @@ function UVIndex() {
   return (
     <div className="widget">
       <h2>UV Index</h2>
+
       <select
         value={selectedLocation}
         onChange={(e) => setSelectedLocation(e.target.value)}
@@ -76,7 +66,7 @@ function UVIndex() {
         {uvData && (
           <>
             <p>
-              ☀️ <strong>Current UV:</strong> {uvData.uv?.toFixed(1) ?? "N/A"} (
+              ☀️ <strong>Current UV:</strong> {uvData.uv.toFixed(1)} (
               {status.label})
             </p>
 
@@ -94,10 +84,13 @@ function UVIndex() {
             <p className="uv-note">{status.note}</p>
 
             <p>
-              🌡️ <strong>UV Max:</strong> {uvData.uv_max?.toFixed(1) ?? "N/A"}{" "}
-              at{" "}
+              🌡️ <strong>UV Max:</strong> {uvData.uv_max.toFixed(1)} at{" "}
               {uvData.uv_max_time
-                ? new Date(uvData.uv_max_time).toLocaleTimeString()
+                ? new Date(uvData.uv_max_time).toLocaleTimeString(undefined, {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    hour12: true,
+                  })
                 : "N/A"}
             </p>
           </>
@@ -106,5 +99,3 @@ function UVIndex() {
     </div>
   );
 }
-
-export default UVIndex;

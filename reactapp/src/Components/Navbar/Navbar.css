@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   background-color: var(--color-nav);
-  transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-container {
@@ -22,7 +21,6 @@
   max-height: 125px;
   padding: 2% 3%;
   top: 0;
-  transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-container.smaller {
@@ -110,9 +108,18 @@ nav a:hover {
   color: rgb(255, 236, 175);
 }
 
+.outer-nav,
+.navbar-container,
+.navbar-container-background,
+.navbar-content,
+nav {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  will-change: background-color, color;
+}
+
 /* =============================
    📱 Mobile Styles
-============================= */
+============================ */
 
 .hamburger-menu-container,
 .hamburger-menu {
@@ -153,7 +160,6 @@ nav a:hover {
     background: var(--color-text);
     transition: all 0.3s ease-in-out;
   }
-
   .hamburger-menu-button::before,
   .hamburger-menu-button::after {
     content: "";
@@ -163,28 +169,22 @@ nav a:hover {
     background: var(--color-text);
     transition: all 0.3s ease-in-out;
   }
-
   .hamburger-menu-button::before {
     transform: translateY(-8px);
   }
-
   .hamburger-menu-button::after {
     transform: translateY(8px);
   }
-
   .hamburger-menu.icon-open .hamburger-menu-button {
     transform: translateX(50px);
     background: transparent;
   }
-
   .hamburger-menu.icon-open {
     transform: translateX(-50px);
   }
-
   .hamburger-menu.icon-open .hamburger-menu-button::before {
     transform: rotate(45deg);
   }
-
   .hamburger-menu.icon-open .hamburger-menu-button::after {
     transform: rotate(-45deg);
   }
@@ -193,56 +193,57 @@ nav a:hover {
     position: absolute;
     top: 100%;
     width: 100vw;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
     z-index: 1;
   }
 
-  nav.open {
-    opacity: 1;
-    visibility: visible;
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    background: var(--color-nav);
+    box-shadow: 0 4px 8px var(--menu-shadow);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin: 0;
+    padding: 0;
   }
 
-  nav ul {
-    position: relative;
-    top: -200px;
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
-    transition: all 0.3s ease-out;
-    background: var(--color-nav);
+  nav.animate ul {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
   nav ul.open {
-    top: 0;
-    left: 0;
-    transition: all 0.3s ease-in;
-    height: fit-content;
+    transform: scaleY(1);
+    opacity: 1;
   }
-
+  /* items */
   nav ul li {
     width: 100%;
     margin: 0;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
+    padding: 1.2rem;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
   }
-
   nav ul li:hover {
     background-color: var(--color-hover);
-    color: var(--color-text);
+  }
+  nav ul li a:hover {
+    color: var(--color-text) !important;
+    opacity: 1 !important;
   }
 
-  nav a:hover {
-    opacity: 1;
-  }
-
-  nav .active:hover {
-    opacity: 0.5;
-  }
-
-  .theme-toggle {
-    display: none;
+  /* full-box clicks */
+  nav ul li a,
+  nav ul li.theme-toggle button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    padding: 0; /* already on LI */
+    text-align: center;
+    cursor: pointer;
   }
 }

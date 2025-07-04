@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Widgets.css";
 import quotes from "./Quotes.json";
 
-function QuotesWidget() {
+function Quotes() {
   const [quote, setQuote] = useState(null);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ function QuotesWidget() {
   );
 }
 
-export default QuotesWidget;
+export default Quotes;

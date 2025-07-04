@@ -46,6 +46,7 @@ body.light {
   --color-text-muted: #333333;
   --color-hover: rgba(168, 190, 169, 0.2);
   --color-accent: rgba(168, 190, 169, 1);
+  --menu-shadow: rgba(0, 0, 0, 0.15);
 }
 
 /* Dark Theme */
@@ -57,6 +58,7 @@ body.dark {
   --color-text-muted: #cccccc;
   --color-hover: rgba(48, 48, 48, 0.5);
   --color-accent: rgb(111, 143, 113);
+  --menu-shadow: rgba(0, 0, 0, 0.6);
 }
 
 /* Shared highlight colors */
@@ -160,6 +162,16 @@ button:hover {
 .fade-exit.fade-exit-active {
   opacity: 0;
   transition: opacity 300ms ease-in;
+}
+
+/* Theme‐transition helper */
+body,
+nav,
+.app,                /* scope to your highest‐level wrapper if you want */
+.main-container,
+h2, h3, p, button, a /* and any other selectors that use your variables */ {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 }
 
 /* ---------------------------------------------------

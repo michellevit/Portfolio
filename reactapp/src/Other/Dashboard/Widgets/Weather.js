@@ -120,10 +120,6 @@ function Weather() {
               )}
             </div>
 
-            <div className="weather-sun-times">
-              🌅 <strong>{sunrise}</strong> | 🌇 <strong>{sunset}</strong>
-            </div>
-
             <div className="weather-periods">
               {Object.entries(grouped).map(([period, entries]) => {
                 const allPast = entries.every((e) => e.hour < currentHour);
