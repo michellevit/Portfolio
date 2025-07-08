@@ -35,7 +35,7 @@ export default function SunriseSunsetWidget() {
         console.error("Sun times fetch error:", err);
         setError("Couldn’t load sunrise/sunset times.");
       });
-  }, [selected, locations]); // ✅ re-run on selection change
+  }, [selected, locations]);
 
   const formatTime = (date) =>
     date.toLocaleTimeString(undefined, {
