@@ -1,6 +1,9 @@
 import React from "react";
 import Masonry from "react-masonry-css";
 import "./Dashboard.css";
+import {
+  LocationProvider,
+} from "./Widgets/LocationContext";
 import AirQuality from "./Widgets/AirQuality";
 import CelestialEvents from "./Widgets/CelestialEvents";
 import Horoscope from "./Widgets/Horoscope";
@@ -25,27 +28,28 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      {/* <h1>🌞 Daily Dashboard</h1> */}
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
-        <Weather />
-        <SunriseSunset />
-        <Humidity />
-        <UVIndex />
-        <AirQuality />
-        <Tides />
-        <MoonPhase />
-        <CelestialEvents />
-        <Quotes />
-        <Quiz />
-        <Kindle />
-        <Horoscope />
-        <YearProgress />
-        <Spotify />
-      </Masonry>
+      <LocationProvider>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          <Weather />
+          <SunriseSunset />
+          <Humidity />
+          <UVIndex />
+          <AirQuality />
+          <Tides />
+          <MoonPhase />
+          <CelestialEvents />
+          <Quotes />
+          <Quiz />
+          <Kindle />
+          <Horoscope />
+          <YearProgress />
+          <Spotify />
+        </Masonry>
+      </LocationProvider>
     </div>
   );
 }
