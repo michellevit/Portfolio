@@ -5,9 +5,10 @@ import AirQuality from "./Widgets/AirQuality";
 import CelestialEvents from "./Widgets/CelestialEvents";
 import Horoscope from "./Widgets/Horoscope";
 import Humidity from "./Widgets/Humidity";
-import MoonPhase from "./Widgets/MoonPhase";
-import Quotes from "./Widgets/Quotes";
 import Kindle from "./Widgets/Kindle";
+import MoonPhase from "./Widgets/MoonPhase";
+import Quiz from "./Widgets/Quiz";
+import Quotes from "./Widgets/Quotes";
 import Spotify from "./Widgets/Spotify/Spotify";
 import SunriseSunset from "./Widgets/SunriseSunset";
 import Tides from "./Widgets/Tides";
@@ -39,6 +40,7 @@ function Dashboard() {
         <MoonPhase />
         <CelestialEvents />
         <Quotes />
+        <Quiz />
         <Kindle />
         <Horoscope />
         <YearProgress />
