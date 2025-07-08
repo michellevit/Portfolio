@@ -1,9 +1,13 @@
 const functions = require("firebase-functions");
+const admin = require("firebase-admin");
 const axios = require("axios");
 const corsLib = require("cors");
 
+admin.initializeApp();
+const db = admin.firestore();
+
 // CORS setup
-const allowedOrigins = ["http://localhost:3000", "https://michellef.dev"];
+const allowedOrigins = ["https://michellef.dev"];
 const cors = corsLib({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -24,196 +28,115 @@ const astronomyKey = functions.config().astronomy.key;
 const spotifyId = functions.config().spotify.id;
 const spotifyKey = functions.config().spotify.key;
 
-// Horoscope
+function getCacheKey(prefix, lat, lon) {
+  const today = new Date().toISOString().split("T")[0];
+  return `${prefix}_${lat}_${lon}_${today}`;
+}
+
+async function getCachedOrFetch(key, fetchFn) {
+  const cached = await db.collection("api_cache").doc(key).get();
+  if (cached.exists) return cached.data();
+
+  const data = await fetchFn();
+  await db.collection("api_cache").doc(key).set(data);
+  return data;
+}
+
+// Horoscope (no location caching needed)
 exports.getHoroscope = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {
     const { sign } = req.query;
     try {
-      const result = await axios.get(
-        "https://api.api-ninjas.com/v1/horoscope",
-        {
-          params: { zodiac: sign },
-          headers: { "X-Api-Key": ninjasKey },
-        }
-      );
+      const result = await axios.get("https://api.api-ninjas.com/v1/horoscope", {
+        params: { zodiac: sign },
+        headers: { "X-Api-Key": ninjasKey },
+      });
       res.json(result.data);
     } catch (err) {
-      console.error(
-        "Horoscope error:",
-        err.response ? err.response.data : err.message
-      );
+      console.error("Horoscope error:", err.response?.data || err.message);
       res.status(500).send("Error retrieving horoscope");
     }
   });
 });
 
-// Air Quality
-exports.getAirQuality = functions.https.onRequest((req, res) => {
-  cors(req, res, async () => {
-    const { lat, lon } = req.query;
-    if (!lat || !lon) {
-      return res.status(400).send("Missing lat/lon");
-    }
+// General handler with caching for APIs with lat/lon
+const withLocationCaching = (prefix, fetchFunction) =>
+  functions.https.onRequest((req, res) => {
+    cors(req, res, async () => {
+      const lat = req.query.lat;
+      const lon = req.query.lon || req.query.lng;
+      if (!lat || !lon) return res.status(400).send("Missing lat/lon");
 
-    try {
-      const result = await axios.get(
-        "https://api.api-ninjas.com/v1/airquality",
-        {
-          params: { lat, lon },
-          headers: { "X-Api-Key": ninjasKey },
-        }
-      );
-      res.json(result.data);
-    } catch (err) {
-      console.error(
-        "Air quality error:",
-        err.response ? err.response.data : err.message
-      );
-      res.status(500).send("Error retrieving air quality");
-    }
-  });
-});
-
-// Humidity
-exports.getWeather = functions.https.onRequest((req, res) => {
-  cors(req, res, async () => {
-    const { lat, lon } = req.query;
-    if (!lat || !lon) return res.status(400).send("Missing lat/lon");
-    try {
-      const result = await axios.get("https://api.api-ninjas.com/v1/weather", {
-        params: { lat, lon },
-        headers: { "X-Api-Key": ninjasKey },
-      });
-      res.json(result.data);
-    } catch (err) {
-      console.error("Weather error:", err.response?.data || err.message);
-      res.status(500).send("Error fetching weather");
-    }
-  });
-});
-
-// UV Index
-exports.getUVIndex = functions.https.onRequest((req, res) => {
-  cors(req, res, async () => {
-    const { lat, lon } = req.query;
-    if (!lat || !lon) {
-      return res.status(400).send("Missing lat/lon");
-    }
-
-    try {
-      const result = await axios.get("https://api.openuv.io/api/v1/uv", {
-        params: { lat, lng: lon },
-        headers: { "x-access-token": uvKey },
-      });
-      res.json(result.data);
-    } catch (err) {
-      console.error(
-        "UV index error:",
-        err.response ? err.response.data : err.message
-      );
-      res.status(500).send("Failed to fetch UV index");
-    }
-  });
-});
-
-// Tides
-exports.getTides = functions.https.onRequest((req, res) => {
-  cors(req, res, async () => {
-    const lat = req.query.lat;
-    const lon = req.query.lon || req.query.lng;
-    if (!lat || !lon) {
-      console.error("Missing lat/lon:", { lat, lon });
-      return res.status(400).send("Missing lat/lon");
-    }
-
-    const today = new Date().toISOString().split("T")[0];
-    const startISO = `${today}T00:00:00+00:00`;
-    const endISO = `${today}T23:59:59+00:00`;
-
-    try {
-      const result = await axios.get(
-        "https://api.stormglass.io/v2/tide/extremes/point",
-        {
-          params: { lat, lng: lon, start: startISO, end: endISO },
-          headers: { Authorization: stormglassKey },
-        }
-      );
-      res.json(result.data);
-    } catch (err) {
-      console.error(
-        "Tide API error:",
-        err.response ? err.response.data : err.message
-      );
-      res.status(500).send("Failed to fetch tide data");
-    }
-  });
-});
-
-// Moon Phase
-exports.getMoonPhase = functions.https.onRequest((req, res) => {
-  cors(req, res, async () => {
-    const location = "Vancouver,BC";
-    const today = new Date().toISOString().split("T")[0];
-
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${today}?unitGroup=metric&key=${visualcrossingKey}&include=days&elements=datetime,moonphase,sunrise,sunset,moonrise,moonset`;
-
-    try {
-      const response = await axios.get(url);
-      const day = response.data?.days?.[0];
-
-      if (!day) {
-        return res.status(404).send("No moon/sun data found");
+      const cacheKey = getCacheKey(prefix, lat, lon);
+      try {
+        const data = await getCachedOrFetch(cacheKey, () => fetchFunction(lat, lon));
+        res.json(data);
+      } catch (err) {
+        console.error(`${prefix} error:`, err.response?.data || err.message);
+        res.status(500).send(`Failed to fetch ${prefix} data`);
       }
-
-      res.json({
-        date: day.datetime,
-        moonPhase: day.moonphase,
-      });
-    } catch (err) {
-      console.error(
-        "Moon phase error:",
-        err.response ? err.response.data : err.message
-      );
-      res.status(500).send("Failed to fetch moon/sun data");
-    }
+    });
   });
+
+exports.getAirQuality = withLocationCaching("airquality", async (lat, lon) => {
+  const result = await axios.get("https://api.api-ninjas.com/v1/airquality", {
+    params: { lat, lon },
+    headers: { "X-Api-Key": ninjasKey },
+  });
+  return result.data;
 });
 
-// Celestial Events
-exports.getCelestialEvents = functions.https.onRequest((req, res) => {
-  cors(req, res, async () => {
-    const authString = Buffer.from(`${astronomyId}:${astronomyKey}`).toString(
-      "base64"
-    );
-
-    const today = new Date().toISOString().split("T")[0];
-    const oneWeekLater = new Date();
-    oneWeekLater.setDate(oneWeekLater.getDate() + 7);
-    const endDate = oneWeekLater.toISOString().split("T")[0];
-
-    const lat = req.query.lat || "49.2827";
-    const lon = req.query.lon || "-123.1207";
-    const elevation = "70";
-
-    const url = `https://api.astronomyapi.com/api/v2/bodies/events/moon?latitude=${lat}&longitude=${lon}&elevation=${elevation}&from_date=${today}&to_date=${endDate}`;
-
-    try {
-      const response = await axios.get(url, {
-        headers: {
-          Authorization: `Basic ${authString}`,
-        },
-      });
-
-      res.set("Access-Control-Allow-Origin", "*");
-      res.json(response.data);
-    } catch (err) {
-      console.error(
-        "Celestial events error:",
-        err.response ? err.response.data : err.message
-      );
-      res.status(500).send("Failed to fetch celestial events");
-    }
+exports.getWeather = withLocationCaching("weather", async (lat, lon) => {
+  const result = await axios.get("https://api.api-ninjas.com/v1/weather", {
+    params: { lat, lon },
+    headers: { "X-Api-Key": ninjasKey },
   });
+  return result.data;
+});
+
+exports.getUVIndex = withLocationCaching("uvindex", async (lat, lon) => {
+  const result = await axios.get("https://api.openuv.io/api/v1/uv", {
+    params: { lat, lng: lon },
+    headers: { "x-access-token": uvKey },
+  });
+  return result.data;
+});
+
+exports.getTides = withLocationCaching("tides", async (lat, lon) => {
+  const today = new Date().toISOString().split("T")[0];
+  const startISO = `${today}T00:00:00+00:00`;
+  const endISO = `${today}T23:59:59+00:00`;
+  const result = await axios.get("https://api.stormglass.io/v2/tide/extremes/point", {
+    params: { lat, lng: lon, start: startISO, end: endISO },
+    headers: { Authorization: stormglassKey },
+  });
+  return result.data;
+});
+
+exports.getMoonPhase = withLocationCaching("moonphase", async () => {
+  const location = "Vancouver,BC";
+  const today = new Date().toISOString().split("T")[0];
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${today}?unitGroup=metric&key=${visualcrossingKey}&include=days&elements=datetime,moonphase,sunrise,sunset,moonrise,moonset`;
+  const response = await axios.get(url);
+  const day = response.data?.days?.[0];
+  if (!day) throw new Error("No moon/sun data found");
+  return { date: day.datetime, moonPhase: day.moonphase };
+});
+
+exports.getCelestialEvents = withLocationCaching("celestial", async (lat, lon) => {
+  const today = new Date().toISOString().split("T")[0];
+  const oneWeekLater = new Date();
+  oneWeekLater.setDate(oneWeekLater.getDate() + 7);
+  const endDate = oneWeekLater.toISOString().split("T")[0];
+
+  const elevation = "70";
+  const authString = Buffer.from(`${astronomyId}:${astronomyKey}`).toString("base64");
+
+  const url = `https://api.astronomyapi.com/api/v2/bodies/events/moon?latitude=${lat}&longitude=${lon}&elevation=${elevation}&from_date=${today}&to_date=${endDate}`;
+  const response = await axios.get(url, {
+    headers: { Authorization: `Basic ${authString}` },
+  });
+  return response.data;
 });
 
 // Spotify
@@ -222,13 +145,8 @@ exports.getSpotifyToken = functions.https.onRequest((req, res) => {
     const code = req.query.code;
     if (!code) return res.status(400).send("Missing code");
 
-    const clientId = functions.config().spotify.id;
-    const clientSecret = functions.config().spotify.key;
+    const credentials = Buffer.from(`${spotifyId}:${spotifyKey}`).toString("base64");
     const redirectUri = "https://michellef.dev/spotify-callback";
-
-    const credentials = Buffer.from(`${clientId}:${clientSecret}`).toString(
-      "base64"
-    );
 
     try {
       const response = await axios.post(
@@ -248,10 +166,7 @@ exports.getSpotifyToken = functions.https.onRequest((req, res) => {
 
       res.json(response.data);
     } catch (err) {
-      console.error(
-        "Spotify token error:",
-        err.response ? err.response.data : err.message
-      );
+      console.error("Spotify token error:", err.response?.data || err.message);
       res.status(500).json({ error: "Failed to get Spotify token" });
     }
   });
