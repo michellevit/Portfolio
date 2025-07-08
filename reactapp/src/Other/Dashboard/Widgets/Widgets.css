@@ -123,6 +123,16 @@
   text-align: center;
 }
 
+.humidity-widget .widget-bar-container {
+  background: linear-gradient(
+    to right,
+    #f44336,  /* Dry */
+    #4caf50 30%,  /* Comfortable starts */
+    #4caf50 70%,  /* Comfortable ends */
+    #ff9800 /* Humid */
+  );
+}
+
 /* Horoscope */
 
 .widget .horoscope-text {
