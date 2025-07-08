@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
-import locations from "./Data/Locations.json"; // 🔸 Import from JSON
+import locations from "./Data/Locations.json";
 
 function getUvStatus(uv) {
   if (uv < 3) {
