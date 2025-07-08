@@ -1,43 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
+import locationData from './Data/Locations.json';
+
 
 function AirQuality() {
   const [selectedLocation, setSelectedLocation] = useState("Burnaby");
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const [locations, setLocations] = useState({});
 
-  const locations = {
-    Burnaby: { lat: 49.2485, lon: -122.9805 },
-  };
 
-  useEffect(() => {
-    const fetchAirQuality = async () => {
-      const { lat, lon } = locations[selectedLocation];
-
-      try {
-        const response = await fetch(
-          `https://us-central1-portfolio-mfdev.cloudfunctions.net/getAirQuality?lat=${lat}&lon=${lon}`
-        );
-        if (!response.ok) throw new Error("Air quality API failed");
-
-        const result = await response.json();
-
-        if (!result || result.overall_aqi === undefined) {
-          setError("No air quality data found.");
-          setData(null);
-        } else {
-          setError(null);
-          setData(result);
-        }
-      } catch (err) {
-        console.error("🌫️ Air quality fetch error:", err);
-        setError("Failed to load air quality data.");
-        setData(null);
-      }
-    };
-
-    fetchAirQuality();
-  }, [selectedLocation]);
+useEffect(() => {
+  setLocations(locationData);
+}, []);
 
   function getAqiStatus(aqi) {
     if (aqi <= 50) return { label: "Good", color: "#4caf50" };
