@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
-import { useLocation } from "./LocationContext"; // ✅ Use context
+import { useLocation } from "./LocationContext";
 
 function getUvStatus(uv) {
   if (uv < 3) {
@@ -40,8 +40,7 @@ export default function UVIndex() {
   const [uvData, setUvData] = useState(null);
   const [error, setError] = useState(null);
 
-  const { selected, locations } = useLocation(); // ✅ Pull selected location
-
+  const { selected, locations } = useLocation(); 
   useEffect(() => {
     const { lat, lon } = locations[selected];
     fetch(
@@ -60,7 +59,7 @@ export default function UVIndex() {
         setError("Failed to fetch UV data.");
         setUvData(null);
       });
-  }, [selected, locations]); // ✅ Update when location changes
+  }, [selected, locations]);
 
   const status = uvData ? getUvStatus(uvData.uv) : null;
 
