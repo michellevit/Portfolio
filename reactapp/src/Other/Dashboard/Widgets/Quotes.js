@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Widgets.css";
-import quotes from "./Quotes.json";
+import quotes from "./Data/Quotes.json";
 
 function Quotes() {
   const [quote, setQuote] = useState(null);
