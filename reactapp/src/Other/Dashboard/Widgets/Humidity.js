@@ -44,7 +44,7 @@ export default function Humidity() {
     };
 
     fetchHumidity();
-  }, [selected, locations]); // ✅ re-fetch on context change
+  }, [selected, locations]);
 
   const status = data ? getHumidityStatus(data.humidity) : null;
 
