@@ -3,7 +3,7 @@
 ![React Version](https://img.shields.io/badge/React-18.2.0-61dafb.svg)
 ![GitHub Pages](https://img.shields.io/badge/Platform-GitHub%20Pages-222.svg)
 
-A portfolio website designed to showcase my projects, developed using React, and previously deployed on Heroku, now hosted on GitHub Pages using a static site approach.
+A portfolio website designed to showcase my projects.
 
 <a href="https://michellef.dev" target="_blank">
   <img src="https://img.shields.io/badge/Website-michellef.dev-6da360?style=for-the-badge">
@@ -12,10 +12,12 @@ A portfolio website designed to showcase my projects, developed using React, and
 ## Table of Contents
 
 - [Technologies Used](#technologies-used)
-- [How To Edit](#how-to-edit)
+- [Run the React App Locally](#run-the-react-app-locally)
 - [How To Deploy](#how-to-deploy)
-- [How To Update GitHub Pages](#how-to-update-github-pages)
 - [How To Edit the Dashboard](#how-to-edit-the-dashboard)
+  - [Configuring Firebase Functions Environment Variables](#configuring-firebase-functions-environment-variables)
+  - [Updating Firebase Functions](#updating-firebase-functions)
+  - [Updating Kindle Quotes](#updating-kindle-quotes)
 - [Troubleshooting](#troubleshooting)
 - [Credits](#credits)
 
@@ -25,23 +27,18 @@ A portfolio website designed to showcase my projects, developed using React, and
 - GitHub Pages
 - Google Firebase
 
-## How to Edit
 
-```powershell
+## Run the React App Locally
+
+```bash
   cd reactapp
   npm start
 ```
 
-## How to Deploy
+### How to Deploy
 
-### Current Hosting on GitHub Pages
-
-- The website is now statically hosted using GitHub Pages for more cost-efficient hosting.
-- GitHub Pages supports static sites, which prompted the conversion of all dynamic backend functionality to use client-side solutions or third-party services like Formspree for form handling.
-
-## How To Update GitHub Pages
-
-- Note: When you run npm run deploy using the gh-pages package, this script handles deploying the contents of your build directory directly to the gh-pages branch on GitHub. This branch is specifically used for serving your site on GitHub Pages, and the deployment process does not typically require you to manually push changes to this branch. The gh-pages tool automates this for you.
+**Updating GitHub Pages**
+_Note: When you run npm run deploy using the gh-pages package, this script handles deploying the contents of your build directory directly to the gh-pages branch on GitHub. This branch is specifically used for serving your site on GitHub Pages, and the deployment process does not typically require you to manually push changes to this branch. The gh-pages tool automates this for you._
 
 - If you’ve made changes to the frontend React app and want to deploy them to your live GitHub Pages site:
 
@@ -55,49 +52,61 @@ cd reactapp && npm run build && npm run deploy && cd .. && git add . && git comm
 
 ## How To Edit the Dashboard
 
-### Modifying Firebase
+### Configuring Firebase Functions Environment Variables
 
-- After modifying functions/index.js you must navigate to the root project folder and then run:
-
-```powershell
-npm --prefix functions run lint -- --fix
-firebase deploy --only functions
-```
-
-### Adding an API endpoint to the dash
+This section walks you through setting up and deploying environment variables for your Firebase Functions—specifically adding API keys or other sensitive configuration values—so that your serverless functions can securely access external services.
 
 - Set the API key - open bash in the root and run:
-
-```bash
-firebase functions:config:set YOUR_API_NAME_HERE.key="YOUR_API_KEY_HERE"
-```
-
+  ```bash
+  firebase functions:config:set YOUR_API_NAME_HERE.key="YOUR_API_KEY_HERE"
+  ```
 - Add the function in the index
-- Deploy the config:
-
-```bash
-firebase deploy --only functions
-```
-
-- Set up the widget accordingly
+- Deploy the functions (including your updated config):
+  ```bash
+  firebase deploy --only functions
+  ```
+- Update your widget to read the API key from functions.config().myapi.key instead of hardcoding.
 - Troubleshooting:
 
-  - Check for errors with a specific function:
+  - View logs for a specific function:
+    ```bash
+    firebase functions:log --only getMoonPhase
+    ```
+  - Verify your config values:
+    ```bash
+     firebase functions:config:get
+    ```
 
+### Updating Firebase Functions
+
+After you've modified code in the functions/ directory (for example, editing index.js or adding new functions), follow these steps to lint, fix, and deploy your changes:
+- Run lint and auto‑fixFrom your project root, execute:
   ```bash
-  firebase functions:log --only getMoonPhase
+  cd functions
+  npm --prefix functions run lint -- --fix
   ```
-
-  - Check for errors with the API key values:
-
+- Deploy functions only:
   ```bash
-   firebase functions:config:get
+  firebase deploy --only functions
   ```
+- Verify deployment - check the CLI output for success messages. To inspect logs for a specific function:
+  ```bash
+  firebase functions:log --only <functionName>
+  ```
+- Troubleshooting
+  - To see all lint errors before auto‑fixing, run:
+    ```bash
+    npm --prefix functions run lint
+    ```
+  - Ensure your Firebase CLI is current:
+    ```bash
+    npm install -g firebase-tools
+    ```
 
 ### Updating Kindle Quotes
 
 - Connect Kindle device to computer
-  - Note: This cannot be done without the device (i.e., solely using the online platform) due to Kindle's strict copyright policy
+  - _Note: This cannot be done without the device (i.e., solely using the online platform) due to Kindle's strict copyright policy_
 - Find the 'My Clippings.txt' file and copy it
 - Paste the file into the 'Utils' folder
 - cd into the Utils folder and run: `python kindle-clipping-converter.py`
