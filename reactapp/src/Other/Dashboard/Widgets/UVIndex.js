@@ -1,5 +1,3 @@
-// src/Components/Widgets/UVIndex.js
-
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
 
@@ -8,12 +6,34 @@ const locations = {
 };
 
 function getUvStatus(uv) {
-  if (uv < 3) return { label: "Low", note: "No sunscreen required." };
-  if (uv < 6) return { label: "Moderate", note: "Use SPF if outside long." };
-  if (uv < 8) return { label: "High", note: "Sunscreen and hat advised." };
+  if (uv < 3) {
+    return { label: "Low", note: "No sunscreen required.", color: "#4caf50" };
+  }
+  if (uv < 6) {
+    return {
+      label: "Moderate",
+      note: "Use SPF if outside long.",
+      color: "#ffeb3b",
+    };
+  }
+  if (uv < 8) {
+    return {
+      label: "High",
+      note: "Sunscreen and hat advised.",
+      color: "#ff9800",
+    };
+  }
+  if (uv < 11) {
+    return {
+      label: "Very High",
+      note: "Avoid midday sun. Sunscreen essential.",
+      color: "#f44336",
+    };
+  }
   return {
-    label: "Very High",
-    note: "Avoid midday sun. Sunscreen essential.",
+    label: "Extreme",
+    note: "Take all precautions! UV radiation is extreme.",
+    color: "#9c27b0",
   };
 }
 
@@ -47,7 +67,6 @@ export default function UVIndex() {
   return (
     <div className="widget">
       <h2>UV Index</h2>
-
       <select
         value={selectedLocation}
         onChange={(e) => setSelectedLocation(e.target.value)}
@@ -63,22 +82,26 @@ export default function UVIndex() {
       <div className="widget-content">
         {error && <p className="widget-error">{error}</p>}
         {!error && !uvData && <p>Loading...</p>}
-        {uvData && (
+        {uvData && status && (
           <>
             <p>
-              ☀️ <strong>Current UV:</strong> {uvData.uv.toFixed(1)} (
-              {status.label})
+              ☀️ <strong>Current UV:</strong> {uvData.uv.toFixed(1)}{" "}
+              <span style={{ color: status.color, fontWeight: "600" }}>
+                ({status.label})
+              </span>
             </p>
 
             <div className="widget-bar-container">
               <div
                 className="widget-bar-indicator"
-                style={{ left: `${(uvData.uv / 11) * 100}%` }}
+                style={{
+                  left: `${(uvData.uv / 11) * 100}%`,
+                  backgroundColor: status.color,
+                }}
               />
             </div>
             <div className="widget-bar-label">
-              <span>Low</span>
-              <span>Very High</span>
+              <span style={{ color: status.color }}>{status.label}</span>
             </div>
 
             <p className="uv-note">{status.note}</p>

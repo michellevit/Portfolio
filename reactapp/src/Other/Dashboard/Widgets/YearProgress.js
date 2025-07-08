@@ -22,9 +22,8 @@ function YearProgress() {
 
   return (
     <div className="widget">
-      <h2>{currentYear} Progress</h2>
+      <h2>{currentYear}</h2>
       <div className="widget-content">
-        <pre className="text-bar">{barString}</pre>
         <div className="progress-bar">
           <div
             className="progress-bar-fill"

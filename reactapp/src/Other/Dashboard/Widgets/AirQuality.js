@@ -76,6 +76,7 @@ function AirQuality() {
               className="widget-bar-indicator"
               style={{
                 left: `${(data.overall_aqi / 500) * 100}%`,
+                backgroundColor: status.color,
               }}
             />
           </div>
