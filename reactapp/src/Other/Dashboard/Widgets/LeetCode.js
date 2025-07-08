@@ -13,7 +13,7 @@ const LeetCode = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch("https://firestore.googleapis.com/v1/projects/YOUR_PROJECT_ID/databases/(default)/documents/leetcode");
+      const res = await fetch("https://us-central1-portfolio-mfdev.cloudfunctions.net/getLeetcode");
       const json = await res.json();
 
       if (!json.documents) return;
