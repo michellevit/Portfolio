@@ -97,10 +97,10 @@ firebase deploy --only functions
 
 - Connect Kindle device to computer
   - Note: This cannot be done without the device (i.e., solely using the online platform) due to Kindle's strict copyright policy
-- Copy the 'My Clippings.txt' file
-- Add the file to the 'KindleUtil' folder
-- Run ```python clipping-converter.py'
-- Copy the 'KindleQuotes.json' file into the folder `reactapp/src/Other/Dashboard/Widgets/'
+- Find the 'My Clippings.txt' file and copy it
+- Paste the file into the 'Utils' folder
+- cd into the Utils folder and run: `python kindle-clipping-converter.py`
+- Move the 'KindleQuotes.json' file into the folder 'reactapp/src/Other/Dashboard/Widgets/Data'
 
 ## Troubleshooting
 
