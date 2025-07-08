@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
-
-const locations = {
-  Burnaby: { lat: 49.2485, lon: -122.9805 },
-  Vancouver: { lat: 49.2827, lon: -123.1207 },
-};
+import { useLocation } from "./LocationContext";
 
 function getHumidityStatus(humidity) {
   if (humidity < 30) {
@@ -17,17 +13,18 @@ function getHumidityStatus(humidity) {
 }
 
 export default function Humidity() {
-  const [selectedLocation, setSelectedLocation] = useState("Burnaby");
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const { selected, locations } = useLocation();
 
   useEffect(() => {
     const fetchHumidity = async () => {
-      const { lat, lon } = locations[selectedLocation];
+      const loc = locations[selected];
+      if (!loc) return;
 
       try {
         const res = await fetch(
-          `https://us-central1-portfolio-mfdev.cloudfunctions.net/getWeather?lat=${lat}&lon=${lon}`
+          `https://us-central1-portfolio-mfdev.cloudfunctions.net/getWeather?lat=${loc.lat}&lon=${loc.lon}`
         );
         if (!res.ok) throw new Error("Weather API failed");
 
@@ -47,25 +44,13 @@ export default function Humidity() {
     };
 
     fetchHumidity();
-  }, [selectedLocation]);
+  }, [selected, locations]); // ✅ re-fetch on context change
 
   const status = data ? getHumidityStatus(data.humidity) : null;
 
   return (
     <div className="widget humidity-widget">
       <h2>Humidity</h2>
-
-      <select
-        value={selectedLocation}
-        onChange={(e) => setSelectedLocation(e.target.value)}
-        className="widget-select"
-      >
-        {Object.keys(locations).map((loc) => (
-          <option key={loc} value={loc}>
-            {loc}
-          </option>
-        ))}
-      </select>
 
       <div className="widget-content">
         {error ? (
