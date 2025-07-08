@@ -1,13 +1,20 @@
+// src/Components/Widgets/Tides.js
+
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
+import locations from "./Data/Locations.json"; // static import of location data
 
 function Tides() {
   const [tides, setTides] = useState([]);
   const [error, setError] = useState(null);
 
+  // Get the first location entry
+  const firstKey = Object.keys(locations)[0];
+  const location = locations[firstKey];
+
   useEffect(() => {
     const fetchTides = async () => {
-      const url = `https://us-central1-portfolio-mfdev.cloudfunctions.net/getTides?lat=49.2827&lon=-123.1207`;
+      const url = `https://us-central1-portfolio-mfdev.cloudfunctions.net/getTides?lat=${location.lat}&lon=${location.lon}`;
 
       try {
         const response = await fetch(url);
@@ -27,7 +34,7 @@ function Tides() {
     };
 
     fetchTides();
-  }, []);
+  }, [location]);
 
   const formatTime = (isoString) => {
     const date = new Date(isoString);
