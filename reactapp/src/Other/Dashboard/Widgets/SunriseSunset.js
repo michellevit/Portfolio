@@ -1,22 +1,22 @@
-// src/Components/Widgets/SunriseSunset.js
-
 import React, { useState, useEffect } from "react";
 import "./Widgets.css";
-import locations from "./Data/Locations.json";
+import { useLocation } from "./LocationContext";
 
 export default function SunriseSunsetWidget() {
   const [sunrise, setSunrise] = useState("");
   const [sunset, setSunset] = useState("");
   const [error, setError] = useState(null);
 
-  const firstKey = Object.keys(locations)[0]; // Set default as first entry in JSON
-  const location = locations[firstKey];
+  const { selected, locations } = useLocation(); 
 
   useEffect(() => {
+    const loc = locations[selected];
+    if (!loc) return;
+
     const url =
       `https://api.open-meteo.com/v1/forecast` +
-      `?latitude=${location.lat}` +
-      `&longitude=${location.lon}` +
+      `?latitude=${loc.lat}` +
+      `&longitude=${loc.lon}` +
       `&daily=sunrise,sunset` +
       `&timezone=auto`;
 
@@ -35,7 +35,7 @@ export default function SunriseSunsetWidget() {
         console.error("Sun times fetch error:", err);
         setError("Couldn’t load sunrise/sunset times.");
       });
-  }, [location]);
+  }, [selected, locations]); // ✅ re-run on selection change
 
   const formatTime = (date) =>
     date.toLocaleTimeString(undefined, {
