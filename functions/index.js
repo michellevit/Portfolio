@@ -27,6 +27,8 @@ const astronomyId = functions.config().astronomy.id;
 const astronomyKey = functions.config().astronomy.key;
 const spotifyId = functions.config().spotify.id;
 const spotifyKey = functions.config().spotify.key;
+const mySecret = functions.config().private.secret; // secret for widgets (e.g., add LeetCode entry, etc)
+
 
 function getCacheKey(prefix, lat, lon) {
   const today = new Date().toISOString().split("T")[0];
@@ -40,6 +42,24 @@ async function getCachedOrFetch(key, fetchFn) {
   const data = await fetchFn();
   await db.collection("api_cache").doc(key).set(data);
   return data;
+}
+
+function withSecretAuth(handler) {
+  return functions.https.onRequest((req, res) => {
+    cors(req, res, async () => {
+      const { secret } = req.body;
+      if (secret !== mySecret) {
+        return res.status(403).json({ error: "Unauthorized" });
+      }
+
+      try {
+        await handler(req, res);
+      } catch (err) {
+        console.error("Handler error:", err);
+        res.status(500).json({ error: "Server error" });
+      }
+    });
+  });
 }
 
 // Horoscope (no location caching needed)
@@ -189,4 +209,37 @@ exports.getSpotifyToken = functions.https.onRequest((req, res) => {
       res.status(500).json({ error: "Failed to get Spotify token" });
     }
   });
+});
+
+
+// Add LeetCode Entry (LeetCode)
+
+exports.submitLeetcode = withSecretAuth(async (req, res) => {
+  const { number, question, difficulty } = req.body;
+
+  const today = new Date().toISOString().split("T")[0];
+
+  const existing = await db.collection("leetcode")
+    .where("number", "==", number)
+    .get();
+
+  if (!existing.empty) {
+    const doc = existing.docs[0];
+    const prev = doc.data();
+    await doc.ref.update({
+      attempts: Number(prev.attempts) + 1,
+      date: today,
+    });
+    return res.json({ message: "✅ Updated existing entry" });
+  }
+
+  await db.collection("leetcode").add({
+    number,
+    question,
+    difficulty,
+    attempts: 1,
+    date: today,
+  });
+
+  res.json({ message: "✅ Added new LeetCode entry" });
 });
