@@ -5,7 +5,9 @@
 
 A portfolio website designed to showcase my projects, developed using React, and previously deployed on Heroku, now hosted on GitHub Pages using a static site approach.
 
-<a href="https://michellef.dev" target="_blank"><img src="https://img.shields.io/badge/Website-michellef.dev-6da360?style=for-the-badge&logo=github"></a>
+<a href="https://michellef.dev" target="_blank">
+  <img src="https://img.shields.io/badge/Website-michellef.dev-6da360?style=for-the-badge">
+</a>
 
 ## Table of Contents
 
