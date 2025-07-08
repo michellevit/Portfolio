@@ -1,9 +1,8 @@
+// src/Components/Widgets/UVIndex.js
+
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
-
-const locations = {
-  Burnaby: { lat: 49.2485, lon: -122.9805 },
-};
+import locations from "./Data/Locations.json"; // 🔸 Import from JSON
 
 function getUvStatus(uv) {
   if (uv < 3) {
@@ -38,7 +37,8 @@ function getUvStatus(uv) {
 }
 
 export default function UVIndex() {
-  const [selectedLocation, setSelectedLocation] = useState("Burnaby");
+  const firstKey = Object.keys(locations)[0]; // 🔸 Default to first key
+  const [selectedLocation, setSelectedLocation] = useState(firstKey);
   const [uvData, setUvData] = useState(null);
   const [error, setError] = useState(null);
 
