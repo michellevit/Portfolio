@@ -13,6 +13,7 @@ import SunriseSunset from "./Widgets/SunriseSunset";
 import Tides from "./Widgets/Tides";
 import UVIndex from "./Widgets/UVIndex";
 import Weather from "./Widgets/Weather";
+import YearProgress from "./Widgets/YearProgress";
 
 function Dashboard() {
   const breakpointColumnsObj = {
@@ -40,6 +41,7 @@ function Dashboard() {
         <Quotes />
         <Kindle />
         <Horoscope />
+        <YearProgress />
         <Spotify />
       </Masonry>
     </div>
