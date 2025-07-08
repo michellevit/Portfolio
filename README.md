@@ -57,8 +57,7 @@ cd reactapp && npm run build && npm run deploy && cd .. && git add . && git comm
 
 ### Modifying Firebase
 
-- When modifying functions/index.js - after you must:
-- Navigate to the root project folder and then run:
+- After modifying functions/index.js you must navigate to the root project folder and then run:
 
 ```powershell
 npm --prefix functions run lint -- --fix
