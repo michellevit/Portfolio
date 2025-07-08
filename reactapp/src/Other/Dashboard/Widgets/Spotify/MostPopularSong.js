@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-const MostPopularSong = ({ token }) => {
+const MostPopularSong = ({ publicToken }) => {
   const [song, setSong] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!token) return;
+    if (!publicToken) return;
 
     const fetchPopular = async () => {
       try {
-        // 1) Grab only the track name + artists
         const url = new URL(
           "https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF/tracks"
         );
@@ -19,7 +18,7 @@ const MostPopularSong = ({ token }) => {
 
         const res = await fetch(url.toString(), {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${publicToken}`,
             Accept: "application/json",
           },
         });
@@ -32,11 +31,9 @@ const MostPopularSong = ({ token }) => {
         }
 
         const json = await res.json();
-        console.debug("👀 playlist‐tracks JSON:", json);
-
         const track = json.items?.[0]?.track;
+
         if (!track) {
-          console.warn("No track in response");
           setError("No track found in playlist");
           return;
         }
@@ -49,7 +46,7 @@ const MostPopularSong = ({ token }) => {
     };
 
     fetchPopular();
-  }, [token]);
+  }, [publicToken]);
 
   return (
     <div className="widget-block">
