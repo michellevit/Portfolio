@@ -2,20 +2,20 @@
 
 import React, { useState, useEffect } from "react";
 import "./Widgets.css";
-
-const LOCATION = { lat: 49.2485, lon: -122.9805 }; // Burnaby
+import locations from "./Data/Locations.json"; 
 
 export default function SunriseSunsetWidget() {
   const [sunrise, setSunrise] = useState("");
   const [sunset, setSunset] = useState("");
   const [error, setError] = useState(null);
 
+  const location = locations["Burnaby"]; // Default Location
+
   useEffect(() => {
-    const today = new Date().toISOString().split("T")[0];
     const url =
       `https://api.open-meteo.com/v1/forecast` +
-      `?latitude=${LOCATION.lat}` +
-      `&longitude=${LOCATION.lon}` +
+      `?latitude=${location.lat}` +
+      `&longitude=${location.lon}` +
       `&daily=sunrise,sunset` +
       `&timezone=auto`;
 
@@ -25,7 +25,6 @@ export default function SunriseSunsetWidget() {
         return res.json();
       })
       .then((data) => {
-        // ISO strings like "2025-07-04T05:13:00"
         const [sr] = data.daily.sunrise;
         const [ss] = data.daily.sunset;
         setSunrise(formatTime(new Date(sr)));
@@ -35,9 +34,8 @@ export default function SunriseSunsetWidget() {
         console.error("Sun times fetch error:", err);
         setError("Couldn’t load sunrise/sunset times.");
       });
-  }, []);
+  }, [location]);
 
-  // now shows e.g. "5:13 AM" or "8:47 PM"
   const formatTime = (date) =>
     date.toLocaleTimeString(undefined, {
       hour: "numeric",
@@ -56,17 +54,11 @@ export default function SunriseSunsetWidget() {
       ) : (
         <div className="sun-times">
           <div className="sun-time">
-            <span role="img" aria-label="Sunrise">
-              🌅
-            </span>
-            {sunrise}
+            <span role="img" aria-label="Sunrise">🌅</span> {sunrise}
           </div>
           |
           <div className="sun-time">
-            <span role="img" aria-label="Sunset">
-              🌇
-            </span>
-            {sunset}
+            <span role="img" aria-label="Sunset">🌇</span> {sunset}
           </div>
         </div>
       )}
