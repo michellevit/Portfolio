@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
+import { useLocation } from "./LocationContext";
 
 function CelestialEvents() {
+  const { selected, locations } = useLocation();
+  const { lat, lon } = locations[selected];
   const [events, setEvents] = useState([]);
   const [error, setError] = useState(null);
 
@@ -9,7 +12,7 @@ function CelestialEvents() {
     const fetchEvents = async () => {
       try {
         const res = await fetch(
-          "https://us-central1-portfolio-mfdev.cloudfunctions.net/getCelestialEvents"
+          `https://us-central1-portfolio-mfdev.cloudfunctions.net/getCelestialEvents?lat=${lat}&lon=${lon}`
         );
         if (!res.ok) throw new Error(`Status ${res.status}`);
         const data = await res.json();
@@ -21,7 +24,7 @@ function CelestialEvents() {
     };
 
     fetchEvents();
-  }, []);
+  }, [lat, lon]);
 
   return (
     <div className="widget">
