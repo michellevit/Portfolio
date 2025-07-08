@@ -164,7 +164,26 @@ exports.getSpotifyToken = functions.https.onRequest((req, res) => {
         }
       );
 
-      res.json(response.data);
+      const refreshToken = response.data.refresh_token;
+
+      // Get app-level token for public data
+      const clientCreds = await axios.post(
+        "https://accounts.spotify.com/api/token",
+        new URLSearchParams({
+          grant_type: "client_credentials",
+        }),
+        {
+          headers: {
+            Authorization: `Basic ${credentials}`,
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+
+      res.json({
+        ...response.data,
+        public_access_token: clientCreds.data.access_token,
+      });
     } catch (err) {
       console.error("Spotify token error:", err.response?.data || err.message);
       res.status(500).json({ error: "Failed to get Spotify token" });
