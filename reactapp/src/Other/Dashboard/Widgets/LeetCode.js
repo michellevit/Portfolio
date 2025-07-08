@@ -49,7 +49,7 @@ const LeetCode = () => {
     setError("");
 
     try {
-      const res = await fetch("https://us-central1-portfolio-mfdev.cloudfunctions.net/getLeetcode", {
+      const res = await fetch("https://us-central1-portfolio-mfdev.cloudfunctions.net/submitLeetcode", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
