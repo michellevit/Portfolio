@@ -43,7 +43,7 @@ A portfolio website designed to showcase my projects, developed using React, and
 
 - Note: When you run npm run deploy using the gh-pages package, this script handles deploying the contents of your build directory directly to the gh-pages branch on GitHub. This branch is specifically used for serving your site on GitHub Pages, and the deployment process does not typically require you to manually push changes to this branch. The gh-pages tool automates this for you.
 
--If you’ve made changes to the frontend React app and want to deploy them to your live GitHub Pages site:
+- If you’ve made changes to the frontend React app and want to deploy them to your live GitHub Pages site:
 
 ```bash
 cd reactapp && npm run build && npm run deploy && cd .. && git add . && git commit -m "Update" && git push origin main
