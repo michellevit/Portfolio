@@ -13,7 +13,7 @@ function CelestialEvents() {
         );
         if (!res.ok) throw new Error(`Status ${res.status}`);
         const data = await res.json();
-        setEvents(data?.data || []);
+        setEvents(data?.data?.events || []);
       } catch (err) {
         console.error("🌠 Celestial events error:", err.message);
         setError("Error fetching celestial events.");
