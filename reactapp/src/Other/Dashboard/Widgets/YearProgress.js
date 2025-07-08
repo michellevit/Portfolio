@@ -15,11 +15,16 @@ function YearProgress() {
   }, []);
 
   const currentYear = new Date().getFullYear();
+  const barLength = 20;
+  const filledCount = Math.round((percentage / 100) * barLength);
+  const emptyCount = barLength - filledCount;
+  const barString = "█".repeat(filledCount) + "░".repeat(emptyCount);
 
   return (
     <div className="widget">
       <h2>{currentYear} Progress</h2>
       <div className="widget-content">
+        <pre className="text-bar">{barString}</pre>
         <div className="progress-bar">
           <div
             className="progress-bar-fill"
