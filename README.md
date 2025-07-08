@@ -27,10 +27,10 @@ A portfolio website designed to showcase my projects, developed using React, and
 
 ## How to Edit
 
-- ```powershell
+```powershell
   cd reactapp
   npm start
-  ```
+```
 
 ## How to Deploy
 
