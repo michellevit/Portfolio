@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
-import { useLocation } from "./LocationContext"; // ✅ context import
+import { useLocation } from "./LocationContext";
 
 const getEmoji = (code, hour, sunriseHour, sunsetHour) => {
   const isNight = hour < sunriseHour || hour >= sunsetHour;
@@ -22,7 +22,7 @@ function Weather() {
   const [sunset, setSunset] = useState("");
   const [error, setError] = useState(null);
 
-  const { selected, locations } = useLocation(); // ✅ use context
+  const { selected, locations } = useLocation(); 
 
   const now = new Date();
   const currentHour = now.getHours();
