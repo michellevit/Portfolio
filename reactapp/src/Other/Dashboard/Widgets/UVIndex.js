@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
-import locations from "./Data/Locations.json";
+import { useLocation } from "./LocationContext"; // ✅ Use context
 
 function getUvStatus(uv) {
   if (uv < 3) {
@@ -37,13 +37,13 @@ function getUvStatus(uv) {
 }
 
 export default function UVIndex() {
-  const firstKey = Object.keys(locations)[0]; // 🔸 Default to first key
-  const [selectedLocation, setSelectedLocation] = useState(firstKey);
   const [uvData, setUvData] = useState(null);
   const [error, setError] = useState(null);
 
+  const { selected, locations } = useLocation(); // ✅ Pull selected location
+
   useEffect(() => {
-    const { lat, lon } = locations[selectedLocation];
+    const { lat, lon } = locations[selected];
     fetch(
       `https://us-central1-portfolio-mfdev.cloudfunctions.net/getUVIndex?lat=${lat}&lon=${lon}`
     )
@@ -60,24 +60,13 @@ export default function UVIndex() {
         setError("Failed to fetch UV data.");
         setUvData(null);
       });
-  }, [selectedLocation]);
+  }, [selected, locations]); // ✅ Update when location changes
 
   const status = uvData ? getUvStatus(uvData.uv) : null;
 
   return (
     <div className="widget">
       <h2>UV Index</h2>
-      <select
-        value={selectedLocation}
-        onChange={(e) => setSelectedLocation(e.target.value)}
-        className="widget-select"
-      >
-        {Object.keys(locations).map((loc) => (
-          <option key={loc} value={loc}>
-            {loc}
-          </option>
-        ))}
-      </select>
 
       <div className="widget-content">
         {error && <p className="widget-error">{error}</p>}
