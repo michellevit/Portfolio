@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
-import locations from "./Data/Locations.json"; 
+import { useLocation } from "./LocationContext"; // ✅ context import
 
 const getEmoji = (code, hour, sunriseHour, sunsetHour) => {
   const isNight = hour < sunriseHour || hour >= sunsetHour;
@@ -17,12 +17,12 @@ const getEmoji = (code, hour, sunriseHour, sunsetHour) => {
 };
 
 function Weather() {
-  const firstKey = Object.keys(locations)[0]; // ✅ use first key from JSON
-  const [selectedLocation, setSelectedLocation] = useState(firstKey);
   const [forecast, setForecast] = useState([]);
   const [sunrise, setSunrise] = useState("");
   const [sunset, setSunset] = useState("");
   const [error, setError] = useState(null);
+
+  const { selected, locations } = useLocation(); // ✅ use context
 
   const now = new Date();
   const currentHour = now.getHours();
@@ -30,7 +30,7 @@ function Weather() {
 
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0];
-    const { lat, lon } = locations[selectedLocation];
+    const { lat, lon } = locations[selected];
 
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,weathercode&daily=sunrise,sunset&timezone=auto`;
 
@@ -70,7 +70,7 @@ function Weather() {
         setError("Failed to load weather.");
         setForecast([]);
       });
-  }, [selectedLocation]);
+  }, [selected, locations]); // ✅ trigger refresh on global location change
 
   const formatTime = (date) =>
     `${date.getHours().toString().padStart(2, "0")}:${date
@@ -90,18 +90,6 @@ function Weather() {
   return (
     <div className="widget">
       <h2>Weather</h2>
-
-      <select
-        value={selectedLocation}
-        onChange={(e) => setSelectedLocation(e.target.value)}
-        className="widget-select"
-      >
-        {Object.keys(locations).map((loc) => (
-          <option key={loc} value={loc}>
-            {loc}
-          </option>
-        ))}
-      </select>
 
       <div className="widget-content">
         {error && <p className="widget-error">{error}</p>}
