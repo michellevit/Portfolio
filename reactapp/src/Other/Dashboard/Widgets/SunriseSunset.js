@@ -1,15 +1,16 @@
-// src/Components/Widgets/SunriseSunsetWidget.js
+// src/Components/Widgets/SunriseSunset.js
 
 import React, { useState, useEffect } from "react";
 import "./Widgets.css";
-import locations from "./Data/Locations.json"; 
+import locations from "./Data/Locations.json";
 
 export default function SunriseSunsetWidget() {
   const [sunrise, setSunrise] = useState("");
   const [sunset, setSunset] = useState("");
   const [error, setError] = useState(null);
 
-  const location = locations["Burnaby"]; // Default Location
+  const firstKey = Object.keys(locations)[0]; // Set default as first entry in JSON
+  const location = locations[firstKey];
 
   useEffect(() => {
     const url =
