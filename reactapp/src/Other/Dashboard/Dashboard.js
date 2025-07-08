@@ -9,6 +9,7 @@ import CelestialEvents from "./Widgets/CelestialEvents";
 import Horoscope from "./Widgets/Horoscope";
 import Humidity from "./Widgets/Humidity";
 import Kindle from "./Widgets/Kindle";
+import LeetCode from "./Widgets/LeetCode";
 import MoonPhase from "./Widgets/MoonPhase";
 import Quiz from "./Widgets/Quiz";
 import Quotes from "./Widgets/Quotes";
@@ -34,20 +35,21 @@ function Dashboard() {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          <Weather />
-          <SunriseSunset />
-          <Humidity />
-          <UVIndex />
           <AirQuality />
-          <Tides />
-          <MoonPhase />
           <CelestialEvents />
-          <Quotes />
-          <Quiz />
-          <Kindle />
           <Horoscope />
-          <YearProgress />
+          <Humidity />
+          <Kindle />
+          <LeetCode />
+          <MoonPhase />
+          <Quiz />
+          <Quotes />
           <Spotify />
+          <SunriseSunset />
+          <Tides />
+          <UVIndex />
+          <Weather />
+          <YearProgress />
         </Masonry>
       </LocationProvider>
     </div>
