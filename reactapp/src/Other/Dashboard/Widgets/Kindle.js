@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Widgets.css";
-import data from "./KindleQuotes.json";
+import data from "./Data/KindleQuotes.json";
 
 function Kindle() {
   const [quote, setQuote] = useState(null);
