@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import quizData from "./Quiz.json";
+import quizData from "./Data/Quiz.json";
 import "./Widgets.css";
 
 export default function Quiz() {
