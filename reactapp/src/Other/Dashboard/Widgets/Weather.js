@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Widgets.css";
-
-const locations = {
-  Burnaby: { lat: 49.2485, lon: -122.9805 },
-};
+import locations from "./Data/Locations.json"; 
 
 const getEmoji = (code, hour, sunriseHour, sunsetHour) => {
   const isNight = hour < sunriseHour || hour >= sunsetHour;
@@ -20,7 +17,8 @@ const getEmoji = (code, hour, sunriseHour, sunsetHour) => {
 };
 
 function Weather() {
-  const [selectedLocation, setSelectedLocation] = useState("Burnaby");
+  const firstKey = Object.keys(locations)[0]; // ✅ use first key from JSON
+  const [selectedLocation, setSelectedLocation] = useState(firstKey);
   const [forecast, setForecast] = useState([]);
   const [sunrise, setSunrise] = useState("");
   const [sunset, setSunset] = useState("");
