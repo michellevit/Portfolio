@@ -1,0 +1,452 @@
+[
+    {
+        "number": 1768,
+        "name": "Merge Strings Alternately",
+        "difficulty": "Easy",
+        "category": "Array / String"
+    },
+    {
+        "number": 1071,
+        "name": "Greatest Common Divisor of Strings",
+        "difficulty": "Easy",
+        "category": "Array / String"
+    },
+    {
+        "number": 1431,
+        "name": "Kids With the Greatest Number of Candies",
+        "difficulty": "Easy",
+        "category": "Array / String"
+    },
+    {
+        "number": 605,
+        "name": "Can Place Flowers",
+        "difficulty": "Easy",
+        "category": "Array / String"
+    },
+    {
+        "number": 345,
+        "name": "Reverse Vowels of a String",
+        "difficulty": "Easy",
+        "category": "Array / String"
+    },
+    {
+        "number": 151,
+        "name": "Reverse Words in a String",
+        "difficulty": "Medium",
+        "category": "Array / String"
+    },
+    {
+        "number": 238,
+        "name": "Product of Array Except Self",
+        "difficulty": "Medium",
+        "category": "Array / String"
+    },
+    {
+        "number": 334,
+        "name": "Increasing Triplet Subsequence",
+        "difficulty": "Medium",
+        "category": "Array / String"
+    },
+    {
+        "number": 443,
+        "name": "String Compression",
+        "difficulty": "Medium",
+        "category": "Array / String"
+    },
+    {
+        "number": 283,
+        "name": "Move Zeroes",
+        "difficulty": "Easy",
+        "category": "Two Pointers"
+    },
+    {
+        "number": 392,
+        "name": "Is Subsequence",
+        "difficulty": "Easy",
+        "category": "Two Pointers"
+    },
+    {
+        "number": 11,
+        "name": "Container With Most Water",
+        "difficulty": "Medium",
+        "category": "Two Pointers"
+    },
+    {
+        "number": 1679,
+        "name": "Max Number of K-Sum Pairs",
+        "difficulty": "Medium",
+        "category": "Two Pointers"
+    },
+    {
+        "number": 643,
+        "name": "Maximum Average Subarray I",
+        "difficulty": "Easy",
+        "category": "Sliding Window"
+    },
+    {
+        "number": 1456,
+        "name": "Maximum Number of Vowels in a Substring of Given Length",
+        "difficulty": "Medium",
+        "category": "Sliding Window"
+    },
+    {
+        "number": 1004,
+        "name": "Max Consecutive Ones III",
+        "difficulty": "Medium",
+        "category": "Sliding Window"
+    },
+    {
+        "number": 1493,
+        "name": "Longest Subarray of 1's After Deleting One Element",
+        "difficulty": "Medium",
+        "category": "Sliding Window"
+    },
+    {
+        "number": 1732,
+        "name": "Find the Highest Altitude",
+        "difficulty": "Easy",
+        "category": "Prefix Sum"
+    },
+    {
+        "number": 724,
+        "name": "Find Pivot Index",
+        "difficulty": "Easy",
+        "category": "Prefix Sum"
+    },
+    {
+        "number": 2215,
+        "name": "Find the Difference of Two Arrays",
+        "difficulty": "Easy",
+        "category": "Hash Map / Set"
+    },
+    {
+        "number": 1207,
+        "name": "Unique Number of Occurrences",
+        "difficulty": "Easy",
+        "category": "Hash Map / Set"
+    },
+    {
+        "number": 1657,
+        "name": "Determine if Two Strings Are Close",
+        "difficulty": "Medium",
+        "category": "Hash Map / Set"
+    },
+    {
+        "number": 2352,
+        "name": "Equal Row and Column Pairs",
+        "difficulty": "Medium",
+        "category": "Hash Map / Set"
+    },
+    {
+        "number": 2390,
+        "name": "Removing Stars From a String",
+        "difficulty": "Medium",
+        "category": "Stack"
+    },
+    {
+        "number": 735,
+        "name": "Asteroid Collision",
+        "difficulty": "Medium",
+        "category": "Stack"
+    },
+    {
+        "number": 394,
+        "name": "Decode String",
+        "difficulty": "Medium",
+        "category": "Stack"
+    },
+    {
+        "number": 933,
+        "name": "Number of Recent Calls",
+        "difficulty": "Easy",
+        "category": "Queue"
+    },
+    {
+        "number": 649,
+        "name": "Dota2 Senate",
+        "difficulty": "Medium",
+        "category": "Queue"
+    },
+    {
+        "number": 2095,
+        "name": "Delete the Middle Node of a Linked List",
+        "difficulty": "Medium",
+        "category": "Linked List"
+    },
+    {
+        "number": 328,
+        "name": "Odd Even Linked List",
+        "difficulty": "Medium",
+        "category": "Linked List"
+    },
+    {
+        "number": 206,
+        "name": "Reverse Linked List",
+        "difficulty": "Easy",
+        "category": "Linked List"
+    },
+    {
+        "number": 2130,
+        "name": "Maximum Twin Sum of a Linked List",
+        "difficulty": "Medium",
+        "category": "Linked List"
+    },
+    {
+        "number": 104,
+        "name": "Maximum Depth of Binary Tree",
+        "difficulty": "Easy",
+        "category": "Binary Tree - DFS"
+    },
+    {
+        "number": 872,
+        "name": "Leaf-Similar Trees",
+        "difficulty": "Easy",
+        "category": "Binary Tree - DFS"
+    },
+    {
+        "number": 1448,
+        "name": "Count Good Nodes in Binary Tree",
+        "difficulty": "Medium",
+        "category": "Binary Tree - DFS"
+    },
+    {
+        "number": 437,
+        "name": "Path Sum III",
+        "difficulty": "Medium",
+        "category": "Binary Tree - DFS"
+    },
+    {
+        "number": 1372,
+        "name": "Longest ZigZag Path in a Binary Tree",
+        "difficulty": "Medium",
+        "category": "Binary Tree - DFS"
+    },
+    {
+        "number": 236,
+        "name": "Lowest Common Ancestor of a Binary Tree",
+        "difficulty": "Medium",
+        "category": "Binary Tree - DFS"
+    },
+    {
+        "number": 199,
+        "name": "Binary Tree Right Side View",
+        "difficulty": "Medium",
+        "category": "Binary Tree - BFS"
+    },
+    {
+        "number": 1161,
+        "name": "Maximum Level Sum of a Binary Tree",
+        "difficulty": "Medium",
+        "category": "Binary Tree - BFS"
+    },
+    {
+        "number": 700,
+        "name": "Search in a Binary Search Tree",
+        "difficulty": "Easy",
+        "category": "Binary Search Tree"
+    },
+    {
+        "number": 450,
+        "name": "Delete Node in a BST",
+        "difficulty": "Medium",
+        "category": "Binary Search Tree"
+    },
+    {
+        "number": 841,
+        "name": "Keys and Rooms",
+        "difficulty": "Medium",
+        "category": "Graphs - DFS"
+    },
+    {
+        "number": 547,
+        "name": "Number of Provinces",
+        "difficulty": "Medium",
+        "category": "Graphs - DFS"
+    },
+    {
+        "number": 1466,
+        "name": "Reorder Routes to Make All Paths Lead to the City Zero",
+        "difficulty": "Medium",
+        "category": "Graphs - DFS"
+    },
+    {
+        "number": 399,
+        "name": "Evaluate Division",
+        "difficulty": "Medium",
+        "category": "Graphs - DFS"
+    },
+    {
+        "number": 1926,
+        "name": "Nearest Exit from Entrance in Maze",
+        "difficulty": "Medium",
+        "category": "Graphs - BFS"
+    },
+    {
+        "number": 994,
+        "name": "Rotting Oranges",
+        "difficulty": "Medium",
+        "category": "Graphs - BFS"
+    },
+    {
+        "number": 215,
+        "name": "Kth Largest Element in an Array",
+        "difficulty": "Medium",
+        "category": "Heap / Priority Queue"
+    },
+    {
+        "number": 2336,
+        "name": "Smallest Number in Infinite Set",
+        "difficulty": "Medium",
+        "category": "Heap / Priority Queue"
+    },
+    {
+        "number": 2542,
+        "name": "Maximum Subsequence Score",
+        "difficulty": "Medium",
+        "category": "Heap / Priority Queue"
+    },
+    {
+        "number": 2462,
+        "name": "Total Cost to Hire K Workers",
+        "difficulty": "Medium",
+        "category": "Heap / Priority Queue"
+    },
+    {
+        "number": 374,
+        "name": "Guess Number Higher or Lower",
+        "difficulty": "Easy",
+        "category": "Binary Search"
+    },
+    {
+        "number": 2300,
+        "name": "Successful Pairs of Spells and Potions",
+        "difficulty": "Medium",
+        "category": "Binary Search"
+    },
+    {
+        "number": 162,
+        "name": "Find Peak Element",
+        "difficulty": "Medium",
+        "category": "Binary Search"
+    },
+    {
+        "number": 875,
+        "name": "Koko Eating Bananas",
+        "difficulty": "Medium",
+        "category": "Binary Search"
+    },
+    {
+        "number": 17,
+        "name": "Letter Combinations of a Phone Number",
+        "difficulty": "Medium",
+        "category": "Backtracking"
+    },
+    {
+        "number": 216,
+        "name": "Combination Sum III",
+        "difficulty": "Medium",
+        "category": "Backtracking"
+    },
+    {
+        "number": 1137,
+        "name": "N-th Tribonacci Number",
+        "difficulty": "Easy",
+        "category": "DP - 1D"
+    },
+    {
+        "number": 746,
+        "name": "Min Cost Climbing Stairs",
+        "difficulty": "Easy",
+        "category": "DP - 1D"
+    },
+    {
+        "number": 198,
+        "name": "House Robber",
+        "difficulty": "Medium",
+        "category": "DP - 1D"
+    },
+    {
+        "number": 790,
+        "name": "Domino and Tromino Tiling",
+        "difficulty": "Medium",
+        "category": "DP - 1D"
+    },
+    {
+        "number": 62,
+        "name": "Unique Paths",
+        "difficulty": "Medium",
+        "category": "DP - Multidimensional"
+    },
+    {
+        "number": 1143,
+        "name": "Longest Common Subsequence",
+        "difficulty": "Medium",
+        "category": "DP - Multidimensional"
+    },
+    {
+        "number": 714,
+        "name": "Best Time to Buy and Sell Stock with Transaction Fee",
+        "difficulty": "Medium",
+        "category": "DP - Multidimensional"
+    },
+    {
+        "number": 72,
+        "name": "Edit Distance",
+        "difficulty": "Medium",
+        "category": "DP - Multidimensional"
+    },
+    {
+        "number": 338,
+        "name": "Counting Bits",
+        "difficulty": "Easy",
+        "category": "Bit Manipulation"
+    },
+    {
+        "number": 136,
+        "name": "Single Number",
+        "difficulty": "Easy",
+        "category": "Bit Manipulation"
+    },
+    {
+        "number": 1318,
+        "name": "Minimum Flips to Make a OR b Equal to c",
+        "difficulty": "Medium",
+        "category": "Bit Manipulation"
+    },
+    {
+        "number": 208,
+        "name": "Implement Trie (Prefix Tree)",
+        "difficulty": "Medium",
+        "category": "Trie"
+    },
+    {
+        "number": 1268,
+        "name": "Search Suggestions System",
+        "difficulty": "Medium",
+        "category": "Trie"
+    },
+    {
+        "number": 435,
+        "name": "Non-overlapping Intervals",
+        "difficulty": "Medium",
+        "category": "Intervals"
+    },
+    {
+        "number": 452,
+        "name": "Minimum Number of Arrows to Burst Balloons",
+        "difficulty": "Medium",
+        "category": "Intervals"
+    },
+    {
+        "number": 739,
+        "name": "Daily Temperatures",
+        "difficulty": "Medium",
+        "category": "Monotonic Stack"
+    },
+    {
+        "number": 901,
+        "name": "Online Stock Span",
+        "difficulty": "Medium",
+        "category": "Monotonic Stack"
+    }
+]
