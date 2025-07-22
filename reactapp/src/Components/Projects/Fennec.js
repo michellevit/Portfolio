@@ -40,7 +40,6 @@ function Fennec() {
       <div className="technologies-used">
         <h3>Technologies Used</h3>
         <ul className="tech">
-          <li>Next.js</li>
           <li>React</li>
           <li>HTML5 Canvas</li>
         </ul>
