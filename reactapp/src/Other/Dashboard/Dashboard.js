@@ -13,6 +13,7 @@ import LeetCode from "./Widgets/LeetCode";
 import MoonPhase from "./Widgets/MoonPhase";
 import Quiz from "./Widgets/Quiz";
 import Quotes from "./Widgets/Quotes";
+import Shortcuts from "./Widgets/Shortcuts";
 import Spotify from "./Widgets/Spotify/Spotify";
 import SunriseSunset from "./Widgets/SunriseSunset";
 import Tides from "./Widgets/Tides";
@@ -44,6 +45,7 @@ function Dashboard() {
           <MoonPhase />
           <Quiz />
           <Quotes />
+          <Shortcuts />
           <Spotify />
           <SunriseSunset />
           <Tides />
