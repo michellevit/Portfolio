@@ -117,6 +117,16 @@ After you've modified code in the functions/ directory (for example, editing ind
 - Issues with GitHub Pages deployment can often be traced back to path issues in the `homepage` field of `package.json` or DNS settings for custom domains.
 - Check the console in the developer tools of your browser for any 404 errors, which typically indicate missing files or incorrect paths.
 
+<!--
+## To DO
+- Pull changes locally
+- Add author for Brothers Karamazov in Books.json
+- Fennec page
+- Fix widgets
+- New widgets: Movies/Podcasts/Albums (log, rate, password protected)
+-->
+
+
 ## Credits
 
 Michelle Flandin
