@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Secret.css";
-import worldImage from "./assets/world.jpg";
 
 function Secret() {
   return (

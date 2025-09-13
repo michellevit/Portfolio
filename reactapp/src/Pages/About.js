@@ -34,8 +34,8 @@ function About() {
             I started my career in administration and accounting, but I kept
             turning to code to make my day-to-day work easier. It started as a
             few simple scripts but quickly turned into building full apps like
-            my <Link to="/amazon-checker">Amazon Checker</Link> and{" "}
-            <Link to="/production-planner">Production Planner</Link> tools.
+            my <Link to="/production-planner">Production Planner</Link> and{" "}
+            <Link to="/amazon-checker">Amazon Checker</Link> tools.
           </p>
           <p>
             Recently I decided to return to school to fill in the gaps of what
