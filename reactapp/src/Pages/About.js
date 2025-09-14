@@ -45,14 +45,15 @@ function About() {
           </p>
           <p>
             I still code for fun though - currently I'm working on{" "}
-            <Link to="/dg-draft">a fantasy disc golf app</Link> and an{" "}
+            <Link to="/dg-draft">a fantasy disc golf app</Link>.
+            {/* and an{" "}
             <a
               href="https://fennec.michellef.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
               8-bit inspired fox animation
-            </a>
+            </a> */}
           </p>
           <p>
             Feel free to{" "}
