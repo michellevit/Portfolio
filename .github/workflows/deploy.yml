@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    defaults:
-      run:
-        working-directory: Portfolio
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,7 +18,16 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install
-      - run: npm run deploy
+      # Optional: quick sanity check so you can see where package.json is
+      - name: Show repository layout
+        run: |
+          pwd
+          ls -la
+
+      - name: Install deps
+        run: npm install
+
+      - name: Build & deploy
+        run: npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
