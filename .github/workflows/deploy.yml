@@ -2,52 +2,44 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # <-- change this if your source code is not on main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # to push to gh-pages
+      contents: write  # needed to push to gh-pages
     steps:
-      - name: Checkout source
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          # ref: main  # optionally force a specific branch if your default isn't correct
-
-      - name: Show repo files (debug)
-        run: |
-          echo "PWD: $(pwd)"
-          echo "Branch:" $(git rev-parse --abbrev-ref HEAD)
-          ls -la
-          echo "--- package.json? ---"
-          if [ -f package.json ]; then
-            cat package.json | head -n 20
-          else
-            echo "package.json NOT FOUND at repo root"
-          fi
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
-      # If you use package-lock.json, npm ci is best; otherwise fall back to npm install
       - name: Install deps
-        run: npm ci || npm install
+        working-directory: reactapp
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Build
+        working-directory: reactapp
         run: npm run build
-        # For Next.js static export, ensure next.config.js has: export default { output: 'export' }
-        # and your build script runs `next build && next export`
+
+      - name: Add CNAME to build (custom domain)
+        working-directory: reactapp
+        run: |
+          echo "michellef.dev" > build/CNAME
 
       - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out   # adjust if your build outputs elsewhere
-          # if you need a custom cname:
-          # cname: yourdomain.com
+        working-directory: reactapp
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx gh-pages -d build -b gh-pages
