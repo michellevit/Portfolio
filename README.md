@@ -137,7 +137,7 @@ After you've modified code in the functions/ directory (for example, editing ind
         }
     },
 .github/workflows/deploy.yml
-- Remove workflow
+- Remove workflow for gh-pages deploy
 - Add Fennec screenshot
 - Fix widgets
 -->
