@@ -9,7 +9,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # needed to push to gh-pages
 
     steps:
       - name: Checkout
@@ -41,8 +41,17 @@ jobs:
         working-directory: reactapp
         run: echo "michellef.dev" > build/CNAME
 
+      # ✅ Set commit identity for gh-pages
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
       - name: Deploy to gh-pages
         working-directory: reactapp
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx gh-pages -d build -b gh-pages
+        run: |
+          # Use the token-backed repo URL so pushes are authenticated
+          REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          npx gh-pages -d build -b gh-pages --repo "$REPO_URL" -m "Deploy: ${{ github.sha }}"
