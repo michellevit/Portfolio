@@ -12,7 +12,7 @@ A portfolio website designed to showcase my projects.
 ## Table of Contents
 
 - [Technologies Used](#technologies-used)
-- [Run the React App Locally](#run-the-react-app-locally)
+- [How to Run Locally](#how-to-run-locally)
 - [How To Deploy](#how-to-deploy)
 - [How To Edit the Dashboard](#how-to-edit-the-dashboard)
   - [Configuring Firebase Functions Environment Variables](#configuring-firebase-functions-environment-variables)
@@ -28,7 +28,7 @@ A portfolio website designed to showcase my projects.
 - Google Firebase
 
 
-## Run the React App Locally
+## How to Run Locally
 
 ```bash
   cd reactapp
