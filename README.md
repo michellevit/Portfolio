@@ -140,7 +140,6 @@ After you've modified code in the functions/ directory (for example, editing ind
 - Remove workflow
 - Add Fennec screenshot
 - Fix widgets
-- New widgets: Movies/Podcasts/Albums (log, rate, password protected)
 -->
 
 
