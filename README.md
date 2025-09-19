@@ -137,6 +137,8 @@ After you've modified code in the functions/ directory (for example, editing ind
         }
     },
 .github/workflows/deploy.yml
+- Remove workflow
+- Add Fennec screenshot
 - Fix widgets
 - New widgets: Movies/Podcasts/Albums (log, rate, password protected)
 -->
