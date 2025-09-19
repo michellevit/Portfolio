@@ -37,18 +37,24 @@ A portfolio website designed to showcase my projects.
 
 ## How to Deploy
 
-**Updating GitHub Pages**
-_Note: When you run npm run deploy using the gh-pages package, this script handles deploying the contents of your build directory directly to the gh-pages branch on GitHub. This branch is specifically used for serving your site on GitHub Pages, and the deployment process does not typically require you to manually push changes to this branch. The gh-pages tool automates this for you._
+Deployment is fully automated using **GitHub Actions**
 
-- If you’ve made changes to the frontend React app and want to deploy them to your live GitHub Pages site:
+- Whenever you commit and push changes to the `main` branch, GitHub will:
+  1. Install dependencies in `reactapp/`
+  2. Build the React app into static files in `reactapp/build/`
+  3. Push the build output to the `gh-pages` branch
+  4. Serve the updated site via GitHub Pages at **https://michellef.dev**
 
-```bash
-cd reactapp && npm run build && npm run deploy && cd .. && git add . && git commit -m "Update" && git push origin main
-```
+- You **do not** need to run `npm run deploy` locally anymore — just push to `main`.
 
+### Notes
+
+- To change the domain, edit the `homepage` field in `reactapp/package.json` and update the `CNAME` step in `.github/workflows/deploy.yml`.
+- To trigger a manual deployment without making code changes, go to the **Actions** tab in GitHub, select **Deploy to GitHub Pages**, and click **Run workflow**.
 - **Modifying the Deployment Setup**:
-  1. To change the GitHub Pages configuration, update the `homepage` in `package.json` to reflect the new repository path or custom domain.
-  2. Ensure that the `gh-pages` package is configured correctly in the `reactapp/package.json`.
+  - To change the GitHub Pages configuration, update the `homepage` in `package.json` to reflect the new repository path or custom domain.
+  - Ensure that the `gh-pages` package is configured correctly in the `reactapp/package.json`
+  - 'GitHub Actions' is configured in `.github/workflows/deploy.yml`
 
 ## How To Edit the Dashboard
 
