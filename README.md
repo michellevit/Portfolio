@@ -120,6 +120,7 @@ After you've modified code in the functions/ directory (for example, editing ind
 <!--
 ## To DO
 - Pull changes locally
+- Remove workflow for gh-pages deploy
 - Add author for Brothers Karamazov in Books.json
 - Add Fennec project data to json: 
     "fennec": {
@@ -137,7 +138,6 @@ After you've modified code in the functions/ directory (for example, editing ind
         }
     },
 .github/workflows/deploy.yml
-- Remove workflow for gh-pages deploy
 - Add Fennec screenshot
 - Fix widgets
 -->
