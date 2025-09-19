@@ -5,24 +5,22 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write   # needed for pushing to gh-pages
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # needed to push to gh-pages
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show tree (sanity check)
-        run: |
-          pwd
-          ls -la
-          echo "---- reactapp ----"
-          ls -la reactapp || true
-
-      - name: Setup Node (cache by lockfile in reactapp)
+      - name: Setup Node (with cache)
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -35,14 +33,14 @@ jobs:
 
       - name: Build
         working-directory: reactapp
+        # CRA treats warnings as errors when CI=true; disable to allow deploys with warnings
         run: CI=false npm run build
 
       - name: Add CNAME (custom domain)
         working-directory: reactapp
         run: echo "michellef.dev" > build/CNAME
 
-      # ✅ Set commit identity for gh-pages
-      - name: Configure Git identity
+      - name: Configure Git identity (for gh-pages commit)
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
@@ -52,6 +50,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Use the token-backed repo URL so pushes are authenticated
           REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
           npx gh-pages -d build -b gh-pages --repo "$REPO_URL" -m "Deploy: ${{ github.sha }}"
