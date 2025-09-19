@@ -3,7 +3,7 @@
 ![React Version](https://img.shields.io/badge/React-18.2.0-61dafb.svg)
 ![GitHub Pages](https://img.shields.io/badge/Platform-GitHub%20Pages-222.svg)
 
-A portfolio website designed to showcase my projects.
+A portfolio app designed to showcase my projects.
 
 <a href="https://michellef.dev" target="_blank">
   <img src="https://img.shields.io/badge/Website-michellef.dev-6da360?style=for-the-badge">
