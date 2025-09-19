@@ -122,7 +122,7 @@ After you've modified code in the functions/ directory (for example, editing ind
 - Pull changes locally
 - Remove workflow for gh-pages deploy
 - Add author for Brothers Karamazov in Books.json
-- Add Fennec project data to json: 
+- Add project data to json: 
     "fennec": {
         "title": "Fox Animation",
         "short": "An 8-bit inspired side-scrolling animation synced to music.",
