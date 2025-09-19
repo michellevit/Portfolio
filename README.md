@@ -119,7 +119,7 @@ After you've modified code in the functions/ directory (for example, editing ind
 
 <!--
 ## To DO
-- Pull changes to local repo
+- Pull changes locally
 - Remove workflow for gh-pages deploy
 - Add author for Brothers Karamazov in Books.json
 - Add project data to json: 
