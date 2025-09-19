@@ -2,32 +2,52 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]   # <-- change this if your source code is not on main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # to push to gh-pages
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout source
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          # ref: main  # optionally force a specific branch if your default isn't correct
 
-      - uses: actions/setup-node@v4
+      - name: Show repo files (debug)
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Branch:" $(git rev-parse --abbrev-ref HEAD)
+          ls -la
+          echo "--- package.json? ---"
+          if [ -f package.json ]; then
+            cat package.json | head -n 20
+          else
+            echo "package.json NOT FOUND at repo root"
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      # Optional: quick sanity check so you can see where package.json is
-      - name: Show repository layout
-        run: |
-          pwd
-          ls -la
-
+      # If you use package-lock.json, npm ci is best; otherwise fall back to npm install
       - name: Install deps
-        run: npm install
+        run: npm ci || npm install
 
-      - name: Build & deploy
-        run: npm run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build
+        run: npm run build
+        # For Next.js static export, ensure next.config.js has: export default { output: 'export' }
+        # and your build script runs `next build && next export`
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out   # adjust if your build outputs elsewhere
+          # if you need a custom cname:
+          # cname: yourdomain.com
