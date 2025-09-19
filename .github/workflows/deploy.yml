@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         working-directory: reactapp
-        run: npm run build
+        run: CI=false npm run build
 
       - name: Add CNAME to build (custom domain)
         working-directory: reactapp
