@@ -121,7 +121,22 @@ After you've modified code in the functions/ directory (for example, editing ind
 ## To DO
 - Pull changes locally
 - Add author for Brothers Karamazov in Books.json
-- Fennec page
+- Add Fennec data to json: 
+    "fennec": {
+        "title": "Fox Animation",
+        "short": "An 8-bit inspired side-scrolling animation synced to music.",
+        "long": "This React app renders a retro fox animation synced to an original music track. Built with HTML5 Canvas and React, the animation is modular and configurable, with sprite transitions and parallax backgrounds triggered by audio timing.",
+        "tags": [
+            "react",
+            "canvas"
+        ],
+        "links": {
+            "demo": "https://fennec.michellef.dev",
+            "video": "",
+            "repo": "https://github.com/michellevit/Fennec-Animation"
+        }
+    },
+.github/workflows/deploy.yml
 - Fix widgets
 - New widgets: Movies/Podcasts/Albums (log, rate, password protected)
 -->
