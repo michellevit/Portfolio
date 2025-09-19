@@ -8,18 +8,18 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # needed to push to gh-pages
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # cache: npm
 
-      - run: npm ci
-
-      # Your script already does "npm run build && gh-pages -d out --dotfiles"
+      - run: npm install
       - run: npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
