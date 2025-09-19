@@ -121,7 +121,7 @@ After you've modified code in the functions/ directory (for example, editing ind
 ## To DO
 - Pull changes locally
 - Add author for Brothers Karamazov in Books.json
-- Add Fennec data to json: 
+- Add Fennec project data to json: 
     "fennec": {
         "title": "Fox Animation",
         "short": "An 8-bit inspired side-scrolling animation synced to music.",
