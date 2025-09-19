@@ -15,33 +15,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Sanity check: show where files actually are
-      - name: Show tree
+      - name: Show tree (sanity check)
         run: |
           pwd
           ls -la
           echo "---- reactapp ----"
           ls -la reactapp || true
 
-      - name: Setup Node (no cache)
+      - name: Setup Node (cache by lockfile in reactapp)
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+          cache-dependency-path: reactapp/package-lock.json
 
       - name: Install deps
         working-directory: reactapp
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+        run: npm ci
 
       - name: Build
         working-directory: reactapp
         run: CI=false npm run build
 
-      - name: Add CNAME to build (custom domain)
+      - name: Add CNAME (custom domain)
         working-directory: reactapp
         run: echo "michellef.dev" > build/CNAME
 
