@@ -12,6 +12,7 @@ import AmazonChecker from "./Components/Projects/AmazonChecker";
 import BoilerplateGateway from "./Components/Projects/BoilerplateGateway";
 import CommentAnalyzer from "./Components/Projects/CommentAnalyzer";
 import DGDraft from "./Components/Projects/DGDraft";
+import Fennec from "./Components/Projects/Fennec";
 import KibbeQuiz from "./Components/Projects/KibbeQuiz";
 import Dashboard from "./Other/Dashboard/Dashboard";
 import ProductionPlanner from "./Components/Projects/ProductionPlanner";
@@ -91,6 +92,8 @@ function App() {
                 />
                 <Route path="/comment-analyzer" element={<CommentAnalyzer />} />
                 <Route path="/dg-draft" element={<DGDraft />} />
+                <Route path="/fennec-animation" element={<Fennec />} />
+
                 <Route path="/kibbe-quiz" element={<KibbeQuiz />} />
                 <Route path="/dash" element={<Dashboard />} />
                 {/* <Route path="/resume" element={<Resume />} /> */}

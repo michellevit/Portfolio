@@ -27,7 +27,6 @@ A portfolio website designed to showcase my projects.
 - GitHub Pages
 - Google Firebase
 
-
 ## How to Run Locally
 
 ```bash
@@ -40,6 +39,7 @@ A portfolio website designed to showcase my projects.
 Deployment is fully automated using **GitHub Actions**
 
 - Whenever you commit and push changes to the `main` branch, GitHub will:
+
   1. Install dependencies in `reactapp/`
   2. Build the React app into static files in `reactapp/build/`
   3. Push the build output to the `gh-pages` branch
@@ -86,6 +86,7 @@ This section walks you through setting up and deploying environment variables fo
 ### Updating Firebase Functions
 
 After you've modified code in the functions/ directory (for example, editing index.js or adding new functions), follow these steps to lint, fix, and deploy your changes:
+
 - Run lint and auto‑fixFrom your project root, execute:
   ```bash
   cd functions
@@ -126,29 +127,8 @@ After you've modified code in the functions/ directory (for example, editing ind
 
 <!--
 ## To DO
-- Pull changes locally
-- Remove workflow for gh-pages deploy
-- Add author for Brothers Karamazov in Books.json
-- Add project data to json: 
-    "fennec": {
-        "title": "Fox Animation",
-        "short": "An 8-bit inspired side-scrolling animation synced to music.",
-        "long": "This React app renders a retro fox animation synced to an original music track. Built with HTML5 Canvas and React, the animation is modular and configurable, with sprite transitions and parallax backgrounds triggered by audio timing.",
-        "tags": [
-            "react",
-            "canvas"
-        ],
-        "links": {
-            "demo": "https://fennec.michellef.dev",
-            "video": "",
-            "repo": "https://github.com/michellevit/Fennec-Animation"
-        }
-    },
-.github/workflows/deploy.yml
-- Add Fennec screenshot
 - Fix widgets
 -->
-
 
 ## Credits
 

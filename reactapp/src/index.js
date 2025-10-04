@@ -35,8 +35,6 @@ root.render(
           <Route path="/matt-is-32" element={<MattIs32 />} />
           <Route path="/secret" element={<Secret />} />
           <Route path="/secret/quiz" element={<Quiz />} />
-          <Route path="/fennec" element={<FoxAnimation />} />
-
           {/* Catch-all with redirect logic */}
           <Route
             path="*"

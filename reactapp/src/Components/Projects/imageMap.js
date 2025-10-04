@@ -3,6 +3,7 @@ import amazonChecker from "../../static/projects/amazon-checker.jpg";
 import boilerplateGateway from "../../static/projects/boilerplate-gateway.jpg";
 import commentAnalyzer from "../../static/projects/comment-analyzer.jpg";
 import dgDraft from "../../static/projects/dg-draft.jpg";
+import fennecAnimation from "../../static/projects/fennec-animation.jpg";
 import kibbeQuiz from "../../static/projects/kibbe-quiz.jpg";
 import productionPlanner from "../../static/projects/production-planner.jpg";
 import siteBlocker from "../../static/projects/site-blocker.jpg";
@@ -39,6 +40,7 @@ const imageMap = {
   kibbe_quiz: kibbeQuiz,
   production_planner: productionPlanner,
   site_blocker: siteBlocker,
+  fennec_animation: fennecAnimation,
 
   // Logos (keys match tag names)
   chartjs,

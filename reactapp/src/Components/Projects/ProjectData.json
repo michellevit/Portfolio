@@ -63,6 +63,21 @@
             "repo": "https://github.com/michellevit/DG-Draft"
         }
     },
+    "fennec_animation": {
+        "title": "Fox Animation",
+        "short": "An 8-bit inspired side-scrolling animation synced to music.",
+        "long": "This Next app renders a retro fox animation synced to an original music track. Built with HTML5 Canvas and React, the animation is modular and configurable, with sprite transitions and parallax backgrounds triggered by audio timing.",
+        "tags": [
+            "next",
+            "react",
+            "canvas"
+        ],
+        "links": {
+            "demo": "https://fennec.michellef.dev",
+            "video": "",
+            "repo": "https://github.com/michellevit/Fennec-Animation"
+        }
+    },
     "kibbe_quiz": {
         "title": "Kibbe Quiz",
         "short": "A quiz that helps 5000+ users a month find their Kibbe body type.",
@@ -83,6 +98,7 @@
         "tags": [
             "featured",
             "django",
+            "docker",
             "react",
             "mysql"
         ],
