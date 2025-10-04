@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6017de3.css",
-    "main.js": "/static/js/main.292cbf6f.js",
+    "main.js": "/static/js/main.d65c6f01.js",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.408922bab782ebecf34e.jpg",
     "static/media/godel.png": "/static/media/godel.a8590ceb485f9ba90b44.png",
     "static/media/confetti.png": "/static/media/confetti.c0bf3f2d7ceda745567f.png",
@@ -9,6 +9,7 @@
     "static/media/wittgenstein.png": "/static/media/wittgenstein.c68462f0d135814312f5.png",
     "static/media/comment-analyzer.jpg": "/static/media/comment-analyzer.aa5de9738baa41be49ca.jpg",
     "static/media/amazon-checker.jpg": "/static/media/amazon-checker.2f00a49f89b0d351f3b0.jpg",
+    "static/media/fennec-animation.jpg": "/static/media/fennec-animation.2e234fdc74442569ecc5.jpg",
     "static/media/production-planner.jpg": "/static/media/production-planner.b50d611667748b0670eb.jpg",
     "static/media/boilerplate-gateway.jpg": "/static/media/boilerplate-gateway.34adfe08acf98e956844.jpg",
     "static/media/dg-draft.jpg": "/static/media/dg-draft.b6d4326736d1f5bdb042.jpg",
@@ -28,10 +29,10 @@
     "static/media/chartjs-logo.svg": "/static/media/chartjs-logo.609a2dc9742df4252749dc4bb2fb9350.svg",
     "index.html": "/index.html",
     "main.b6017de3.css.map": "/static/css/main.b6017de3.css.map",
-    "main.292cbf6f.js.map": "/static/js/main.292cbf6f.js.map"
+    "main.d65c6f01.js.map": "/static/js/main.d65c6f01.js.map"
   },
   "entrypoints": [
     "static/css/main.b6017de3.css",
-    "static/js/main.292cbf6f.js"
+    "static/js/main.d65c6f01.js"
   ]
 }
