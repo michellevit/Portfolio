@@ -49,6 +49,7 @@ function Fennec() {
           <img src={imageMap["react"]} alt="React logo" />
           <img src={imageMap["html"]} alt="HTML logo" />
           <img src={imageMap["github"]} alt="GitHub logo" />
+          <img src={imageMap["nextjs"]} alt="Next.js logo" />
         </div>
       </div>
     </div>
