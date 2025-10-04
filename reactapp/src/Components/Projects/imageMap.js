@@ -19,7 +19,7 @@ import html from "../../static/logos/html-logo.png";
 import huggingface from "../../static/logos/huggingface-logo.png";
 import javascript from "../../static/logos/javascript-logo.png";
 import mysql from "../../static/logos/mysql-logo.png";
-import nextjs from "../../static/logos/nextjs-logo.svg";
+import nextjs from "../../static/logos/nextjs-logo.png";
 import nodejs from "../../static/logos/nodejs-logo.svg";
 import openpyxl from "../../static/logos/openpyxl-logo.png";
 import postgres from "../../static/logos/postgres-logo.png";
