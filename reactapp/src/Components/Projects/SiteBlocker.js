@@ -23,7 +23,7 @@ function SiteBlocker() {
       </div>
       <div>
         <h3>Demo</h3>
-        <YouTubeEmbed embedId="i5OJ-5s9mCA" />
+        <YouTubeEmbed embedId="Lb0UT2GqB4g" />
       </div>
       <div className="key-features">
         <h3>Key Features</h3>
