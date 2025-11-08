@@ -1,10 +1,16 @@
 {
   "currentBook": {
-    "title": "Snow Crash",
-    "author": "Neal Stephenson",
-    "url": "https://www.goodreads.com/book/show/40651883-snow-crash"
+    "title": "The Beginning of Infinity",
+    "author": "David Deutsch",
+    "url": "https://www.goodreads.com/book/show/10483171-the-beginning-of-infinity"
   },
   "previousBooks": [
+    {
+      "year": 2025,
+      "title": "Snow Crash",
+      "author": "Neal Stephenson",
+      "url": "https://www.goodreads.com/book/show/40651883-snow-crash"
+    },
     {
       "year": 2025,
       "title": "Tomorrow, and Tomorrow, and Tomorrow",
