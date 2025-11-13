@@ -30,30 +30,20 @@ function About() {
             />
           </h2>
           <p>I'm a software developer based in Vancouver, BC.</p>
+
           <p>
-            I started my career in administration and accounting, but I kept
-            turning to code to make my day-to-day work easier. It started as a
-            few simple scripts but quickly turned into building full apps like
-            my <Link to="/production-planner">Production Planner</Link> and{" "}
-            <Link to="/amazon-checker">Amazon Checker</Link> tools.
+            I'm currently studying computer science at{" "}
+            <a href="https://oregonstate.edu/">Oregon State University</a> while
+            working as a software engineering co-op at{" "}
+            <a href="https://www.amgen.com/">Amgen</a>, where I collaborate with
+            scientists and engineers to develop internal tools and data-driven
+            applications.
           </p>
           <p>
-            Recently I decided to return to school to fill in the gaps of what
-            I'd been learning on my own. I am now studying computer science at{" "}
-            <a href="https://oregonstate.edu/">OSU</a>, balancing academics with
-            a software co-op role at <a href="https://www.amgen.com/">Amgen</a>.
-          </p>
-          <p>
-            I still code for fun though - currently I'm working on{" "}
-            <Link to="/dg-draft">a fantasy disc golf app</Link>.
-            {/* and an{" "}
-            <a
-              href="https://fennec.michellef.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              8-bit inspired fox animation
-            </a> */}
+            I love building things that automate workflows, like my
+            <Link to="/production-planner">Production Planner</Link> app, but I
+            also enjoy taking on projects that are just for fun, like my
+            <Link to="/dg-draft">Fantasy Disc Golf App</Link>.
           </p>
           <p>
             Feel free to{" "}
