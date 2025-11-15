@@ -8,6 +8,9 @@ A portfolio website designed to showcase my projects.
 <a href="https://michellef.dev" target="_blank">
   <img src="https://img.shields.io/badge/Website-michellef.dev-6da360?style=for-the-badge">
 </a>
+<br></br>
+
+![Portfolio Demo](assets/portfolio-demo.gif)
 
 ## Table of Contents
 
