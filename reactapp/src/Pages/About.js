@@ -40,9 +40,9 @@ function About() {
             applications.
           </p>
           <p>
-            I love building things that automate workflows, like my
+            I love building things that automate workflows, like my{" "}
             <Link to="/production-planner">Production Planner</Link> app, but I
-            also enjoy taking on projects that are just for fun, like my
+            also enjoy taking on projects that are just for fun, like my{" "}
             <Link to="/dg-draft">Fantasy Disc Golf App</Link>.
           </p>
           <p>
