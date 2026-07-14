@@ -1,10 +1,22 @@
 {
   "currentBook": {
-    "title": "The Wheel of Time: The Eye of the World",
-    "author": "Robert Jordan",
-    "url": "https://www.goodreads.com/book/show/228665.The_Eye_of_the_World"
+    "title": "Xenocide",
+    "author": "Orson Scott Card",
+    "url": "https://www.goodreads.com/en/book/show/8648.Xenocide"
   },
   "previousBooks": [
+    {
+      "year": 2026,
+      "title": "Speaker for the Dead",
+      "author": "Orson Scott Card",
+      "url": "https://www.goodreads.com/book/show/9818767-speaker-for-the-dead?ref=rae_0"
+    },
+    {
+      "year": 2026,
+      "title": "Wuthering Heights",
+      "author": "Emily Brontë",
+      "url": "https://www.goodreads.com/book/show/32929156-wuthering-heights"
+    },
     {
       "year": 2025,
       "title": "Snow Crash",
