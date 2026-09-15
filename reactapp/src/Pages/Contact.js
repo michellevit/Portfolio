@@ -59,7 +59,7 @@ function Contact() {
       }
     } catch (error) {
       setErrorMessage(
-        "Failed to send the message. Please reach me at contact@michellef.dev",
+        "Failed to send the message. Please contact me via LinkedIn",
       );
     } finally {
       setIsSubmitting(false);
