@@ -45,7 +45,7 @@ body.light .about-text p a:hover {
 }
 
 body.dark .about-text p a:hover {
-  color: var(--color-accent);
+  color: white;
   filter: brightness(50%);
 }
 
@@ -78,7 +78,8 @@ body.dark .about-text p a:hover {
 .about-picture img {
   width: 100%;
   max-width: 275px;
-  box-shadow: 0 4px 8px 0 var(--color-main-dark-detail),
+  box-shadow:
+    0 4px 8px 0 var(--color-main-dark-detail),
     0 6px 20px 0 var(--color-main-dark-detail);
   border-radius: 15px;
 }
