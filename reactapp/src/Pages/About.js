@@ -33,11 +33,13 @@ function About() {
 
           <p>
             I'm currently studying computer science at{" "}
-            <a href="https://oregonstate.edu/">Oregon State University</a> while
-            working as a software engineering co-op at{" "}
-            <a href="https://www.amgen.com/">Amgen</a>, where I collaborate with
-            scientists and engineers to develop internal tools and data-driven
-            applications.
+            <a href="https://oregonstate.edu/">Oregon State University</a>. I
+            recently completed a software engineering co-op at{" "}
+            <a href="https://www.amgen.com/">Amgen</a>, where I worked with
+            scientists and engineers to build internal tools and data-driven
+            applications. The experience sparked my interest in developing
+            software that solves real-world problems and helps move scientific
+            work forward.{" "}
           </p>
           <p>
             I love building things that automate workflows, like my{" "}
