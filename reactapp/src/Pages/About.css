@@ -45,7 +45,6 @@ body.light .about-text p a:hover {
 }
 
 body.dark .about-text p a:hover {
-  color: white;
   filter: brightness(50%);
 }
 
