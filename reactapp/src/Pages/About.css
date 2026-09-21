@@ -45,7 +45,7 @@ body.light .about-text p a:hover {
 }
 
 body.dark .about-text p a:hover {
-  filter: brightness(50%);
+  filter: brightness(30%);
 }
 
 .about-text .about-contact a {
